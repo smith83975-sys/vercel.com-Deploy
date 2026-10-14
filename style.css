@@ -56,3 +56,8 @@ ul{padding-left:1.2em}li{margin:6px 0}
 .news-list li.sep{padding:0;border:0}
 
 @media(max-width:700px){#gsr-hist::before{content:'Swipe to see the full timeline →';display:block;font-size:12px;color:#999;margin-bottom:4px}}
+
+.m1c{max-width:900px;margin:1rem auto;box-sizing:border-box}.m1c-ctl{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;font-weight:700}#m1-range{flex:1;min-width:160px;accent-color:#d4af37}#m1-num{width:4.2rem;padding:.3rem;background:#1b1e24;color:inherit;border:1px solid #555b66;border-radius:6px}
+.m1c-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}@media(max-width:640px){.m1c-grid{grid-template-columns:1fr}}
+.m1c-metal{background:#1b1e24;border-radius:10px;padding:.9rem}.m1c-metal h3{margin:.1rem 0 .5rem}.m1c-row{display:flex;justify-content:space-between;gap:.5rem;margin:.25rem 0}.m1c-big{font-size:1.4rem;font-weight:700}.m1c-mult{font-size:1.8rem;font-weight:800;color:#7fbf7a}
+.m1c-bar{height:14px;border-radius:7px;background:#2a2e36;margin:.35rem 0;overflow:hidden}.m1c-bar span{display:block;height:100%;border-radius:7px}.m1c-lbl{font-size:.8rem;color:#999}
