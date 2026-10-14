@@ -13,6 +13,7 @@
 <div class="sponsor">Sponsor slot available. <a href="sponsor.html">Sponsor VaultPulse from $400/month</a></div>
 <header><nav class="site-nav"><a href="/">Inventory &amp; score</a> · <a href="flow.html">Deliveries &amp; notable moves</a> · <a href="/#tanks">Tanks</a> · <a href="/#newsletter">Newsletter</a> · <a href="sponsor.html">Sponsor</a></nav><h1>VaultPulse</h1><p>COMEX registered vs eligible silver &amp; gold inventory, deliveries and physical premiums, in one place.</p></header>
 <main>
+<section id="ratio"><h2>Gold-to-silver ratio (live)</h2><div class="cards"><div class="card"><div id="gsr-value" style="font-size:2.4rem;font-weight:700">…</div><p id="gsr-prices" class="note">Loading spot prices…</p><p id="gsr-meta" class="note"></p></div></div><p class="note">The ratio is how many ounces of silver equal the value of one ounce of gold (gold spot ÷ silver spot). Informational only — not financial advice or a prediction.</p></section>
 <section><h2>COMEX warehouse stocks</h2>
 <p class="cite" id="comexCite">Loading…</p>
 <div class="cards" id="cards"></div></section>
@@ -44,6 +45,6 @@
 <section id="sponsor"><h2>Sponsor</h2><p>Reach silver and gold stackers. <a href="sponsor.html">Sponsor VaultPulse from $400/month</a> — homepage bar + daily email mention.</p></section>
 </main>
 <footer><p><b>Not financial advice.</b> Data is informational, may be delayed or rounded, and is credited to the sources and dates shown. COMEX data originates from CME Group warehouse reports.</p></footer>
-<script src="app.js"></script><script src="tanks.js"></script>
+<script src="app.js"></script><script src="tanks.js"></script><script src="ratio.js"></script>
 <script>fetch('data/entries.json').then(r=>r.json()).then(d=>{const e=[...d.entries].sort((a,b)=>b.data_date.localeCompare(a.data_date)).slice(0,3);const x=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));document.getElementById('flow-teaser').innerHTML='<ul>'+e.map(i=>'<li><a href="flow.html#'+x(i.id)+'">'+x(i.headline)+'</a> <span class="cite">(data date '+x(i.data_date)+', '+x(i.source)+')</span></li>').join('')+'</ul>'}).catch(()=>{})</script>
 </body></html>
