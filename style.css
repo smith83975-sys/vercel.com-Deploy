@@ -23,3 +23,5 @@ ul{padding-left:1.2em}li{margin:6px 0}
 .tank-vals{list-style:none;padding:0;margin:0;font-size:14px}
 
 .gsr-scale{max-width:420px;margin:10px auto 0}.gsr-scale svg{display:block}
+
+.eras{font-size:14px;line-height:1.5;padding-left:18px}.eras li{margin:6px 0}.eras a{color:#7ab}#gsr-hist svg{max-width:100%;height:auto}
