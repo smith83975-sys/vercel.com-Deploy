@@ -11,7 +11,7 @@ bills+='<rect x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+w.toFixed(1)+'"
 const gold=metal==='gold';
 const obj=gold?'<rect x="'+(lx-22)+'" y="'+(ly+72)+'" width="44" height="20" rx="3" fill="#d4af37" stroke="#9c7d1c"/>':'<circle cx="'+lx+'" cy="'+(ly+82)+'" r="11" fill="#c0c6cf" stroke="#7d848e"/>';
 const pan=(x,y,w)=>'<line x1="'+x+'" y1="'+y+'" x2="'+(x-w/2)+'" y2="'+(y+94)+'" stroke="#8a909a"/><line x1="'+x+'" y1="'+y+'" x2="'+(x+w/2)+'" y2="'+(y+94)+'" stroke="#8a909a"/><path d="M'+(x-w/2-5)+' '+(y+94)+' h'+(w+10)+' q-5 12 -'+(w/2+5)+' 12 q-'+(w/2)+' 0 -'+(w/2+5)+' -12z" fill="#3a3f49"/>';
-const r2=ratio.toFixed(2);
+const r2=ratio.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
 return '<svg viewBox="0 0 460 280" aria-hidden="true" focusable="false"><polygon points="214,262 246,262 234,50 226,50" fill="#555b66"/><rect x="190" y="260" width="80" height="7" rx="3" fill="#555b66"/>'+
 '<line x1="'+lx.toFixed(1)+'" y1="'+ly.toFixed(1)+'" x2="'+rx.toFixed(1)+'" y2="'+ry.toFixed(1)+'" stroke="#8a909a" stroke-width="6" stroke-linecap="round"/><circle cx="230" cy="50" r="8" fill="#d4af37"/>'+
 pan(+lx.toFixed(1),ly,80)+pan(+rx.toFixed(1),ry,130)+obj+bills+
