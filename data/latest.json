@@ -130,5 +130,24 @@
     "dollar_to_gold_per_oz": 11976,
     "dollar_to_gold_1913_per_oz": 26.25,
     "note": "Snapshot of figures as displayed; the Debt Clock's ticking values are client-side extrapolations and its formulas are not published."
+  },
+  "live_paper": {
+    "m2": {
+      "value_usd": 23342800000000.0,
+      "month": "2026-08",
+      "series": "M2SL (seasonally adjusted, monthly)",
+      "source": "https://fred.stlouisfed.org/series/M2SL",
+      "retrieved_at": "2026-10-14T19:05:00Z"
+    },
+    "gold_reserve": {
+      "troy_oz": 261498926.241,
+      "as_of": "2026-08-31",
+      "source": "https://fiscaldata.treasury.gov/datasets/status-report-government-gold-reserve/",
+      "retrieved_at": "2026-10-14T19:05:00Z"
+    },
+    "silver_basis": {
+      "troy_oz": 261498926.241,
+      "definition": "No official current US government silver reserve is published (the National Defense Stockpile silver was sold off by the early 2000s). Paper-to-silver here uses the same ounce count as the US gold reserve, valued at silver spot."
+    }
   }
 }

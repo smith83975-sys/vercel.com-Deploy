@@ -21,8 +21,8 @@ pan(lx.toFixed(1)*1,ly,70)+pan(rx.toFixed(1)*1,ry,110)+obj+bills+
 '<text x="'+rx.toFixed(0)+'" y="'+(ry+126).toFixed(0)+'" font-size="9" text-anchor="middle" fill="#999">each bundle = $'+per+'</text></svg>'+
 '<p class="note" style="text-align:center"><strong>$1 of '+metal+' : $'+r2+' of paper</strong> · US Debt Clock snapshot, '+date+'</p>';}
 function draw(d){const dc=d&&d.debt_clock;const box=document.getElementById('debt-scales');if(!box||!dc)return;
-const date=new Date(dc.retrieved_at).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
-const mk=(metal,r,per)=>{if(!(r>0))return '';return '<div class="card debt-scale" role="img" aria-label="Balance scale tipped heavily toward paper: $1 of '+metal+' against $'+r.toFixed(2)+' of paper money, per the US Debt Clock snapshot of '+date+'. Illustration only, not financial advice."><h3>Paper vs '+metal+'</h3>'+svg(metal,r,per,date)+'</div>';};
-box.innerHTML=mk('gold',dc.paper_to_gold_ratio,10)+mk('silver',dc.paper_to_silver_ratio,50);}
-fetch('data/latest.json',{cache:'no-store'}).then(r=>r.json()).then(draw).catch(()=>{});
+const L=window.VP_LIVE_PAPER;const live=!!L;const date=live?'live, our calculation':'US Debt Clock snapshot, '+new Date(dc.retrieved_at).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
+const mk=(metal,r,per)=>{if(!(r>0))return '';return '<div class="card debt-scale" role="img" aria-label="Balance scale tipped heavily toward paper: $1 of '+metal+' against $'+r.toFixed(2)+' of paper money, per '+date+'. Illustration only, not financial advice."><h3>Paper vs '+metal+'</h3>'+svg(metal,r,per,date)+'</div>';};
+box.innerHTML=live?mk('gold',L.gold,2)+mk('silver',L.silver,100):mk('gold',dc.paper_to_gold_ratio,10)+mk('silver',dc.paper_to_silver_ratio,50);}
+let D=null;fetch('data/latest.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{D=d;draw(d)}).catch(()=>{});document.addEventListener('vp-live-paper',()=>{if(D)draw(D)});
 })();
