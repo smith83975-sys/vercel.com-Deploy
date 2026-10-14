@@ -119,5 +119,16 @@
     "as_of": "2026-10-14T18:38:56Z",
     "source": "gold-api.com",
     "source_url": "https://gold-api.com"
+  },
+  "debt_clock": {
+    "source": "https://www.usdebtclock.org/",
+    "retrieved_at": "2026-10-14T18:58:00Z",
+    "paper_to_silver_ratio": 405.96,
+    "paper_to_gold_ratio": 152.81,
+    "dollar_to_silver_per_oz": 1516,
+    "dollar_to_silver_1913_per_oz": 2.71,
+    "dollar_to_gold_per_oz": 11976,
+    "dollar_to_gold_1913_per_oz": 26.25,
+    "note": "Snapshot of figures as displayed; the Debt Clock's ticking values are client-side extrapolations and its formulas are not published."
   }
 }
