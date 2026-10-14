@@ -37,3 +37,5 @@ ul{padding-left:1.2em}li{margin:6px 0}
 .pm-big{font-size:2.2rem;font-weight:700;color:#d4af37}
 .pm-spot{color:#ddd}
 @media(max-width:600px){.pm-ratio{font-size:1.9rem}.pm-big{font-size:1.7rem}}
+
+.pm-tiers{margin-top:14px}.pm-tiers-intro{font-size:.92rem;margin:0 0 6px}.pm-tier-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:.95rem}.pm-tier-table th,.pm-tier-table td{padding:6px 8px;border-bottom:1px solid #333;text-align:right}.pm-tier-table th:first-child,.pm-tier-table td:first-child{text-align:left}.pm-tier-table th{color:#999;font-weight:600}

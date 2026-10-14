@@ -18,6 +18,10 @@ pan(+lx.toFixed(1),ly,80)+pan(+rx.toFixed(1),ry,130)+obj+bills+
 '<text x="'+lx.toFixed(0)+'" y="'+(ly+130).toFixed(0)+'" font-size="17" text-anchor="middle" fill="'+(gold?'#d4af37':'#c0c6cf')+'" font-weight="700">$1 of '+metal+'</text>'+
 '<text x="'+rx.toFixed(0)+'" y="'+(ry+130).toFixed(0)+'" font-size="17" text-anchor="middle" fill="#7fbf7a" font-weight="700">$'+r2+' of paper</text>'+
 '<text x="'+rx.toFixed(0)+'" y="'+(ry+148).toFixed(0)+'" font-size="12" text-anchor="middle" fill="#999">each bundle = $'+per+'</text></svg>';}
+function tiers(m,oz,sp){const el=$('lp-'+m+'-tiers');if(!el)return;const M=LP&&LP.m2&&LP.m2.value_usd;const nm=m==='gold'?'gold':'silver';
+let h='<p class="pm-tiers-intro">If '+nm+' backed X% of the money supply, the price per ounce would need to be… <em>(hypothetical, not a prediction, not financial advice)</em></p><table class="pm-tier-table"><thead><tr><th>Backing</th><th>Implied price</th><th>vs spot</th></tr></thead><tbody>';
+[30,40,50,100].forEach(p=>{let v='Unavailable',x='Unavailable';if(M&&oz>0){const i=p/100*M/oz;v=usd(i)+' /oz';if(sp&&sp.price>0)x=(i/sp.price).toLocaleString('en-US',{maximumFractionDigits:i/sp.price<100?1:0})+'x spot';}h+='<tr><td>'+p+'%</td><td>'+v+'</td><td>'+x+'</td></tr>';});
+el.innerHTML=h+'</tbody></table>';}
 let LP=null,TK=null;
 async function load(){
 try{if(!LP)LP=(await (await fetch('data/latest.json',{cache:'no-store'})).json()).live_paper;}catch(e){}
@@ -34,6 +38,7 @@ if(T&&T.total_oz>0){const si=LP.m2.value_usd/T.total_oz;$('lp-silver-imp').textC
 if(s){const r=si/s.price;$('lp-silver').textContent=Math.round(r).toLocaleString('en-US')+' to 1';$('lp-silver-spot').textContent=usd(s.price,2)+' /oz';const el=$('lp-silver-scale');el.innerHTML=svg('silver',r,100);el.setAttribute('aria-label','Balance scale tipped toward paper: $1 of silver in all COMEX vaults against $'+Math.round(r).toLocaleString('en-US')+' of paper money (live, our calculation). Illustration only.');}
 else set('silver',null,0);}
 else{$('lp-silver-imp').textContent='Unavailable';$('lp-reg-oz').textContent='Unavailable';set('silver',null,0);}}
+{const T2=TK&&TK.tanks&&TK.tanks.find(t=>t.metal==='silver');tiers('gold',LP&&LP.gold_reserve&&LP.gold_reserve.troy_oz,g);tiers('silver',T2&&T2.total_oz,s);}
 $('lp-meta').textContent=(g&&s)?'Spot updated '+new Date(g.updatedAt||Date.now()).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})+' · refreshes every 60s':'Live spot unavailable right now. Ratios and spot are not shown rather than estimated; retrying every 60s.';
 }
 load();setInterval(load,60000);
