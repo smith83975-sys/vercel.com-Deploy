@@ -40,3 +40,17 @@ ul{padding-left:1.2em}li{margin:6px 0}
 
 .pm-tiers{margin-top:14px}.pm-tiers-intro{font-size:.92rem;margin:0 0 6px}.pm-tier-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:.95rem}.pm-tier-table th,.pm-tier-table td{padding:6px 8px;border-bottom:1px solid #333;text-align:right}.pm-tier-table th:first-child,.pm-tier-table td:first-child{text-align:left}.pm-tier-table th{color:#999;font-weight:600}
 .news-list{list-style:none;padding:0;margin:0}.news-list li{padding:.55rem 0;border-bottom:1px solid rgba(128,128,128,.25);display:flex;flex-direction:column;gap:.15rem}.news-list li:last-child{border-bottom:0}.news-list a{font-weight:600;overflow-wrap:anywhere}
+.stream-head{display:flex;justify-content:space-between;align-items:center;gap:.5rem;margin-bottom:.4rem;flex-wrap:wrap}.stream-head .note{margin:0}
+.live{font-weight:700;font-size:.8rem;letter-spacing:.08em;color:#e53935;display:inline-flex;align-items:center;gap:.4rem}
+.live .dot{width:.6rem;height:.6rem;border-radius:50%;background:#e53935;animation:vp-pulse 1.4s infinite}
+@keyframes vp-pulse{0%{box-shadow:0 0 0 0 rgba(229,57,53,.7)}70%{box-shadow:0 0 0 .5rem rgba(229,57,53,0)}100%{box-shadow:0 0 0 0 rgba(229,57,53,0)}}
+.stream-box{height:22rem;overflow:hidden;position:relative;border:1px solid rgba(128,128,128,.25);border-radius:8px;padding:0 .7rem;-webkit-mask-image:linear-gradient(transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(transparent,#000 6%,#000 94%,transparent)}
+.stream-box.static{overflow-y:auto;-webkit-mask-image:none;mask-image:none}
+.news-list li.fresh{animation:vp-in .8s ease-out,vp-hl 4s ease-out}
+@keyframes vp-in{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+@keyframes vp-hl{from{background:rgba(255,193,7,.25)}to{background:transparent}}
+.tag-new{display:inline-block;font-size:.65rem;font-weight:700;background:#e53935;color:#fff;border-radius:3px;padding:0 .3rem;margin-right:.35rem;vertical-align:middle}
+.ico{margin-right:.3rem}.legend{margin:.5rem 0 0;font-size:.8rem}
+@media (max-width:480px){.stream-box{height:19rem}}
+@media (prefers-reduced-motion:reduce){.live .dot,.news-list li.fresh{animation:none}}
+.news-list li.sep{padding:0;border:0}

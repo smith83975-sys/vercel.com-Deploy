@@ -21,6 +21,6 @@ module.exports=async(req,res)=>{
  all.sort((a,b)=>b.published.localeCompare(a.published));
  for(const i of all){const k=i.title.toLowerCase().replace(/[^a-z0-9]/g,'').slice(0,60);if(seen.has(k)||seen.has(i.link))continue;seen.add(k);seen.add(i.link);out.push(i);if(out.length>=30)break}
  res.setHeader('Content-Type','application/json; charset=utf-8');
- res.setHeader('Cache-Control',out.length?'public, s-maxage=300, stale-while-revalidate=600':'no-store');
+ res.setHeader('Cache-Control',out.length?'public, s-maxage=120, stale-while-revalidate=300':'no-store');
  res.status(out.length?200:502).send(JSON.stringify({updated:new Date().toISOString(),count:out.length,items:out}));
 };
