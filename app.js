@@ -1,9 +1,10 @@
 const M=n=>(n/1e6).toFixed(2)+'M oz', P='<span class="pending">pending</span>';
-const $=id=>document.getElementById(id);
+const $=id=>document.getElementById(id)||{innerHTML:''};
 fetch('data/latest.json').then(r=>r.json()).then(d=>{
  const c=d.comex;
  $('comexCite').innerHTML=`Report date: <b>${c.report_date}</b>. Source: <a href="${c.source_url}">${c.source}</a>`;
  $('oiCite').innerHTML=`Open interest source: <a href="${d.open_interest.source_url}">${d.open_interest.source}</a>`;
+ $('cards').innerHTML='';$('scores').innerHTML='';
  ['silver','gold'].forEach(m=>{
   const s=c[m], ch=s.registered_change_oz, oi=d.open_interest[m];
   $('cards').innerHTML+=`<div class="card"><h3>${m[0].toUpperCase()+m.slice(1)}</h3>
@@ -24,7 +25,7 @@ fetch('data/latest.json').then(r=>r.json()).then(d=>{
    <div class="cite">OI ${oi.contracts.toLocaleString()} contracts × ${oi.oz_per_contract} oz. Registered as of ${c.report_date}.</div></div>`;
  });
  const p=d.premiums; $('premCite').innerHTML=`Checked ${p.checked_at}. Source: ${p.source}.`;
- const tb=document.querySelector('#prem tbody');
+ const tb=document.querySelector('#prem tbody')||{innerHTML:''};
  p.items.forEach(it=>{
   if(!it.dealers.length){tb.innerHTML+=`<tr><td>${it.product}</td><td colspan="4">${P}: ${it.pending}</td></tr>`;return;}
   it.dealers.forEach(x=>{const pr=x.price-it.spot;

@@ -1,5 +1,45 @@
-{ "cleanUrls": true,
-  "redirects": [
-    { "source": "/:path((?!api/).*)", "has": [ { "type": "host", "value": "vaultpulse-weld.vercel.app" } ], "destination": "https://vaultpulsehq.com/:path", "permanent": true }
-  ],
-  "headers": [ { "source": "/data/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=300" } ] } ] }
+{
+ "cleanUrls": true,
+ "redirects": [
+  {
+   "source": "/:path((?!api/).*)",
+   "has": [
+    {
+     "type": "host",
+     "value": "vaultpulse-weld.vercel.app"
+    }
+   ],
+   "destination": "https://vaultpulsehq.com/:path",
+   "permanent": true
+  }
+ ],
+ "headers": [
+  {
+   "source": "/data/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=300"
+    }
+   ]
+  },
+  {
+   "source": "/(.*)\\.(js|css)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=3600, stale-while-revalidate=86400"
+    }
+   ]
+  },
+  {
+   "source": "/(.*)\\.(png|ico|svg|jpg|webp)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=604800, stale-while-revalidate=86400"
+    }
+   ]
+  }
+ ]
+}
