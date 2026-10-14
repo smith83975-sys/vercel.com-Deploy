@@ -19,7 +19,7 @@ pan(lx.toFixed(1)*1,ly,70)+pan(rx.toFixed(1)*1,ry,110)+obj+bills+
 '<text x="'+lx.toFixed(0)+'" y="'+(ly+112).toFixed(0)+'" font-size="12" text-anchor="middle" fill="'+(gold?'#d4af37':'#c0c6cf')+'" font-weight="700">$1 of '+metal+'</text>'+
 '<text x="'+rx.toFixed(0)+'" y="'+(ry+112).toFixed(0)+'" font-size="12" text-anchor="middle" fill="#7fbf7a" font-weight="700">$'+r2+' of paper</text>'+
 '<text x="'+rx.toFixed(0)+'" y="'+(ry+126).toFixed(0)+'" font-size="9" text-anchor="middle" fill="#999">each bundle = $'+per+'</text></svg>'+
-'<p class="note" style="text-align:center"><strong>$1 of '+metal+' : $'+r2+' of paper</strong> · US Debt Clock snapshot, '+date+'</p>';}
+'<p class="note" style="text-align:center"><strong>$1 of '+metal+' : $'+r2+' of paper</strong> · '+date+'</p>';}
 function draw(d){const dc=d&&d.debt_clock;const box=document.getElementById('debt-scales');if(!box||!dc)return;
 const L=window.VP_LIVE_PAPER;const live=!!L;const date=live?'live, our calculation':'US Debt Clock snapshot, '+new Date(dc.retrieved_at).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
 const mk=(metal,r,per)=>{if(!(r>0))return '';return '<div class="card debt-scale" role="img" aria-label="Balance scale tipped heavily toward paper: $1 of '+metal+' against $'+r.toFixed(2)+' of paper money, per '+date+'. Illustration only, not financial advice."><h3>Paper vs '+metal+'</h3>'+svg(metal,r,per,date)+'</div>';};
