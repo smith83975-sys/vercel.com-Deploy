@@ -81,7 +81,7 @@ def build():
     # footer
     R.append(f'''<tr><td style="padding:24px 28px 28px;border-top:1px solid #2a2f3a;{FONT}font-size:12px;line-height:1.6;color:{MUTED};" align="center">
 <b style="color:#c9d1dc;">Not financial advice.</b> Headlines are from third-party sources and copied as published; VaultPulse doesn't endorse them. Figures are dated and sourced above.<br><br>
-<a href="{{$url}}" style="color:{GOLD};">View in browser</a> &nbsp;&middot;&nbsp; <a href="{{$unsubscribe}}" style="color:{GOLD};">Unsubscribe</a> &nbsp;&middot;&nbsp; <a href="{SITE}" style="color:{GOLD};">vaultpulse-weld.vercel.app</a></td></tr>''')
+<a href="{{$url}}" style="color:{GOLD};">View in browser</a> &nbsp;&middot;&nbsp; <a href="{{$unsubscribe}}" style="color:{GOLD};">Unsubscribe</a> &nbsp;&middot;&nbsp; <a href="{SITE}" style="color:{GOLD};">vaultpulsehq.com</a></td></tr>''')
     pre = f"Gold ${g:,.2f} · Silver ${s:,.2f} · ratio {g/s:.1f} + today's top headlines" if g and s else "Today's gold & silver headlines and vault check"
     doc = f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark light"><meta name="supported-color-schemes" content="dark light"><title>{E(subject)}</title>
 <style>body{{margin:0;padding:0;}} @media (max-width:620px){{.wrap{{width:100%!important;}} .stack{{display:block!important;width:100%!important;}}}}</style></head>

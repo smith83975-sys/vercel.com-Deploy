@@ -3,7 +3,7 @@
 Usage: python3 scripts/daily_brief.py [out.md]"""
 import json, sys, os, urllib.request, datetime as dt
 FORECAST = __import__("re").compile(r"\b(forecast|target|predict|outlook|could (hit|reach)|will (hit|reach)|to (hit|reach)|expects?|sees?|projection|price call|by 20\d\d|next year)\b", 2)
-SITE = "https://vaultpulse-weld.vercel.app"
+SITE = "https://vaultpulsehq.com"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def get(url):
     req = urllib.request.Request(url, headers={"User-Agent": "VaultPulse-brief/1.0"})
