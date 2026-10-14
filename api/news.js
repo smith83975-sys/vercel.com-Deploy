@@ -14,7 +14,7 @@ async function get(f){
    let title=tag(it,'title'),source=f.name;const s=tag(it,'source');
    if(f.gn){if(s)source=s;const i=title.lastIndexOf(' - ');if(i>0&&(!s||title.endsWith(s)))title=title.slice(0,i)}
    let d=new Date(tag(it,'pubDate'));if(d>Date.now())d=new Date();return{title,source,link:tag(it,'link'),published:isNaN(d)?null:d.toISOString()}
-  }).filter(i=>i.title&&/^https?:/.test(i.link)&&i.published&&(!f.filter||KW.test(i.title)))}
+  }).filter(i=>i.title&&/^https?:/.test(i.link)&&i.published&&KW.test(i.title))}
  catch(e){return[]}finally{clearTimeout(to)}}
 module.exports=async(req,res)=>{
  const all=(await Promise.all(FEEDS.map(get))).flat();const seen=new Set(),out=[];
