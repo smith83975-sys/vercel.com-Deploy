@@ -59,3 +59,6 @@ Prefer small, accurate updates over flashy claims. Always cite the data date and
 4. Share the site on X and metals communities.
 
 This follows the same loop as agentusecases.ai: useful directory/signal site → traffic → sponsors + newsletter.
+
+## Deliveries & notable moves (merged from VaultFlow)
+`flow.html` (linked from the nav and a homepage section) is a plain-English feed of notable COMEX silver/gold delivery notices, issues/stops and big registered/eligible shifts (`data/entries.json`, auto-archived after `archive_after_days`), "gas tank" gauges of registered stock vs. month-to-date deliveries (`data/tank.json`), and a short force majeure explainer. Every entry cites its data date and source. Not financial advice, no price predictions. The old vaultflow-rho.vercel.app address redirects here.

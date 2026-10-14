@@ -1,0 +1,13 @@
+{
+ "note": "Fill = COMEX registered (deliverable) oz. Drain = October month-to-date standard-contract deliveries (contracts x contract size). Approximate; dates differ by metal.",
+ "tanks": [
+  {"metal":"silver","label":"Silver","registered_oz":103350000,"registered_date":"2026-10-12",
+   "registered_source":"The Vault Report (CME Group daily warehouse stocks)","registered_url":"https://thevaultreport.com/comex",
+   "mtd_contracts":3250,"oz_per_contract":5000,"mtd_date":"2026-10-13",
+   "mtd_source":"Heavy Metal Stats (CME Group daily delivery notices)","mtd_url":"https://heavymetalstats.com/inventory"},
+  {"metal":"gold","label":"Gold","registered_oz":15100000,"registered_approx":true,"registered_date":"2026-10-02",
+   "registered_source":"MetalCharts (CME Group warehouse stocks)","registered_url":"https://metalcharts.org",
+   "mtd_contracts":12329,"oz_per_contract":100,"mtd_date":"2026-10-08","mtd_note":"Standard 100-oz GC only; excludes Micro Gold.",
+   "mtd_source":"Arc Research (CME Group delivery notices)","mtd_url":"https://www.getarcresearch.com/commodities/gold/warehouse-and-delivery/2026-10-08"}
+ ]
+}

@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>VaultPulse – COMEX Registered vs Eligible Silver &amp; Gold Inventory, Physical Premiums</title>
-<meta name="description" content="Daily COMEX registered vs eligible silver and gold warehouse stocks, day-over-day changes, a transparent physical tightness score, and retail bullion premiums over spot. Sources and data dates cited.">
+<title>VaultPulse – COMEX Registered vs Eligible Silver &amp; Gold Inventory, Deliveries, Physical Premiums</title>
+<meta name="description" content="Daily COMEX registered vs eligible silver and gold warehouse stocks, day-over-day changes, COMEX delivery notices and notable inventory shifts, a transparent physical tightness score, and retail bullion premiums over spot. Sources and data dates cited.">
 <meta property="og:title" content="VaultPulse – COMEX silver & gold inventory tracker">
 <meta property="og:description" content="Registered vs eligible COMEX stocks, tightness score, and retail premiums. Not financial advice.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="sponsor">Sponsor slot available. <a href="sponsor.html">Sponsor VaultPulse from $400/month</a></div>
-<header><h1>VaultPulse</h1><p>COMEX registered vs eligible silver &amp; gold inventory and physical premiums, in one place.</p></header>
+<header><nav class="site-nav"><a href="/">Inventory &amp; score</a> · <a href="flow.html">Deliveries &amp; notable moves</a> · <a href="flow.html#tanks">Tanks</a> · <a href="/#newsletter">Newsletter</a> · <a href="sponsor.html">Sponsor</a></nav><h1>VaultPulse</h1><p>COMEX registered vs eligible silver &amp; gold inventory, deliveries and physical premiums, in one place.</p></header>
 <main>
 <section><h2>COMEX warehouse stocks</h2>
 <p class="cite" id="comexCite">Loading…</p>
@@ -33,6 +33,7 @@
 <p class="cite" id="premCite"></p>
 <table id="prem"><thead><tr><th>Product</th><th>Dealer</th><th>Price</th><th>Spot ref.</th><th>Premium</th></tr></thead><tbody></tbody></table></section>
 
+<section id="flow"><h2>Deliveries &amp; notable moves</h2><p>Plain-English feed of notable COMEX silver and gold delivery notices, issues/stops and big registered/eligible shifts, plus "gas tank" gauges of registered stock vs. month-to-date deliveries. <a href="flow.html">Open the deliveries tracker →</a></p><div id="flow-teaser"></div></section>
 <section id="newsletter"><h2>Daily newsletter</h2>
 <form action="https://buttondown.com/api/emails/embed-subscribe/vaultpulse" method="post">
 <input type="email" name="email" placeholder="you@example.com" required> <button>Subscribe</button>
@@ -42,4 +43,5 @@
 </main>
 <footer><p><b>Not financial advice.</b> Data is informational, may be delayed or rounded, and is credited to the sources and dates shown. COMEX data originates from CME Group warehouse reports.</p></footer>
 <script src="app.js"></script>
+<script>fetch('data/entries.json').then(r=>r.json()).then(d=>{const e=[...d.entries].sort((a,b)=>b.data_date.localeCompare(a.data_date)).slice(0,3);const x=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));document.getElementById('flow-teaser').innerHTML='<ul>'+e.map(i=>'<li><a href="flow.html#'+x(i.id)+'">'+x(i.headline)+'</a> <span class="cite">(data date '+x(i.data_date)+', '+x(i.source)+')</span></li>').join('')+'</ul>'}).catch(()=>{})</script>
 </body></html>

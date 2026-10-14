@@ -15,3 +15,9 @@ footer{font-size:13px;color:#aaa;border-top:1px solid #333}
 .btn-sponsor:hover{opacity:.9}
 .mailto-placeholder{color:#e9a33b;font-style:italic}
 ul{padding-left:1.2em}li{margin:6px 0}
+.archive .entry{opacity:.75}
+.tank-wrap{display:flex;gap:16px;align-items:flex-end}
+.tank{position:relative;width:70px;height:180px;border:3px solid #555;border-radius:12px 12px 8px 8px;overflow:hidden;flex:none;background:#111}
+.tank .fill{position:absolute;inset:0;background:linear-gradient(#9aa3b5,#6d7588)}.tank.gold .fill{background:linear-gradient(#e2c35a,#a8861f)}
+.tank .drain{position:absolute;left:0;right:0;bottom:0;background:repeating-linear-gradient(45deg,#222,#222 5px,#e55 5px,#e55 7px);border-top:2px solid #e55}
+.tank-vals{list-style:none;padding:0;margin:0;font-size:14px}
