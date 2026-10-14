@@ -52,13 +52,12 @@
 <div class="card" id="force-majeure"><h3>What is force majeure?</h3><p>Force majeure is a contract clause that lets a party delay or skip its obligations when extraordinary events outside its control happen, such as war, a natural disaster, or a government order. In a COMEX context, it could allow delays to physical delivery during a genuine emergency instead of counting as a breach. This is general information only. It is not a prediction that it will happen, and it is not financial advice.</p></div></section>
 <section id="flow"><h2>Deliveries &amp; notable moves</h2><p>Plain-English feed of notable COMEX silver and gold delivery notices, issues/stops and big registered/eligible shifts, plus "gas tank" gauges of registered stock vs. month-to-date deliveries. <a href="flow.html">Open the deliveries tracker →</a></p><div id="flow-teaser"></div></section>
 <section id="newsletter"><h2>Daily newsletter</h2>
-<form action="https://buttondown.com/api/emails/embed-subscribe/vaultpulse" method="post">
-<input type="email" name="email" placeholder="you@example.com" required> <button>Subscribe</button>
-<p class="note">Confirmation may take a day or two while the list is reviewed.</p></form></section>
+<form class="vp-subscribe" novalidate><input type="email" name="email" placeholder="you@example.com" required autocomplete="email"> <button type="submit">Subscribe</button><input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0"><p class="note sub-msg" role="status" aria-live="polite"></p></form></section>
 
 <section id="sponsor"><h2>Sponsor</h2><p>Reach silver and gold stackers. <a href="sponsor.html">Sponsor VaultPulse from $400/month</a> — homepage bar + daily email mention.</p></section>
 </main>
 <footer><p><b>Not financial advice.</b> Data is informational, may be delayed or rounded, and is credited to the sources and dates shown. COMEX data originates from CME Group warehouse reports.</p></footer>
 <script src="app.js"></script><script src="tanks.js"></script><script src="ratiohistory.js" defer></script><script src="ratio.js"></script><script src="livepaper.js"></script><script src="news.js"></script>
 <script>fetch('data/entries.json').then(r=>r.json()).then(d=>{const e=[...d.entries].sort((a,b)=>b.data_date.localeCompare(a.data_date)).slice(0,3);const x=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));document.getElementById('flow-teaser').innerHTML='<ul>'+e.map(i=>'<li><a href="flow.html#'+x(i.id)+'">'+x(i.headline)+'</a> <span class="cite">(data date '+x(i.data_date)+', '+x(i.source)+')</span></li>').join('')+'</ul>'}).catch(()=>{})</script>
-<script src="m1calc.js"></script></body></html>
+<script src="m1calc.js"></script><script src="subscribe.js" defer></script>
+</body></html>
