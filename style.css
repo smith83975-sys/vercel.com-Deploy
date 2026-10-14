@@ -26,4 +26,14 @@ ul{padding-left:1.2em}li{margin:6px 0}
 
 .eras{font-size:14px;line-height:1.5;padding-left:18px}.eras li{margin:6px 0}.eras a{color:#7ab}#gsr-hist svg{max-width:100%;height:auto}
 #gsr-hist{overflow-x:auto}#gsr-hist svg{min-width:640px}
-.debt-scale svg{display:block;max-width:420px;margin:0 auto}
+
+
+.anchor-alias{display:block;position:relative;top:-20px;visibility:hidden}
+.pm-card{max-width:760px;margin:1rem auto;width:100%;box-sizing:border-box}
+.pm-ratio{font-size:2.4rem;font-weight:700;text-align:center}
+.pm-scale svg{display:block;width:100%;max-width:720px;margin:0 auto}
+.pm-prices{display:flex;gap:1rem;justify-content:space-around;flex-wrap:wrap;text-align:center;margin:.5rem 0}
+.pm-label{font-size:.95rem;color:#aaa}
+.pm-big{font-size:2.2rem;font-weight:700;color:#d4af37}
+.pm-spot{color:#ddd}
+@media(max-width:600px){.pm-ratio{font-size:1.9rem}.pm-big{font-size:1.7rem}}
