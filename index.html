@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VaultPulse – COMEX Registered vs Eligible Silver &amp; Gold Inventory, Physical Premiums</title>
+<meta name="description" content="Daily COMEX registered vs eligible silver and gold warehouse stocks, day-over-day changes, a transparent physical tightness score, and retail bullion premiums over spot. Sources and data dates cited.">
+<meta property="og:title" content="VaultPulse – COMEX silver & gold inventory tracker">
+<meta property="og:description" content="Registered vs eligible COMEX stocks, tightness score, and retail premiums. Not financial advice.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sponsor">Sponsor slot available. <a href="#sponsor">Sponsor VaultPulse</a></div>
+<header><h1>VaultPulse</h1><p>COMEX registered vs eligible silver &amp; gold inventory and physical premiums, in one place.</p></header>
+<main>
+<section><h2>COMEX warehouse stocks</h2>
+<p class="cite" id="comexCite">Loading…</p>
+<div class="cards" id="cards"></div></section>
+
+<section><h2>Physical tightness score</h2>
+<div class="cards" id="scores"></div>
+<details open><summary>How the score is calculated</summary>
+<p>Score (0–100, higher = tighter) = average of two components:</p>
+<ol>
+<li><b>Inventory component</b> = 100 − percentile of today's registered ounces within the recent daily history we hold (currently ~30 days for silver).</li>
+<li><b>Coverage component</b> = 100 − min(100, registered oz ÷ (futures open interest × contract size) × 100).</li>
+</ol>
+<p>If a component's input is unavailable it is shown as pending and the score uses the remaining component only (marked "partial"). The short history window means the percentile is a recent-trend measure, not a long-term one.</p>
+</details>
+<p class="cite" id="oiCite"></p></section>
+
+<section><h2>Retail premiums over spot</h2>
+<p class="cite" id="premCite"></p>
+<table id="prem"><thead><tr><th>Product</th><th>Dealer</th><th>Price</th><th>Spot ref.</th><th>Premium</th></tr></thead><tbody></tbody></table></section>
+
+<section id="newsletter"><h2>Daily newsletter</h2>
+<!-- PLACEHOLDER: replace action with your Buttondown/ConvertKit/Beehiiv endpoint -->
+<form action="#REPLACE-WITH-NEWSLETTER-PROVIDER" method="post" onsubmit="alert('Newsletter not connected yet (placeholder).');return false;">
+<input type="email" name="email" placeholder="you@example.com" required> <button>Subscribe</button>
+<p class="note">Placeholder form, not yet connected to a provider.</p></form></section>
+
+<section id="sponsor"><h2>Sponsor</h2><p>Reach silver and gold stackers. Sponsorship link coming soon.</p></section>
+</main>
+<footer><p><b>Not financial advice.</b> Data is informational, may be delayed or rounded, and is credited to the sources and dates shown. COMEX data originates from CME Group warehouse reports.</p></footer>
+<script src="app.js"></script>
+</body></html>
