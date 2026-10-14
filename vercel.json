@@ -1,1 +1,5 @@
-{ "cleanUrls": true, "headers": [ { "source": "/data/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=300" } ] } ] }
+{ "cleanUrls": true,
+  "redirects": [
+    { "source": "/:path((?!api/).*)", "has": [ { "type": "host", "value": "vaultpulse-weld.vercel.app" } ], "destination": "https://vaultpulsehq.com/:path", "permanent": true }
+  ],
+  "headers": [ { "source": "/data/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=300" } ] } ] }
