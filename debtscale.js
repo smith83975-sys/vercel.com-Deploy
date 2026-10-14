@@ -1,6 +1,6 @@
 (function(){
 function svg(metal,ratio,per,date){
-const a=-14*Math.PI/180,L=110,cx=200,cy=40; // beam tilts down on the right (paper)
+const a=14*Math.PI/180,L=110,cx=200,cy=40; // beam tilts down on the right (paper)
 const lx=cx-L*Math.cos(a),ly=cy-L*Math.sin(a),rx=cx+L*Math.cos(a),ry=cy+L*Math.sin(a);
 const n=Math.round(ratio),full=Math.floor(n/per),rem=n%per;
 const items=[];for(let i=0;i<full;i++)items.push(per);if(rem)items.push(rem);
