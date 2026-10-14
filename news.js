@@ -1,8 +1,8 @@
 (function(){const el=document.getElementById('news-list'),box=document.getElementById('news-box'),meta=document.getElementById('news-meta');
 const x=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const ago=s=>{const m=Math.max(0,Math.round((Date.now()-new Date(s))/60000));if(m<1)return'just now';if(m<60)return m+' min ago';const h=Math.round(m/60);if(h<24)return h+' hr ago';const d=Math.round(h/24);return d+(d==1?' day ago':' days ago')};
-const MAJOR=/force majeure|\bdefaults?\b|delivery failure|failed deliver|\bhalt(s|ed)?\b|suspend|margin (hike|raise|increase)|(hike|raise)s? margin|emergency|record high|all[- ]time high|\brecord\b|\bcrash|plunge|\bsoar|\bsurge|squeeze|shortage/i;
-const NOTE=/\bslip|\bfall|\bfell\b|\bdrop|\bjump|\brall(y|ies|ied)|\bcpi\b|\bfed\b|federal reserve|tariff|\bslump|\bspike|\btumble|\bdip/i;
+const MAJOR=/force majeure|\bdefaults?\b|delivery failure|failed deliver|\bhalt(s|ed)?\b|suspend|margin (hike|raise|increase)|(hike|raise)s? margin|emergency|record high|all[- ]time high|\bcrash|plunge|\bsoar|\bsurge|squeeze|shortage/i;
+const NOTE=/\bslip|\bfall|\bfell\b|\bdrop|\bjump|\brall(y|ies|ied)|\bcpi\b|\bfed\b|federal reserve|tariff|\bslump|\bspike|\btumble|\bdip|\bslid|\bdeclin|\bsell-off|\bsink/i;
 const ico=t=>MAJOR.test(t)?'<span class="ico" title="Major event (keyword)">🚨</span>':NOTE.test(t)?'<span class="ico" title="Notable move (keyword)">⚠️</span>':'';
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduce)box.classList.add('static');
 let items=[],seen=new Set(),first=true,fresh=new Set(),paused=false,pos=0;
