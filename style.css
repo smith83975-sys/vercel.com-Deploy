@@ -21,3 +21,5 @@ ul{padding-left:1.2em}li{margin:6px 0}
 .tank .fill{position:absolute;inset:0;background:linear-gradient(#9aa3b5,#6d7588)}.tank.gold .fill{background:linear-gradient(#e2c35a,#a8861f)}
 .tank .drain{position:absolute;left:0;right:0;bottom:0;background:repeating-linear-gradient(45deg,#222,#222 5px,#e55 5px,#e55 7px);border-top:2px solid #e55}
 .tank-vals{list-style:none;padding:0;margin:0;font-size:14px}
+
+.gsr-scale{max-width:420px;margin:10px auto 0}.gsr-scale svg{display:block}
