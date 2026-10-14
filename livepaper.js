@@ -21,12 +21,15 @@ pan(+lx.toFixed(1),ly,80)+pan(+rx.toFixed(1),ry,130)+obj+bills+
 let LP=null;
 async function load(){
 try{if(!LP)LP=(await (await fetch('data/latest.json',{cache:'no-store'})).json()).live_paper;}catch(e){}
-if(LP){$('lp-gold-imp').textContent=usd(LP.m2.value_usd/LP.gold_reserve.troy_oz)+' /oz';$('lp-silver-imp').textContent=usd(LP.m2.value_usd/LP.silver_basis.troy_oz)+' /oz';}
+if(LP){$('lp-gold-imp').textContent=usd(LP.m2.value_usd/LP.gold_reserve.troy_oz)+' /oz';}
 const get=x=>fetch('https://api.gold-api.com/price/'+x,{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(j=>{if(!(j.price>0))throw 0;return j}).catch(()=>null);
 const [g,s]=await Promise.all([get('XAU'),get('XAG')]);
 const set=(m,sp,oz)=>{if(sp&&LP){const r=LP.m2.value_usd/(oz*sp.price);$('lp-'+m).textContent=r.toFixed(2)+' to 1';$('lp-'+m+'-spot').textContent=usd(sp.price,2)+' /oz';const el=$('lp-'+m+'-scale');el.innerHTML=svg(m,r,m==='gold'?2:100);el.setAttribute('aria-label','Balance scale tipped toward paper: $1 of '+m+' against $'+r.toFixed(2)+' of paper money (live, our calculation). Illustration only.');}
 else{$('lp-'+m).textContent='Unavailable';$('lp-'+m+'-spot').textContent='Unavailable';$('lp-'+m+'-scale').innerHTML='<p class="note" style="text-align:center">Scale unavailable: live spot price could not be loaded.</p>';}};
-if(LP){set('gold',g,LP.gold_reserve.troy_oz);set('silver',s,LP.silver_basis.troy_oz);}
+if(LP){set('gold',g,LP.gold_reserve.troy_oz);
+const gi=LP.m2.value_usd/LP.gold_reserve.troy_oz;
+if(g&&s){const gsr=g.price/s.price,si=gi/gsr,r=si/s.price;$('lp-silver-imp').textContent=usd(si)+' /oz';$('lp-silver').textContent=r.toFixed(2)+' to 1';$('lp-silver-spot').textContent=usd(s.price,2)+' /oz';$('lp-gsr-used').textContent=gsr.toFixed(2);const el=$('lp-silver-scale');el.innerHTML=svg('silver',r,2);el.setAttribute('aria-label','Balance scale tipped toward paper: $1 of silver against $'+r.toFixed(2)+' of paper money (derived from gold at today\'s gold/silver ratio). Illustration only.');}
+else{$('lp-silver-imp').textContent='Unavailable';set('silver',null,0);}}
 $('lp-meta').textContent=(g&&s)?'Spot updated '+new Date(g.updatedAt||Date.now()).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})+' · refreshes every 60s':'Live spot unavailable right now. Ratios and spot are not shown rather than estimated; retrying every 60s.';
 }
 load();setInterval(load,60000);
