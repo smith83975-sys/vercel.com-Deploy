@@ -24,7 +24,7 @@ if(rome)s+=fig(roman,84,y(rome.ratio)-26,84,y(rome.ratio),'Rome ~'+rome.ratio+':
 if(ow)s+=fig(cowboy,450,y(ow.ratio)-34,x(1873),y(ow.ratio),'Old West ~'+Math.round(ow.ratio)+':1',ow.year+' avg '+ow.ratio);
 const pk=d.annual.reduce((a,b)=>b.ratio>a.ratio?b:a);s+='<text x="'+x(pk.year)+'" y="'+(y(pk.ratio)-6)+'" font-size="10" fill="#ddd" text-anchor="middle">'+pk.year+': '+pk.ratio+'</text>';
 const last=d.annual[d.annual.length-1];
-if(live){s+='<circle cx="'+x(2026)+'" cy="'+y(live)+'" r="5" fill="#4caf50"/><text x="'+(x(2026)-6)+'" y="'+(y(live)-8)+'" font-size="10" fill="#8d8" text-anchor="end">Now ≈'+live.toFixed(1)+'</text>';}
+if(live){s+='<circle cx="'+x(2026)+'" cy="'+y(live)+'" r="5" fill="#4caf50"/><rect x="'+(x(2026)-70)+'" y="'+(y(live)+10)+'" width="66" height="16" rx="8" fill="#16301a" stroke="#4caf50"/><text x="'+(x(2026)-37)+'" y="'+(y(live)+22)+'" font-size="10.5" font-weight="700" fill="#8d8" text-anchor="middle">Today ≈'+live.toFixed(1)+'</text>';}
 s+='</svg><p class="note">Grey line: annual averages 1687–'+last.year+'. Gold dots: official/mint ratios (Roman value approximate). Figures mark the Roman era and the American Old West (1873 annual average); illustrations are ours. Green dot: today\'s live spot ratio. The time axis is broken between AD 1 and 1687 because there is no continuous sourced series for that gap. Annual averages hide short spikes and dips (for example single days in 1980 or 2020).</p>';
 el.innerHTML=s;
 const A=Object.fromEntries(d.annual.map(a=>[a.year,a.ratio])),src=d.annual_source,mw='<a href="'+src.url+'" rel="noopener">MeasuringWorth</a>';
