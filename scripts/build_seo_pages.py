@@ -3,7 +3,8 @@
 below; refresh them when data/*.json changes (weekday routine), then re-run:
   python3 scripts/build_seo_pages.py
 Live JS overwrites these numbers in the browser."""
-import json, html
+import json, html, sys, os
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__))); import site_nav
 B='https://vaultpulsehq.com'
 L=json.load(open('data/latest.json')); T=json.load(open('data/tank.json'))
 s=L['comex']['silver']; g=L['comex']['gold']; rd=L['comex']['report_date']
@@ -23,11 +24,7 @@ F.update(oi_c=f"{OI['silver']['contracts']:,}", oi_oz=f"{oi_s/1e6:.1f}M oz", p_t
  oi_d='2026-10-13 (CME Daily Bulletin fetched 2026-10-14; trade date assumed)', s_mtd_c=f"{st['mtd_contracts']:,}", s_chg=f"{s['registered_change_oz']/1e3:+,.1f}K oz", s_chg_vs=s['change_vs'])
 _h=s['history_registered_moz']; _k=sorted(_h); F.update(h0d=_k[0],h0=f"{_h[_k[0]]:.2f}M oz",h1d=_k[-1],h1=f"{_h[_k[-1]]:.2f}M oz",h_pct=f"{100*(_h[_k[-1]]/_h[_k[0]]-1):+.1f}%")
 E=[e for e in json.load(open('data/entries.json'))['entries'] if e['metal']=='silver'][:5]
-SILVER_STRIP='<aside class="card silver-strip"><b>Silver focus:</b> <a href="/silver-squeeze-tracker">Silver squeeze tracker</a> · <a href="/comex-silver-inventory">COMEX silver inventory</a> · <a href="/silver-premiums">Silver premiums</a> · <a href="/paper-to-metal">Paper to silver</a></aside>'
-NAV=[('/silver-squeeze-tracker','Silver squeeze tracker'),('/comex-silver-inventory','COMEX silver inventory'),('/silver-premiums','Silver &amp; gold premiums'),('/silver-manipulation-history','Silver manipulation history'),
- ('/gold-silver-ratio','Gold/silver ratio'),('/comex-gold-inventory','COMEX gold inventory'),('/comex-force-majeure','COMEX force majeure'),('/paper-to-metal','Paper to metal (M1/M2)'),
- ('/gold-silver-news','Gold &amp; silver news'),('/flow','Deliveries tracker'),('/sponsor','Sponsor')]
-FOOTNAV='<nav class="foot-nav" aria-label="Site pages"><a href="/">Home</a>'+''.join(f' · <a href="{u}">{t}</a>' for u,t in NAV)+'</nav>'
+# Navigation lives in scripts/site_nav.py (single source list for every page).
 ORG={"@context":"https://schema.org","@type":"Organization","@id":B+"/#org","name":"VaultPulse","url":B+"/","logo":B+"/apple-touch-icon.png","sameAs":["https://x.com/VaultPulseHQ"]}
 HEAD_ICONS='<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">'
 def page(slug,title,desc,h1,body,scripts,faq=None,dataset=None,crumb=None,img='preview.png'):
@@ -49,18 +46,19 @@ def page(slug,title,desc,h1,body,scripts,faq=None,dataset=None,crumb=None,img='p
 <meta property="og:type" content="website"><meta property="og:site_name" content="VaultPulse"><meta property="og:url" content="{url}"><meta property="og:title" content="{t}"><meta property="og:description" content="{d}"><meta property="og:image" content="{B}/{img}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@VaultPulseHQ"><meta name="twitter:title" content="{t}"><meta name="twitter:description" content="{d}"><meta name="twitter:image" content="{B}/{img}">
 {HEAD_ICONS}
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/style.css?v={site_nav.CSSV}">
 <script type="application/ld+json">{json.dumps(ld)}</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-<header><nav class="site-nav"><a href="/">VaultPulse home</a> › {crumb or h1}</nav><h1>{h1}</h1></header>
+{site_nav.nav(slug)}
+<header><nav class="crumbs" aria-label="Breadcrumb"><a href="/">VaultPulse home</a> › {crumb or h1}</nav><h1>{h1}</h1></header>
 <main>
 {body}
 {faqhtml}
-{SILVER_STRIP}
+{site_nav.keep(slug)}
 </main>
-<footer><p><b>Not financial advice. No price predictions.</b> Data is informational, may be delayed or rounded, and is credited to the sources and dates shown. COMEX data originates from CME Group warehouse reports.</p>{FOOTNAV}<p>Follow <a href="https://x.com/VaultPulseHQ" rel="me">@VaultPulseHQ</a> on X.</p></footer>
+<footer>{site_nav.foot(slug)}<p><b>Not financial advice. No price predictions.</b> Data is informational, may be delayed or rounded, and is credited to the sources and dates shown. COMEX data originates from CME Group warehouse reports.</p><p>Follow <a href="https://x.com/VaultPulseHQ" rel="me">@VaultPulseHQ</a> on X.</p></footer>
 {''.join(f'<script defer src="/{x}"></script>' for x in scripts)}
 </body>
 </html>
@@ -76,7 +74,7 @@ def cut(a,b): i=idx.index(a); return idx[i:idx.index(b,i)+len(b)]
 PAPER_W=cut('<section id="paper-to-metals">','</section>').replace('<span id="debt-clock" class="anchor-alias"></span>','').replace('href="data/','href="/data/')
 for k,v in [('id="lp-gold-imp">…',f'id="lp-gold-imp">{F["imp_g"]}'),('id="lp-silver-imp">…',f'id="lp-silver-imp">{F["imp_s"]}'),('id="lp-gold-spot">…',f'id="lp-gold-spot">{F["gold"]}'),('id="lp-silver-spot">…',f'id="lp-silver-spot">{F["silver"]}'),('id="lp-reg-oz">…',f'id="lp-reg-oz">{F["s_tot"]}'),('id="lp-reg-src">…',f'id="lp-reg-src">as of {rd}'),('Loading live spot…',f'Stored values as of {F["date"]}; live spot loads in your browser.')]: PAPER_W=PAPER_W.replace(k,v)
 M1_W=cut('<section id="m1-calc">','</section>').replace('Loading inputs…',f'Stored example ({F["date"]}): at 30% backing, M1 {F["m1t"]} ({F["m2m"]}, FRED M1SL) gives about {F["m1g"]}/oz gold and {F["m1s"]}/oz silver.')
-def links(*xs): return '<p>Related: '+' · '.join(f'<a href="{u}">{t}</a>' for u,t in NAV if u in xs)+'</p>'
+def links(*xs): return ''  # related links now rendered as the 'Keep exploring' card grid (site_nav.RELATED)
 SRC=lambda *xs: '<section id="sources"><h2>Sources</h2><ul>'+''.join(f'<li><a href="{u}">{t}</a></li>' for t,u in xs)+'</ul></section>'
 P={}
 pr=L['premiums']['items'][0]; d0=pr['dealers'][0]; pp=100*(d0['price']-pr['spot'])/pr['spot']
@@ -203,7 +201,7 @@ P['gold-silver-news']=page('gold-silver-news','Live Gold &amp; Silver News Strea
 {SRC(('Google News','https://news.google.com'),('Investing.com: Commodities news','https://www.investing.com/news/commodities-news'),('FXStreet','https://www.fxstreet.com'))}''',
  ['news.js'], crumb='Gold &amp; silver news')
 
-import sys, os; sys.path.insert(0,os.path.dirname(os.path.abspath(__file__))); import manip_art
+import manip_art
 U=dict(jpm_cftc='https://www.cftc.gov/PressRoom/PressReleases/8260-20',jpm_doj='https://www.justice.gov/opa/pr/jpmorgan-chase-co-agrees-pay-920-million-connection-schemes-defraud-precious-metals-and-us',
  sn='https://www.justice.gov/archives/opa/pr/former-jp-morgan-precious-metals-traders-sentenced-prison',ca7='https://law.justia.com/cases/federal/appellate-courts/ca7/23-2849/23-2849-2025-08-20.html',
  bns='https://www.cftc.gov/PressRoom/PressReleases/8220-20',y18='https://www.cftc.gov/PressRoom/PressReleases/7681-18',ml='https://www.cftc.gov/PressRoom/PressReleases/7946-19',
@@ -253,11 +251,10 @@ for k,v in P.items():
     open(k+'.html','w').write(v)
     txt=re.sub(r'<script.*?</script>|<[^>]+>',' ',v,flags=re.S); print(k,len(txt.split()),'words')
 
-# shared footer nav + silver strip on hand-written pages; sitemap with silver priority
-for f in ['index.html','flow.html','sponsor.html','404.html']:
-    t=open(f).read(); t=re.sub(r'<nav class="foot-nav" aria-label="Site pages">.*?</nav>',FOOTNAV,t,flags=re.S)
-    if f!='404.html' and 'silver-strip' not in t: t=t.replace('<footer>',SILVER_STRIP+'\n<footer>',1)
-    open(f,'w').write(t)
+# shared nav on hand-written pages (single source: site_nav.py); 404 generated
+for f,k in [('index.html','home'),('flow.html','flow'),('sponsor.html','sponsor')]:
+    t=open(f).read(); open(f,'w').write(site_nav.apply_hand(t,k))
+open('404.html','w').write(site_nav.page404())
 SIL={'silver-squeeze-tracker','comex-silver-inventory','silver-premiums'}
 urls=['']+['silver-squeeze-tracker','comex-silver-inventory','silver-premiums','silver-manipulation-history','paper-to-metal','gold-silver-ratio','comex-gold-inventory','comex-force-majeure','gold-silver-news','flow','sponsor']
 open('sitemap.xml','w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'<url><loc>{B}/{u}</loc><lastmod>{F["date"]}</lastmod><priority>{"1.0" if u in SIL or u=="" else "0.9" if u=="silver-manipulation-history" else "0.7"}</priority></url>\n' for u in urls)+'</urlset>\n')
