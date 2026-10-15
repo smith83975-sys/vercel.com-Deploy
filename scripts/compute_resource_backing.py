@@ -36,6 +36,17 @@ def fred_latest(series):
     raise ValueError(f'{series}: no numeric value')
 
 
+DEBT_API = ('https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_to_penny'
+            '?sort=-record_date&page%5Bsize%5D=1')
+DEBT_PAGE = 'https://fiscaldata.treasury.gov/datasets/debt-to-the-penny/'
+
+
+def debt_latest():
+    txt = subprocess.run(['curl', '-sS', '--fail', '-m', '25', DEBT_API], capture_output=True, text=True, check=True).stdout
+    r = json.loads(txt)['data'][0]
+    return float(r['tot_pub_debt_out_amt']), r['record_date'], float(r['debt_held_public_amt']), float(r['intragov_hold_amt'])
+
+
 def dig(obj, path):
     for k in path.split('.'):
         obj = (obj or {}).get(k)
@@ -99,22 +110,37 @@ def main():
         items.append(o)
 
     m1 = (lp.get('m1') or {}); m2 = (lp.get('m2') or {})
+    od = (L.get('resource_backing') or {}).get('money_supply') or {}
+    try:
+        if '--offline' in sys.argv:
+            raise RuntimeError('offline')
+        dv, dd, dpub, dint = debt_latest(); debt_note = None
+    except Exception as e:  # keep last stored figure with ITS date
+        dv, dd, dpub, dint = od.get('debt_usd'), od.get('debt_date'), od.get('debt_held_public_usd'), od.get('debt_intragov_usd')
+        debt_note = f'Treasury API fetch failed ({type(e).__name__}); showing last stored value'
     def totals(sel):
         t = sum(i['value_usd'] for i in items if sel(i) and i['value_usd'] is not None)
         return {'value_usd': round(t, 0),
                 'per_m1_dollar': round(t / m1['value_usd'], 4) if m1.get('value_usd') else None,
                 'per_m2_dollar': round(t / m2['value_usd'], 4) if m2.get('value_usd') else None,
                 'pct_of_m1': round(100 * t / m1['value_usd'], 1) if m1.get('value_usd') else None,
-                'pct_of_m2': round(100 * t / m2['value_usd'], 1) if m2.get('value_usd') else None}
+                'pct_of_m2': round(100 * t / m2['value_usd'], 1) if m2.get('value_usd') else None,
+                'pct_of_debt': round(100 * t / dv, 1) if dv else None,
+                'per_debt_dollar': round(t / dv, 4) if dv else None}
     out = {
         'computed_at': now, 'computed_by': 'scripts/compute_resource_backing.py', 'inputs_file': 'data/resources.json',
         'hypothetical': True,
         'disclaimer': 'HYPOTHETICAL. Resources in the ground are not liquid, many are privately owned, and this is an illustration, not a valuation or prediction. Not financial advice.',
         'formula': {'value': 'quantity x current price (gas: dry Bcf x 1,000,000 Mcf x 1.036 MMBtu/Mcf x Henry Hub; metals: metric tons x 32,150.7 troy oz x spot)',
                     'land': 'published BEA working-paper estimate, 2009 dollars, not updated',
-                    'coverage': 'selected resource value / money supply (M1 or M2) x 100; per dollar = selected value / money supply'},
+                    'coverage': 'selected resource value / money supply (M1 or M2) or total public debt x 100; per dollar = selected value / that total'},
         'money_supply': {'m1_usd': m1.get('value_usd'), 'm1_month': m1.get('month'), 'm1_source': m1.get('source'),
-                         'm2_usd': m2.get('value_usd'), 'm2_month': m2.get('month'), 'm2_source': m2.get('source')},
+                         'm2_usd': m2.get('value_usd'), 'm2_month': m2.get('month'), 'm2_source': m2.get('source'),
+                         'debt_usd': dv, 'debt_date': dd, 'debt_held_public_usd': dpub, 'debt_intragov_usd': dint,
+                         'debt_label': 'Total public debt outstanding', 'debt_source': DEBT_PAGE, 'debt_api': DEBT_API,
+                         'debt_source_name': 'US Treasury, Debt to the Penny (FiscalData)', 'debt_stale_note': debt_note},
+        'revaluation_note': {'text': "Comparing the debt with the country's assets mirrors the 'asset revaluation' idea discussed on usdebtclock.org. Shown here only as arithmetic: VaultPulse does not endorse it or predict it will happen.",
+                             'url': 'https://www.usdebtclock.org/', 'name': 'usdebtclock.org'},
         'prices': prices, 'items': items,
         'totals': {'default': totals(lambda i: i['default_on']), 'federal_only': totals(lambda i: i['ownership'] == 'federal'),
                    'silver_only': totals(lambda i: i['group'] == 'silver' and i['default_on'])},
@@ -126,7 +152,7 @@ def main():
     json.dump(L, open(LATEST, 'w'), indent=2, ensure_ascii=False); open(LATEST, 'a').write('\n')
     d = out['totals']['default']
     print(f"resource_backing: default set ${d['value_usd']/1e12:.2f}T = {d['pct_of_m2']}% of M2, {d['pct_of_m1']}% of M1; "
-          f"federal only ${out['totals']['federal_only']['value_usd']/1e12:.2f}T")
+          f"{d['pct_of_debt']}% of debt; federal only ${out['totals']['federal_only']['value_usd']/1e12:.2f}T")
 
 
 if __name__ == '__main__':
