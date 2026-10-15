@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T09:12:00Z",
+  "generated_at": "2026-10-15T09:30:24Z",
   "comex": {
     "report_date": "2026-10-13",
     "source": "CME Group daily COMEX warehouse stock reports, via thevaultreport.com/comex (cross-checked with metalcharts.org/comex/silver and /comex/gold). Direct CME .xls download was blocked (HTTP 403) from our server. VaultReport lists next warehouse report as Thu Oct 15 evening ET, so Oct 13 is the newest published stock date; MetalCharts labels matching rounded figures as Oct 14.",
@@ -114,10 +114,10 @@
     ]
   },
   "spot_last_known": {
-    "gold_usd": 4157.799805,
-    "silver_usd": 56.820999,
-    "ratio": 73.17,
-    "as_of": "2026-10-15T09:10:14Z",
+    "gold_usd": 4160.700195,
+    "silver_usd": 56.849998,
+    "ratio": 73.19,
+    "as_of": "2026-10-15T09:29:44Z",
     "source": "gold-api.com",
     "source_url": "https://gold-api.com"
   },
