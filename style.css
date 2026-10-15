@@ -62,3 +62,14 @@ ul{padding-left:1.2em}li{margin:6px 0}
 .m1c-metal{background:#1b1e24;border-radius:10px;padding:.9rem}.m1c-metal h3{margin:.1rem 0 .5rem}.m1c-row{display:flex;justify-content:space-between;gap:.5rem;margin:.25rem 0}.m1c-big{font-size:1.4rem;font-weight:700}.m1c-mult{font-size:1.8rem;font-weight:800;color:#7fbf7a}
 .m1c-bar{height:14px;border-radius:7px;background:#2a2e36;margin:.35rem 0;overflow:hidden}.m1c-bar span{display:block;height:100%;border-radius:7px}.m1c-lbl{font-size:.8rem;color:#999}
 .foot-nav{margin:.8rem 0;line-height:1.9}.foot-nav a{white-space:nowrap}a.more{font-weight:600}
+.manip-hero{margin:0 0 1rem}.manip-hero svg{display:block;width:100%;height:auto;border-radius:12px}.manip-hero figcaption{font-size:12px;color:#999;margin-top:6px;font-style:italic}
+.lede{font-size:1.08rem;line-height:1.55;background:#1a1d24;border-left:4px solid #c0c6cf;padding:12px 14px;border-radius:6px}
+.manip-proven{display:flex;gap:16px;align-items:center;margin-bottom:12px}.manip-caught{flex:0 0 180px;max-width:180px}.manip-caught svg{display:block;width:100%;height:auto}.manip-proven p{margin:0}
+.badge{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:10px;margin-right:6px}
+.badge.proven{background:#4a1616;color:#ff8a80;border:1px solid #e53935}.badge.alleged{background:#3d3010;color:#ffd54f;border:1px solid #d4a017}.badge.dismissed{background:#1e2a36;color:#9ecbff;border:1px solid #5a8bbd}
+.manip-table td{vertical-align:top;line-height:1.45}.manip-table td:first-child{white-space:nowrap;font-variant-numeric:tabular-nums;color:#ccc}.manip-table tr.grp th{padding-top:16px;font-weight:600;color:#bbb;font-size:13px;border-bottom:1px solid #444}
+.manip-table td a{overflow-wrap:anywhere}
+@media(max-width:700px){.manip-proven{flex-direction:column;align-items:stretch}.manip-caught{margin:0 auto;flex-basis:auto;width:170px}
+.manip-table thead{display:none}.manip-table,.manip-table tbody,.manip-table tr,.manip-table td,.manip-table th{display:block;width:auto}
+.manip-table tr:not(.grp){background:#1a1d24;border-radius:8px;padding:8px 10px;margin:8px 0}.manip-table td{border:0;padding:3px 0}.manip-table td:first-child{white-space:normal}
+.manip-table td::before{content:attr(data-l);display:block;font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.05em}.manip-table tr.grp th{border:0;padding:14px 0 2px}}
