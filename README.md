@@ -74,4 +74,14 @@ Weekday refresh routine:
 2. Open interest: download CME Daily Bulletin Section 02B and run `python3 scripts/parse_cme_oi.py <file.pdf>`
    (or `--fetch`). It sets contracts, `fetched_at` and `trade_date` (when the header shows one). If CME blocks
    the download, leave `open_interest` as is: the old `fetched_at` keeps the site honest about the date.
-3. `python3 scripts/build_seo_pages.py` (runs compute_paper_to_metal.py first), then commit and deploy.
+3. `python3 scripts/build_seo_pages.py` (runs compute_paper_to_metal.py and compute_resource_backing.py first), then commit and deploy.
+
+## What backs a dollar? (hypothetical resource calculator)
+`data/resources.json` holds curated, dated quantities with source links (USGS MCS 2026 silver/gold/copper, EIA proved
+reserves YE2024, EIA Annual Coal Report 2024, DOE SPR, BEA land estimate, CRS federal acreage). 
+`scripts/compute_resource_backing.py` (run automatically by `build_seo_pages.py`) pulls WTI, Henry Hub and copper from
+FRED (falls back to the last stored price with its own date), uses M1/M2, the Treasury gold reserve and stored spot from
+`latest.json`, and writes `latest.json -> resource_backing`. `resbacking.js` renders the card (checkboxes, M1/M2 toggle,
+live gold/silver spot) and `scripts/render_resource_backing.js` writes the static fallback into index.html between
+`<!--rb-->` markers. Update a quantity in resources.json only when its source publishes a new figure.
+Note: build_seo_pages.py carries the hand-added GATA and Follow-on-X sections on silver-manipulation-history over from the current file.

@@ -118,3 +118,15 @@ html{scroll-padding-top:120px}html,body{overflow-x:clip}
 .pm-src h3{margin:.1rem 0 .5rem}.pm-src-list{margin:0;padding-left:1.1rem;font-size:.9rem;line-height:1.45}.pm-src-list li{margin:.35rem 0;overflow-wrap:anywhere}.pm-formula{font-size:.9rem;margin:.6rem 0 .3rem;padding:.5rem .7rem;background:#1b1e24;border-radius:8px}
 @media(max-width:600px){.pm-src-list{font-size:.86rem;padding-left:1rem}}
 .vp-follow-x{scroll-margin-top:96px;margin:1.5rem 0}
+/* What backs a dollar? (hypothetical resource calculator) */
+.rb{max-width:900px}.rb h3{margin:.1rem 0 .5rem}.rb-hyp{font-size:.72rem;background:#5a3b12;color:#f3d28b;border-radius:4px;padding:.1rem .4rem;vertical-align:middle;letter-spacing:.04em}
+.rb-warn{font-size:.9rem;background:#2a2316;border-left:3px solid #d4af37;padding:.5rem .7rem;border-radius:6px}
+.rb-ctl{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;margin:.6rem 0}.rb-ctl label{cursor:pointer;font-weight:600}.rb-btn{background:#1b1e24;color:inherit;border:1px solid #555b66;border-radius:6px;padding:.3rem .7rem;cursor:pointer}.rb-btn:hover{border-color:#d4af37}
+.rb-head{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}.rb-big{font-size:2.4rem;font-weight:700;color:#d4af37}.rb-head>div:last-child{flex:1;min-width:220px}
+.rb-silver{font-size:.95rem;padding:.4rem .6rem;background:#1f2228;border-left:3px solid #c0c6cf;border-radius:6px}
+.rb-bar{display:flex;height:18px;border-radius:9px;overflow:hidden;background:#2a2e36;margin:.6rem 0 .3rem}.rb-bar span{display:block;height:100%;min-width:2px}
+.rb-legend{font-size:.82rem;display:flex;flex-wrap:wrap;gap:.3rem .9rem;margin:.2rem 0 .6rem}.rb-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:middle}
+.rb-tw{overflow-x:auto}.rb-t{width:100%;border-collapse:collapse;font-size:.88rem;font-variant-numeric:tabular-nums}.rb-t th,.rb-t td{padding:6px;border-bottom:1px solid #333;text-align:left;vertical-align:top}.rb-t th{color:#999}.rb-t small{color:#999}.rb-t tr.rb-off td{opacity:.5}.rb-t td:first-child{text-align:center}.rb-cb{width:18px;height:18px;accent-color:#d4af37}
+.rb-src{margin-top:.6rem}.rb-src summary{cursor:pointer}
+@media(max-width:700px){.rb-t thead{display:none}.rb-t tr{display:block;border-bottom:1px solid #444;padding:.4rem 0}.rb-t td{display:flex;justify-content:space-between;gap:.6rem;border:0;padding:3px 4px;text-align:right}.rb-t td::before{content:attr(data-l);color:#999;text-align:left;flex:0 0 32%}.rb-t td:first-child{text-align:right}.rb-big{font-size:1.9rem}}
+.rb-ctl label{display:inline-flex;align-items:center;gap:.35rem}.rb-ctl input[type=radio]{width:auto;padding:0;margin:0;accent-color:#d4af37}.rb-cb{padding:0}
