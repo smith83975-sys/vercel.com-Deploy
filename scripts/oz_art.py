@@ -67,3 +67,78 @@ def scene(p='h',vb='0 0 800 500',sky=True,ad=False):
             +DEFS.format(p=p)+bg+ground+road(p,800,500,262)+city(p,494,262,.9)+(tornado(p,705,95,.7)+coin(p,330,120,40)+coin(p,560,60,22,'Oz.') if ad else tornado(p,150,110,.85)+coin(p,690,150,42)+coin(p,300,95,24,'Oz.'))
             +shoe(p,240,350,1.25)+shoe(p,600,372,1.25,True,True)
             +''.join(spark(x,y,r,'#fff',.95) for x,y,r in [(232,345,9),(455,338,7),(612,360,10),(395,420,6),(560,470,8),(420,470,5)])+'</svg>')
+def dorothy(p,x,y,sc=1):
+    """ORIGINAL cartoon Dorothy based on the public-domain 1900 book (blue-and-white checked gingham,
+    pigtails, little basket, SILVER shoes). Not the 1939 film design: golden pigtails with pink ribbons,
+    plain checked dress with a white collar, silver (not ruby) slippers. Feet at (0,0), ~300 units tall."""
+    skin='#f7d3b8'; skin_s='#e9b996'; hair='#e2a94a'; hair_s='#c98a2c'; ink='#22262e'
+    d=(f'<defs><pattern id="{p}ging" width="14" height="14" patternUnits="userSpaceOnUse">'
+       f'<rect width="14" height="14" fill="#ffffff"/><rect width="7" height="14" fill="#5b8fe0" opacity=".55"/>'
+       f'<rect width="14" height="7" fill="#5b8fe0" opacity=".55"/><rect width="7" height="7" fill="#2f63c4"/></pattern>'
+       f'<linearGradient id="{p}slip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#d3d9e3"/><stop offset="1" stop-color="#8a94a5"/></linearGradient></defs>')
+    g=d+'<ellipse cx="0" cy="2" rx="78" ry="10" fill="#000" opacity=".22"/>'
+    # legs + socks
+    g+=f'<rect x="-22" y="-84" width="13" height="74" rx="6" fill="{skin}"/><rect x="9" y="-84" width="13" height="74" rx="6" fill="{skin}"/>'
+    g+='<rect x="-23" y="-34" width="15" height="24" rx="5" fill="#ffffff"/><rect x="8" y="-34" width="15" height="24" rx="5" fill="#ffffff"/>'
+    # SILVER slippers (big, sparkly)
+    for sx,fl in [(-17,-1),(17,1)]:
+        g+=(f'<g transform="translate({sx},0) scale({fl*1.3},1.3)">'
+            f'<path d="M-12,-16 C-12,-24 4,-24 10,-20 C20,-16 32,-14 34,-6 C36,2 26,3 14,3 L-6,3 C-14,3 -14,-6 -12,-16Z" fill="url(#{p}slip)" stroke="#5e6878" stroke-width="2.4"/>'
+            f'<path d="M-4,-17 C2,-20 10,-18 14,-14" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" opacity=".9"/>'
+            f'<circle cx="22" cy="-10" r="3.2" fill="#eef1f6" stroke="#5e6878" stroke-width="1.2"/></g>')
+    g+=spark(-36,-22,9,'#ffffff',1)+spark(44,-26,8,'#ffffff',1)+spark(4,-38,6,'#ffe9a8',1)+spark(-52,0,5,'#fff',.9)+spark(56,-2,6,'#fff',.95)
+    # arms (behind dress edges)
+    g+=f'<path d="M-30,-190 C-58,-196 -78,-222 -84,-252" stroke="{skin}" stroke-width="13" fill="none" stroke-linecap="round"/>'
+    g+=f'<circle cx="-86" cy="-258" r="11" fill="{skin}"/>'  # waving hand
+    g+=f'<path d="M30,-190 C46,-170 52,-150 56,-128" stroke="{skin}" stroke-width="13" fill="none" stroke-linecap="round"/>'
+    # dress
+    g+=(f'<path d="M-30,-200 C-36,-160 -58,-112 -66,-82 C-30,-72 30,-72 66,-82 C58,-112 36,-160 30,-200 C12,-208 -12,-208 -30,-200Z" fill="url(#{p}ging)" stroke="#1f4a99" stroke-width="2.6"/>'
+        f'<path d="M-66,-82 C-30,-72 30,-72 66,-82 L64,-88 C30,-79 -30,-79 -64,-88Z" fill="#ffffff" opacity=".9"/>')
+    # puff sleeves
+    g+=f'<ellipse cx="-33" cy="-194" rx="15" ry="12" fill="url(#{p}ging)" stroke="#1f4a99" stroke-width="2.4"/><ellipse cx="33" cy="-194" rx="15" ry="12" fill="url(#{p}ging)" stroke="#1f4a99" stroke-width="2.4"/>'
+    # white collar
+    g+='<path d="M-24,-206 C-18,-190 -4,-190 0,-200 C4,-190 18,-190 24,-206 C10,-212 -10,-212 -24,-206Z" fill="#ffffff" stroke="#b8c2d2" stroke-width="1.6"/>'
+    # basket in right hand
+    g+=(f'<path d="M40,-140 C42,-176 84,-176 86,-140" stroke="#8a5a2b" stroke-width="5" fill="none"/>'
+        f'<path d="M34,-140 L92,-140 L84,-108 C78,-100 48,-100 42,-108Z" fill="#c98c4a" stroke="#7a4d22" stroke-width="2.4"/>'
+        f'<path d="M38,-128 L88,-128 M41,-117 L85,-117" stroke="#7a4d22" stroke-width="2"/>'
+        f'<path d="M44,-140 C50,-152 60,-152 64,-140 Z" fill="#ffffff" opacity=".9"/><circle cx="74" cy="-145" r="7" fill="#e85d5d"/>'
+        f'<circle cx="56" cy="-130" r="10" fill="{skin}"/>')
+    # neck + head
+    g+=f'<rect x="-8" y="-222" width="16" height="18" fill="{skin_s}"/>'
+    # pigtails (behind head)
+    for s in (-1,1):
+        g+=(f'<path d="M{s*40},-262 C{s*72},-262 {s*84},-236 {s*78},-206 C{s*74},-190 {s*64},-196 {s*66},-212 C{s*68},-232 {s*58},-246 {s*40},-246Z" fill="{hair}" stroke="{hair_s}" stroke-width="2.2"/>'
+            f'<path d="M{s*48},-262 l{s*14},-12 l{s*4},16 l{s*-4},16 l{s*-14},-12Z" fill="#ff7fa8" stroke="#d94f80" stroke-width="1.6"/>')
+    g+=f'<circle cx="0" cy="-258" r="44" fill="{skin}"/>'
+    # hair cap + bangs
+    g+=(f'<path d="M-45,-258 C-48,-300 -20,-312 0,-312 C20,-312 48,-300 45,-258 C38,-276 26,-282 14,-276 C6,-288 -6,-288 -14,-276 C-26,-284 -40,-276 -45,-258Z" fill="{hair}" stroke="{hair_s}" stroke-width="2.2"/>')
+    # face: big happy eyes + SMILE + blush
+    g+=(f'<ellipse cx="-16" cy="-252" rx="5.6" ry="7.2" fill="{ink}"/><circle cx="-14" cy="-255" r="2.2" fill="#fff"/>'
+        f'<ellipse cx="16" cy="-252" rx="5.6" ry="7.2" fill="{ink}"/><circle cx="18" cy="-255" r="2.2" fill="#fff"/>'
+        f'<path d="M-15,-236 Q0,-220 15,-236 Q0,-228 -15,-236Z" fill="#c94a5a" stroke="{ink}" stroke-width="2.6" stroke-linejoin="round"/>'
+        f'<ellipse cx="-30" cy="-236" rx="8" ry="4.6" fill="#ff8fab" opacity=".65"/><ellipse cx="30" cy="-236" rx="8" ry="4.6" fill="#ff8fab" opacity=".65"/>')
+    return f'<g transform="translate({x},{y}) scale({sc})">{g}</g>'
+def pup(p,x,y,sc=1):
+    """Small generic cartoon dog (not any specific film dog)."""
+    ink='#22262e'
+    g=('<ellipse cx="0" cy="2" rx="34" ry="6" fill="#000" opacity=".2"/>'
+       '<ellipse cx="0" cy="-20" rx="26" ry="16" fill="#3a3f4b"/>'
+       '<rect x="-20" y="-12" width="8" height="14" rx="4" fill="#3a3f4b"/><rect x="12" y="-12" width="8" height="14" rx="4" fill="#3a3f4b"/>'
+       '<path d="M-24,-26 q-14,-8 -12,-22" stroke="#3a3f4b" stroke-width="6" fill="none" stroke-linecap="round"/>'
+       '<circle cx="22" cy="-40" r="17" fill="#3a3f4b"/>'
+       '<ellipse cx="10" cy="-44" rx="6" ry="11" fill="#2a2e37" transform="rotate(20 10 -44)"/><ellipse cx="35" cy="-44" rx="6" ry="11" fill="#2a2e37" transform="rotate(-20 35 -44)"/>'
+       '<circle cx="17" cy="-42" r="3" fill="#fff"/><circle cx="28" cy="-42" r="3" fill="#fff"/><circle cx="17.5" cy="-41.5" r="1.6" fill="'+ink+'"/><circle cx="28.5" cy="-41.5" r="1.6" fill="'+ink+'"/>'
+       '<ellipse cx="23" cy="-33" rx="4" ry="3" fill="#111"/><path d="M19,-29 q4,4 8,0" stroke="#ff8fab" stroke-width="2" fill="none"/>')
+    return f'<g transform="translate({x},{y}) scale({sc})">{g}</g>'
+def scene2(p='h',vb='0 0 800 500',sc=1.0):
+    """Ad scene: same sky/road/Emerald City/tornado/coins, with smiling Dorothy in silver slippers as focal point."""
+    bg=(f'<rect width="800" height="500" fill="#141925"/><circle cx="560" cy="250" r="230" fill="url(#{p}glow)" opacity=".25"/>'
+        +''.join(spark(x,y,r,'#fff',o) for x,y,r,o in [(80,60,6,.8),(200,120,4,.6),(330,40,5,.7),(720,70,6,.8),(650,160,3,.6),(470,90,4,.6),(40,200,3,.5),(760,220,4,.6)]))
+    ground='<path d="M0,300 C200,270 600,270 800,300 L800,500 L0,500Z" fill="#1f3b2c"/><path d="M0,330 C250,300 550,305 800,335 L800,500 L0,500Z" fill="#244a35"/>'
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}" role="img" aria-label="Original cartoon: a smiling girl in a blue-and-white checked dress and sparkly silver shoes on a yellow brick road, with a green city, a little tornado and silver Oz coins">'
+            +DEFS.format(p=p)+bg+ground+road(p,800,500,262)+city(p,494,262,.9)
+            +tornado(p,712,92,.62)+coin(p,610,170,34)+coin(p,300,56,20,'Oz.')
+            +'<circle cx="400" cy="330" r="150" fill="url(#'+p+'glow)" opacity=".5"/>'
+            +pup(p,530,478,1.1*sc)+dorothy(p,374,472,1.32*sc)
+            +''.join(spark(x,y,r,'#fff',.95) for x,y,r in [(290,440,7),(650,420,6),(560,300,5),(470,330,6)])+'</svg>')
