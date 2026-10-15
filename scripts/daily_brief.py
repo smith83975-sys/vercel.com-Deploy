@@ -5,6 +5,19 @@ import json, sys, os, urllib.request, datetime as dt
 FORECAST = __import__("re").compile(r"\b(forecast|target|predict|outlook|could (hit|reach)|will (hit|reach)|to (hit|reach)|expects?|sees?|projection|price call|by 20\d\d|next year)\b", 2)
 SITE = "https://vaultpulsehq.com"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Featured block: edit this list to swap what's promoted in the brief (empty list = no block).
+# "until" (YYYY-MM-DD, optional) hides an item after that date.
+FEATURED = [
+    {"label": "New on VP",
+     "title": "Silver manipulation history",
+     "blurb": "What's proven, what isn't, with official sources: 12 dated cases from CFTC, DOJ and court records, sorted into proven, alleged and dismissed.",
+     "url": SITE + "/silver-manipulation-history",
+     "cta": "Read the case history",
+     "until": "2026-11-15"},
+]
+def featured(now=None):
+    d = (now or dt.datetime.now(dt.timezone.utc)).strftime("%Y-%m-%d")
+    return [f for f in FEATURED if not f.get("until") or d <= f["until"]]
 def get(url):
     req = urllib.request.Request(url, headers={"User-Agent": "VaultPulse-brief/1.0"})
     with urllib.request.urlopen(req, timeout=20) as r: return json.load(r)
@@ -25,8 +38,12 @@ def main():
     tanks = {t["metal"]: t for t in json.load(open(os.path.join(ROOT, "data/tank.json")))["tanks"]}
     L = [f"**Subject:** VaultPulse Daily Brief: your gold & silver catch-up for {now.strftime('%b %d')}", "",
          "Good day, and thanks for reading!", "",
-         "Here's your quick, sourced look at what moved in gold and silver news today, plus a fresh check on the COMEX vaults. Grab a coffee; this takes two minutes.", "",
-         "## Today's top headlines"]
+         "Here's your quick, sourced look at what moved in gold and silver news today, plus a fresh check on the COMEX vaults. Grab a coffee; this takes two minutes.", ""]
+    feats = featured(now)
+    if feats: L.append("## Featured")
+    for f in feats:
+        L += [f"**{f['label']}: {f['title']}.** {f['blurb']} [{f['cta']}]({f['url']})", ""]
+    L += ["## Today's top headlines"]
     if top:
         for i, it in enumerate(top, 1): L.append(f"{i}. [{it['title']}]({it['link']}) ({it['source']})")
     else: L.append("_The news feed was quiet when this brief was built. Check the live box on the site anytime._")

@@ -3,7 +3,7 @@
 Usage: python3 scripts/daily_brief_html.py [out.html] [out.md]"""
 import json, sys, os, re, html, datetime as dt
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from daily_brief import get, spot, SITE, ROOT
+from daily_brief import get, spot, SITE, ROOT, featured
 import daily_brief
 
 FORECAST = re.compile(r"\b(forecast|target|predict|outlook|could (hit|reach)|will (hit|reach)|to (hit|reach)|expects?|sees?|projection|price call|by 20\d\d|next year)\b", re.I)
@@ -50,6 +50,15 @@ def build():
         R.append(f'''<tr><td style="padding:18px 28px 0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:{CARD};border:1px solid #2a2f3a;border-radius:10px;"><tr>
 {cell("Gold spot", f"${g:,.2f}", GOLD)}{cell("Silver spot", f"${s:,.2f}", "#c9d1dc")}{cell("Gold/Silver", f"{g/s:.1f}", "#ffffff")}
 </tr><tr><td colspan="3" align="center" style="padding:0 10px 12px;{FONT}font-size:11px;color:{MUTED};">Per troy oz &middot; gold-api.com, {stamp} &middot; ratio is our calculation</td></tr></table></td></tr>''')
+    # featured (config: FEATURED in daily_brief.py)
+    feats = featured(now)
+    if feats: R.append(section("Featured"))
+    for f in feats:
+        R.append(f'''<tr><td style="padding:0 28px 4px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#2a2310;border:1px solid {GOLD};border-radius:10px;"><tr><td style="padding:16px 18px;{FONT}">
+<div style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:{GOLD};font-weight:700;">&#10024; {E(f['label'])}</div>
+<a href="{E(f['url'])}" style="display:block;color:#ffffff;text-decoration:none;font-size:18px;line-height:1.35;font-weight:800;padding:4px 0 6px;">{E(f['title'])}</a>
+<div style="font-size:15px;line-height:1.55;color:#f3e6c0;">{E(f['blurb'])}</div>
+<div style="padding-top:10px;"><a href="{E(f['url'])}" style="color:{GOLD};font-size:15px;font-weight:700;text-decoration:none;">{E(f['cta'])} &rarr;</a></div></td></tr></table></td></tr>''')
     # headlines
     R.append(section("Today's top headlines"))
     if top:
