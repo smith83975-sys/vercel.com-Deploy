@@ -18,27 +18,25 @@ pan(+lx.toFixed(1),ly,80)+pan(+rx.toFixed(1),ry,130)+obj+bills+
 '<text x="'+lx.toFixed(0)+'" y="'+(ly+130).toFixed(0)+'" font-size="17" text-anchor="middle" fill="'+(gold?'#d4af37':'#c0c6cf')+'" font-weight="700">$1 of '+metal+'</text>'+
 '<text x="'+rx.toFixed(0)+'" y="'+(ry+130).toFixed(0)+'" font-size="17" text-anchor="middle" fill="#7fbf7a" font-weight="700">$'+r2+' of paper</text>'+
 '<text x="'+rx.toFixed(0)+'" y="'+(ry+148).toFixed(0)+'" font-size="12" text-anchor="middle" fill="#999">each bundle = $'+per+'</text></svg>';}
-function tiers(m,oz,sp){const el=$('lp-'+m+'-tiers');if(!el)return;const M=LP&&LP.m2&&LP.m2.value_usd;const nm=m==='gold'?'gold':'silver';
+function tiers(m,oz,sp){const el=$('lp-'+m+'-tiers');if(!el)return;const M=PM&&PM.money_supply&&PM.money_supply.m2_usd;const nm=m==='gold'?'gold':'silver';
 let h='<p class="pm-tiers-intro">If '+nm+' backed X% of the money supply, the price per ounce would need to be… <em>(hypothetical, not a prediction, not financial advice)</em></p><table class="pm-tier-table"><thead><tr><th>Backing</th><th>Implied price</th><th>vs spot</th></tr></thead><tbody>';
 [30,40,50,100].forEach(p=>{let v='Unavailable',x='Unavailable';if(M&&oz>0){const i=p/100*M/oz;v=usd(i)+' /oz';if(sp&&sp.price>0)x=(i/sp.price).toLocaleString('en-US',{maximumFractionDigits:i/sp.price<100?1:0})+'x spot';}h+='<tr><td>'+p+'%</td><td>'+v+'</td><td>'+x+'</td></tr>';});
 el.innerHTML=h+'</tbody></table>';}
-let LP=null,TK=null;
+let LP=null,PM=null;
 async function load(){
-try{if(!LP)LP=(await (await fetch('data/latest.json',{cache:'no-store'})).json()).live_paper;}catch(e){}
-try{if(!TK)TK=await (await fetch('data/tank.json',{cache:'no-store'})).json();}catch(e){}
-if(LP){$('lp-gold-imp').textContent=usd(LP.m2.value_usd/LP.gold_reserve.troy_oz)+' /oz';}
+try{if(!PM){const d=await (await fetch('/data/latest.json',{cache:'no-store'})).json();LP=d.live_paper;PM=d.paper_to_metal;}}catch(e){}
+const MS=PM&&PM.money_supply;if(MS&&MS.implied_gold_m2_usd_per_oz){$('lp-gold-imp').textContent=usd(MS.implied_gold_m2_usd_per_oz)+' /oz';}
 const get=x=>fetch('https://api.gold-api.com/price/'+x,{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(j=>{if(!(j.price>0))throw 0;return j}).catch(()=>null);
 const [g,s]=await Promise.all([get('XAU'),get('XAG')]);
-const set=(m,sp,oz)=>{if(sp&&LP){const r=LP.m2.value_usd/(oz*sp.price);$('lp-'+m).textContent=r.toFixed(2)+' to 1';$('lp-'+m+'-spot').textContent=usd(sp.price,2)+' /oz';const el=$('lp-'+m+'-scale');el.innerHTML=svg(m,r,m==='gold'?2:100);el.setAttribute('aria-label','Balance scale tipped toward paper: $1 of '+m+' against $'+r.toFixed(2)+' of paper money (live, our calculation). Illustration only.');}
+const set=(m,sp,oz)=>{if(sp&&MS&&oz){const r=MS.m2_usd/(oz*sp.price);$('lp-'+m).textContent=r.toFixed(2)+' to 1';$('lp-'+m+'-spot').textContent=usd(sp.price,2)+' /oz';const el=$('lp-'+m+'-scale');el.innerHTML=svg(m,r,m==='gold'?2:100);el.setAttribute('aria-label','Balance scale tipped toward paper: $1 of '+m+' against $'+r.toFixed(2)+' of paper money (live, our calculation). Illustration only.');}
 else{$('lp-'+m).textContent='Unavailable';$('lp-'+m+'-spot').textContent='Unavailable';$('lp-'+m+'-scale').innerHTML='<p class="note" style="text-align:center">Scale unavailable: live spot price could not be loaded.</p>';}};
-if(LP){set('gold',g,LP.gold_reserve.troy_oz);
-const gi=LP.m2.value_usd/LP.gold_reserve.troy_oz;
-const T=TK&&TK.tanks.find(t=>t.metal==='silver');
-if(T&&T.total_oz>0){const si=LP.m2.value_usd/T.total_oz;$('lp-silver-imp').textContent=usd(si)+' /oz';$('lp-reg-oz').textContent=Math.round(T.total_oz).toLocaleString('en-US')+' oz total ('+Math.round(T.registered_oz).toLocaleString('en-US')+' registered + '+Math.round(T.eligible_oz).toLocaleString('en-US')+' eligible)';$('lp-reg-src').innerHTML='as of '+T.total_date+', <a href="'+T.total_url+'">'+T.total_source+'</a>';
+if(MS){set('gold',g,MS.gold_reserve_oz);
+const T=PM.silver,V=PM.vault;
+if(T&&T.total_oz>0&&MS.implied_silver_m2_usd_per_oz){const si=MS.implied_silver_m2_usd_per_oz;$('lp-silver-imp').textContent=usd(si)+' /oz';$('lp-reg-oz').textContent=Math.round(T.total_oz).toLocaleString('en-US')+' oz total ('+Math.round(T.registered_oz).toLocaleString('en-US')+' registered + '+Math.round(T.eligible_oz).toLocaleString('en-US')+' eligible)';$('lp-reg-src').innerHTML='as of '+V.report_date+', CME warehouse reports via <a href="https://thevaultreport.com/comex">The Vault Report</a>';
 if(s){const r=si/s.price;$('lp-silver').textContent=Math.round(r).toLocaleString('en-US')+' to 1';$('lp-silver-spot').textContent=usd(s.price,2)+' /oz';const el=$('lp-silver-scale');el.innerHTML=svg('silver',r,100);el.setAttribute('aria-label','Balance scale tipped toward paper: $1 of silver in all COMEX vaults against $'+Math.round(r).toLocaleString('en-US')+' of paper money (live, our calculation). Illustration only.');}
 else set('silver',null,0);}
 else{$('lp-silver-imp').textContent='Unavailable';$('lp-reg-oz').textContent='Unavailable';set('silver',null,0);}}
-{const T2=TK&&TK.tanks&&TK.tanks.find(t=>t.metal==='silver');tiers('gold',LP&&LP.gold_reserve&&LP.gold_reserve.troy_oz,g);tiers('silver',T2&&T2.total_oz,s);}
+tiers('gold',MS&&MS.gold_reserve_oz,g);tiers('silver',PM&&PM.silver&&PM.silver.total_oz,s);
 $('lp-meta').textContent=(g&&s)?'Spot updated '+new Date(g.updatedAt||Date.now()).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})+' · refreshes every 60s':'Live spot unavailable right now. Ratios and spot are not shown rather than estimated; retrying every 60s.';
 }
 load();setInterval(load,60000);

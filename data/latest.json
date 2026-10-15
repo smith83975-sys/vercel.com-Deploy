@@ -48,8 +48,11 @@
     }
   },
   "open_interest": {
-    "source": "CME Group Daily Bulletin, Section 02B Exchange Summary Volume & Open Interest (Metals). Prior extract kept: current bulletin PDF returned HTTP 403 on 2026-10-15 refresh; figures are from fetch on 2026-10-14 (trade date not shown in extract, likely 2026-10-13).",
+    "source": "CME Group Daily Bulletin, Section 02B Exchange Summary Volume & Open Interest (Metals), futures open interest.",
     "source_url": "https://www.cmegroup.com/daily_bulletin/current/Section02B_Summary_Volume_And_Open_Interest_Metals_Futures_And_Options.pdf",
+    "fetched_at": "2026-10-14",
+    "trade_date": null,
+    "trade_date_note": "Trade date not shown in the extract we kept; the 2026-10-15 refresh got HTTP 403 from CME, so these are the 2026-10-14 fetch. scripts/parse_cme_oi.py records the bulletin trade date when it can parse one.",
     "silver": {
       "contracts": 104389,
       "oz_per_contract": 5000
@@ -136,8 +139,8 @@
       "retrieved_at": "2026-10-15T09:12:00Z"
     },
     "silver_basis": {
-      "source_file": "data/tank.json",
-      "definition": "No official US silver reserve; implied silver = M2 / COMEX registered silver oz (from tank.json)."
+      "source_file": "data/latest.json (comex.silver.total_oz)",
+      "definition": "No official US silver reserve; implied silver = M2 / TOTAL COMEX silver oz (registered + eligible). M2 / registered-only is shown only as a labelled secondary figure (paper_to_metal.money_supply)."
     },
     "m1": {
       "value_usd": 19991100000000.0,
@@ -145,6 +148,103 @@
       "series": "M1SL (seasonally adjusted, monthly)",
       "source": "https://fred.stlouisfed.org/series/M1SL",
       "retrieved_at": "2026-10-15T09:12:00Z"
+    }
+  },
+  "paper_to_metal": {
+    "computed_at": "2026-10-15T11:01:14Z",
+    "computed_by": "scripts/compute_paper_to_metal.py",
+    "formula": {
+      "paper_oz": "open interest contracts x oz per contract (silver 5,000 oz; gold 100 oz)",
+      "ratio_vs_total": "paper oz / total COMEX vault oz (registered + eligible)  [headline]",
+      "ratio_vs_registered": "paper oz / registered oz  [secondary]",
+      "coverage_total_pct": "total vault oz / paper oz x 100",
+      "implied_m2": "M2 / metal oz (gold: US Treasury gold reserve; silver: total COMEX silver)",
+      "m2_paper_ratio": "implied price / spot (live in browser; stored value uses spot_last_known)"
+    },
+    "vault": {
+      "report_date": "2026-10-13",
+      "report_date_label": "Oct 13, 2026",
+      "source": "CME Group daily COMEX warehouse stock reports, via thevaultreport.com/comex (cross-checked with metalcharts.org/comex/silver and /comex/gold). Direct CME .xls download was blocked (HTTP 403) from our server. VaultReport lists next warehouse report as Thu Oct 15 evening ET, so Oct 13 is the newest published stock date; MetalCharts labels matching rounded figures as Oct 14.",
+      "sources": [
+        {
+          "name": "The Vault Report (republishes CME warehouse stocks)",
+          "url": "https://thevaultreport.com/comex"
+        },
+        {
+          "name": "MetalCharts COMEX silver (cross-check)",
+          "url": "https://metalcharts.org/comex/silver"
+        },
+        {
+          "name": "MetalCharts COMEX gold (cross-check)",
+          "url": "https://metalcharts.org/comex/gold"
+        },
+        {
+          "name": "CME Group daily warehouse stock reports (original)",
+          "url": "https://www.cmegroup.com/clearing/operations-and-deliveries/nymex-delivery-notices.html"
+        }
+      ]
+    },
+    "open_interest": {
+      "trade_date": null,
+      "fetched_at": "2026-10-14",
+      "source": "CME Group Daily Bulletin, Section 02B Exchange Summary Volume & Open Interest (Metals), futures open interest.",
+      "source_url": "https://www.cmegroup.com/daily_bulletin/current/Section02B_Summary_Volume_And_Open_Interest_Metals_Futures_And_Options.pdf",
+      "as_of_label": "open interest as of CME bulletin fetched Oct 14, 2026, trade date not shown in extract"
+    },
+    "spot": {
+      "gold_usd": 4160.700195,
+      "silver_usd": 56.849998,
+      "as_of": "2026-10-15T09:29:44Z",
+      "source": "gold-api.com",
+      "source_url": "https://gold-api.com"
+    },
+    "silver": {
+      "oi_contracts": 104389,
+      "oz_per_contract": 5000,
+      "paper_oz": 521945000,
+      "registered_oz": 103091211,
+      "eligible_oz": 230110000,
+      "total_oz": 333200000,
+      "ratio_vs_total": 1.5665,
+      "ratio_vs_registered_secondary": 5.0629,
+      "coverage_total_pct": 63.84,
+      "coverage_registered_pct_secondary": 19.75,
+      "vault_as_of": "2026-10-13",
+      "oi_as_of_label": "open interest as of CME bulletin fetched Oct 14, 2026, trade date not shown in extract"
+    },
+    "gold": {
+      "oi_contracts": 415134,
+      "oz_per_contract": 100,
+      "paper_oz": 41513400,
+      "registered_oz": 14880000,
+      "eligible_oz": 8600000,
+      "total_oz": 23480000,
+      "ratio_vs_total": 1.768,
+      "ratio_vs_registered_secondary": 2.7899,
+      "coverage_total_pct": 56.56,
+      "coverage_registered_pct_secondary": 35.84,
+      "vault_as_of": "2026-10-13",
+      "oi_as_of_label": "open interest as of CME bulletin fetched Oct 14, 2026, trade date not shown in extract"
+    },
+    "money_supply": {
+      "m2_usd": 23342800000000.0,
+      "m2_month": "2026-08",
+      "m2_source": "https://fred.stlouisfed.org/series/M2SL",
+      "m1_usd": 19991100000000.0,
+      "m1_month": "2026-08",
+      "m1_source": "https://fred.stlouisfed.org/series/M1SL",
+      "gold_reserve_oz": 261498926.241,
+      "gold_reserve_as_of": "2026-08-31",
+      "gold_reserve_source": "https://fiscaldata.treasury.gov/datasets/status-report-government-gold-reserve/",
+      "silver_basis": "total COMEX silver (registered + eligible)",
+      "silver_oz": 333200000,
+      "silver_as_of": "2026-10-13",
+      "implied_gold_m2_usd_per_oz": 89265.38,
+      "implied_silver_m2_usd_per_oz": 70056.42,
+      "implied_silver_m2_vs_registered_secondary": 226428.61,
+      "m2_paper_ratio_gold_at_stored_spot": 21.45,
+      "m2_paper_ratio_silver_at_stored_spot": 1232.3,
+      "stored_spot_as_of": "2026-10-15T09:29:44Z"
     }
   }
 }

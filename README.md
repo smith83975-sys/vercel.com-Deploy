@@ -39,7 +39,7 @@ Upload the folder. The site is pure static HTML/CSS.
 You are the CEO of VaultPulse (vaultpulse site). Your job is to autonomously maintain it:
 
 - Update the COMEX registered/eligible numbers daily from official CME warehouse reports or reliable aggregators.
-- Recalculate the tightness scores (simple formula: based on registered inventory percentile vs recent history + registered / open interest coverage).
+- Recalculate the tightness scores (simple formula: registered inventory percentile vs recent history + total vault / open interest coverage; registered-only coverage shown as secondary).
 - Refresh the premium snapshot from major dealer sites when notable moves occur.
 - Optimize page titles, meta description, and headings for SEO and AI chatbots.
 - Start and maintain a short daily email newsletter with the numbers.
@@ -62,3 +62,16 @@ This follows the same loop as agentusecases.ai: useful directory/signal site →
 
 ## Deliveries & notable moves (merged from VaultFlow)
 `flow.html` (linked from the nav and a homepage section) is a plain-English feed of notable COMEX silver/gold delivery notices, issues/stops and big registered/eligible shifts (`data/entries.json`, auto-archived after `archive_after_days`), "gas tank" gauges of registered stock vs. month-to-date deliveries (`data/tank.json`), and a short force majeure explainer. Every entry cites its data date and source. Not financial advice, no price predictions. The old vaultflow-rho.vercel.app address redirects here.
+
+## Paper vs metal (single source of truth)
+Every paper-to-metal figure (open-interest ratio, coverage, M2/M1 implied prices) is computed by
+`scripts/compute_paper_to_metal.py` into `data/latest.json -> paper_to_metal`. Pages read only that block;
+no ratio is hardcoded in HTML/JS. Silver is measured against TOTAL COMEX vault silver (registered + eligible);
+registered-only values are labelled secondary.
+
+Weekday refresh routine:
+1. Update `comex` (CME warehouse stocks via thevaultreport.com, cross-check metalcharts.org).
+2. Open interest: download CME Daily Bulletin Section 02B and run `python3 scripts/parse_cme_oi.py <file.pdf>`
+   (or `--fetch`). It sets contracts, `fetched_at` and `trade_date` (when the header shows one). If CME blocks
+   the download, leave `open_interest` as is: the old `fetched_at` keeps the site honest about the date.
+3. `python3 scripts/build_seo_pages.py` (runs compute_paper_to_metal.py first), then commit and deploy.

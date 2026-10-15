@@ -3,10 +3,10 @@ const $=id=>document.getElementById(id)||{innerHTML:''};
 fetch('data/latest.json').then(r=>r.json()).then(d=>{
  const c=d.comex;
  $('comexCite').innerHTML=`Report date: <b>${c.report_date}</b>. Source: <a href="${c.source_url}">${c.source}</a>`;
- $('oiCite').innerHTML=`Open interest source: <a href="${d.open_interest.source_url}">${d.open_interest.source}</a>`;
+ const PM=d.paper_to_metal||{};$('oiCite').innerHTML=`Open interest: <a href="${d.open_interest.source_url}">CME Daily Bulletin, Section 02B</a>; ${(PM.open_interest||{}).as_of_label||'date unknown'}.`;
  $('cards').innerHTML='';$('scores').innerHTML='';
  ['silver','gold'].forEach(m=>{
-  const s=c[m], ch=s.registered_change_oz, oi=d.open_interest[m];
+  const s=c[m], ch=s.registered_change_oz, oi=d.open_interest[m], pm=PM[m];
   $('cards').innerHTML+=`<div class="card"><h3>${m[0].toUpperCase()+m.slice(1)}</h3>
    <div>Registered</div><div class="big">${M(s.registered_oz)}</div>
    <div>Eligible: <b>${M(s.eligible_oz)}</b> · Total: <b>${M(s.total_oz)}</b></div>
@@ -17,12 +17,13 @@ fetch('data/latest.json').then(r=>r.json()).then(d=>{
   let inv=null,cov=null;
   const h=s.history_registered_moz;
   if(h){const v=Object.values(h),x=s.registered_oz/1e6;inv=100-100*v.filter(y=>y<=x+1e-9).length/v.length;}
-  if(oi){const c2=100*s.registered_oz/(oi.contracts*oi.oz_per_contract);cov={pct:c2,comp:100-Math.min(100,c2)};}
+  if(pm&&pm.coverage_total_pct!=null){const c2=pm.coverage_total_pct;cov={pct:c2,reg:pm.coverage_registered_pct_secondary,comp:100-Math.min(100,c2)};}
   const parts=[inv,cov&&cov.comp].filter(v=>v!=null), score=parts.reduce((a,b)=>a+b,0)/parts.length;
   $('scores').innerHTML+=`<div class="card"><h3>${m} tightness</h3><div class="big">${score.toFixed(0)}/100 ${parts.length<2?'<span class="pending">(partial)</span>':''}</div>
    <div>Inventory component: ${inv==null?P+' (no daily history held yet)':inv.toFixed(0)+(h?` (${Object.keys(h).length}-day window)`:'')}</div>
-   <div>Coverage: ${cov?cov.pct.toFixed(1)+'% of OI ounces → component '+cov.comp.toFixed(0):P}</div>
-   <div class="cite">OI ${oi.contracts.toLocaleString()} contracts × ${oi.oz_per_contract} oz. Registered as of ${c.report_date}.</div></div>`;
+   <div>Coverage: ${cov?'total vault metal = '+cov.pct.toFixed(1)+'% of OI ounces → component '+cov.comp.toFixed(0):P}</div>
+   ${cov&&cov.reg!=null?`<div class="cite">Secondary: registered only = ${cov.reg.toFixed(1)}% of OI ounces.</div>`:''}
+   <div class="cite">OI ${pm?pm.oi_contracts.toLocaleString():'n/a'} contracts × ${pm?pm.oz_per_contract.toLocaleString():'n/a'} oz; ${PM.open_interest?PM.open_interest.as_of_label:''}. Vaults as of ${c.report_date}.</div></div>`;
  });
  const p=d.premiums; $('premCite').innerHTML=`Checked ${p.checked_at}. Source: ${p.source}.`;
  const tb=document.querySelector('#prem tbody')||{innerHTML:''};
