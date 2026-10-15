@@ -1,39 +1,39 @@
 {
- "note": "Fill = COMEX registered (deliverable) oz. Drain = October month-to-date standard-contract deliveries (contracts x contract size). Approximate; dates differ by metal.",
+ "note": "Fill = COMEX registered (deliverable) oz. Drain = October month-to-date standard-contract deliveries (contracts x contract size). Approximate; dates differ by metal. Silver MTD uses CME cumulative for the October contract (includes late-September first-notice days).",
  "tanks": [
   {
    "metal": "silver",
    "label": "Silver",
-   "registered_oz": 103350000,
-   "registered_date": "2026-10-12",
+   "registered_oz": 103090000,
+   "registered_date": "2026-10-13",
    "registered_source": "The Vault Report (CME Group daily warehouse stocks)",
    "registered_url": "https://thevaultreport.com/comex",
-   "mtd_contracts": 3250,
+   "mtd_contracts": 3262,
    "oz_per_contract": 5000,
-   "mtd_date": "2026-10-13",
-   "mtd_source": "Heavy Metal Stats (CME Group daily delivery notices)",
-   "mtd_url": "https://heavymetalstats.com/inventory",
-   "eligible_oz": 228660000,
-   "total_oz": 332010000,
-   "total_date": "2026-10-12",
+   "mtd_date": "2026-10-14",
+   "mtd_source": "CME Group Metals Issues and Stops MTD Report (via public index of MetalsIssuesAndStopsMTDReport.pdf; direct PDF fetch HTTP 403). Cross-checked with thevaultreport.com/comex/deliveries daily totals.",
+   "mtd_url": "https://www.cmegroup.com/delivery_reports/MetalsIssuesAndStopsMTDReport.pdf",
+   "eligible_oz": 230110000,
+   "total_oz": 333200000,
+   "total_date": "2026-10-13",
    "total_source": "The Vault Report (CME Group daily warehouse stocks)",
    "total_url": "https://thevaultreport.com/comex",
-   "total_note": "Registered + eligible, all COMEX silver vaults; eligible/total rounded to 0.01M oz by source."
+   "total_note": "Registered + eligible, all COMEX silver vaults; eligible/total rounded to 0.01M oz by source. Exact registered 103,091,211 oz."
   },
   {
    "metal": "gold",
    "label": "Gold",
-   "registered_oz": 15100000,
+   "registered_oz": 14880000,
    "registered_approx": true,
-   "registered_date": "2026-10-02",
-   "registered_source": "MetalCharts (CME Group warehouse stocks)",
-   "registered_url": "https://metalcharts.org",
-   "mtd_contracts": 12329,
+   "registered_date": "2026-10-13",
+   "registered_source": "The Vault Report (CME Group daily warehouse stocks); cross-checked MetalCharts",
+   "registered_url": "https://thevaultreport.com/comex",
+   "mtd_contracts": 12520,
    "oz_per_contract": 100,
-   "mtd_date": "2026-10-08",
-   "mtd_note": "Standard 100-oz GC only; excludes Micro Gold.",
-   "mtd_source": "Arc Research (CME Group delivery notices)",
-   "mtd_url": "https://www.getarcresearch.com/commodities/gold/warehouse-and-delivery/2026-10-08"
+   "mtd_date": "2026-10-14",
+   "mtd_note": "Standard 100-oz GC only; excludes Micro Gold. CME cumulative for October contract (includes Sep 29\u201330 first-notice days).",
+   "mtd_source": "CME Group Metals Issues and Stops MTD Report (via public index; direct PDF HTTP 403). Daily: 8 GC notices on Oct 14.",
+   "mtd_url": "https://www.cmegroup.com/delivery_reports/MetalsIssuesAndStopsMTDReport.pdf"
   }
  ]
 }

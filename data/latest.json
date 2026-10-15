@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-10-14T14:50:00Z",
+  "generated_at": "2026-10-15T09:12:00Z",
   "comex": {
-    "report_date": "2026-10-12",
-    "source": "CME Group daily COMEX warehouse stock reports, via thevaultreport.com/comex (cross-checked with metalcharts.org/comex/silver). Direct CME .xls download was blocked (HTTP 403) from our server.",
+    "report_date": "2026-10-13",
+    "source": "CME Group daily COMEX warehouse stock reports, via thevaultreport.com/comex (cross-checked with metalcharts.org/comex/silver and /comex/gold). Direct CME .xls download was blocked (HTTP 403) from our server. VaultReport lists next warehouse report as Thu Oct 15 evening ET, so Oct 13 is the newest published stock date; MetalCharts labels matching rounded figures as Oct 14.",
     "source_url": "https://thevaultreport.com/comex",
     "silver": {
-      "registered_oz": 103351409,
-      "eligible_oz": 228660000,
-      "total_oz": 332010000,
-      "registered_change_oz": 593800,
-      "change_vs": "2026-10-09",
-      "precision_note": "Registered is exact; eligible/total rounded to 0.01M oz by source.",
+      "registered_oz": 103091211,
+      "eligible_oz": 230110000,
+      "total_oz": 333200000,
+      "registered_change_oz": -260198,
+      "change_vs": "2026-10-12",
+      "precision_note": "Registered is exact (103,091,211 oz per VaultReport); eligible/total rounded to 0.01M oz by source.",
       "history_registered_moz": {
         "2026-09-14": 96.45,
         "2026-09-15": 97.17,
@@ -32,22 +32,23 @@
         "2026-10-07": 102.22,
         "2026-10-08": 102.81,
         "2026-10-09": 102.76,
-        "2026-10-12": 103.35
+        "2026-10-12": 103.35,
+        "2026-10-13": 103.09
       }
     },
     "gold": {
-      "registered_oz": 15050000,
-      "eligible_oz": 8430000,
+      "registered_oz": 14880000,
+      "eligible_oz": 8600000,
       "total_oz": 23480000,
-      "registered_change_oz": -20000,
-      "change_vs": "2026-10-09",
-      "precision_note": "All gold figures rounded to 0.01M oz by source; day change derived from 15.07M (Oct 9) to 15.05M (Oct 12), so approximate.",
-      "registered_30d_change_pct": -0.46,
+      "registered_change_oz": -170000,
+      "change_vs": "2026-10-12",
+      "precision_note": "All gold figures rounded to 0.01M oz by source; day change derived from 15.05M (Oct 12) to 14.88M (Oct 13), so approximate.",
+      "registered_30d_change_pct": -1.6,
       "history_registered_moz": null
     }
   },
   "open_interest": {
-    "source": "CME Group Daily Bulletin, Section 02B Exchange Summary Volume & Open Interest (Metals), 'current' bulletin fetched 2026-10-14; trade date not shown in extract (likely 2026-10-13).",
+    "source": "CME Group Daily Bulletin, Section 02B Exchange Summary Volume & Open Interest (Metals). Prior extract kept: current bulletin PDF returned HTTP 403 on 2026-10-15 refresh; figures are from fetch on 2026-10-14 (trade date not shown in extract, likely 2026-10-13).",
     "source_url": "https://www.cmegroup.com/daily_bulletin/current/Section02B_Summary_Volume_And_Open_Interest_Metals_Futures_And_Options.pdf",
     "silver": {
       "contracts": 104389,
@@ -59,26 +60,26 @@
     }
   },
   "premiums": {
-    "checked_at": "2026-10-14",
+    "checked_at": "2026-10-15",
     "source": "bullion-compare.com (hourly dealer comparison; premium measured vs its independent spot floor)",
     "items": [
       {
         "product": "1 oz American Silver Eagle",
         "metal": "silver",
-        "spot": 58.39,
+        "spot": 56.56,
         "dealers": [
           {
             "dealer": "SD Bullion",
-            "price": 66.16
-          },
-          {
-            "dealer": "APMEX",
-            "price": 66.94,
-            "note": "as of Oct 13"
+            "price": 59.86,
+            "note": "as of Oct 14"
           },
           {
             "dealer": "JM Bullion",
-            "price": 75.26
+            "price": 60.4
+          },
+          {
+            "dealer": "APMEX",
+            "price": 65.45
           }
         ],
         "url": "https://bullion-compare.com/prices/silver-eagle-1oz"
@@ -86,19 +87,19 @@
       {
         "product": "1 oz American Gold Eagle",
         "metal": "gold",
-        "spot": 4110.27,
+        "spot": 4154.4,
         "dealers": [
           {
+            "dealer": "Sell Your Metals",
+            "price": 4238.52
+          },
+          {
             "dealer": "SD Bullion",
-            "price": 4253.67
+            "price": 4266.88
           },
           {
             "dealer": "APMEX",
-            "price": 4327.97
-          },
-          {
-            "dealer": "JM Bullion",
-            "price": 4338.48
+            "price": 4372.28
           }
         ],
         "url": "https://bullion-compare.com/prices/gold-eagle-1oz"
@@ -113,10 +114,10 @@
     ]
   },
   "spot_last_known": {
-    "gold_usd": 4096.0,
-    "silver_usd": 55.752998,
-    "ratio": 73.47,
-    "as_of": "2026-10-14T18:38:56Z",
+    "gold_usd": 4157.799805,
+    "silver_usd": 56.820999,
+    "ratio": 73.17,
+    "as_of": "2026-10-15T09:10:14Z",
     "source": "gold-api.com",
     "source_url": "https://gold-api.com"
   },
@@ -126,13 +127,13 @@
       "month": "2026-08",
       "series": "M2SL (seasonally adjusted, monthly)",
       "source": "https://fred.stlouisfed.org/series/M2SL",
-      "retrieved_at": "2026-10-14T19:05:00Z"
+      "retrieved_at": "2026-10-15T09:12:00Z"
     },
     "gold_reserve": {
       "troy_oz": 261498926.241,
       "as_of": "2026-08-31",
       "source": "https://fiscaldata.treasury.gov/datasets/status-report-government-gold-reserve/",
-      "retrieved_at": "2026-10-14T19:05:00Z"
+      "retrieved_at": "2026-10-15T09:12:00Z"
     },
     "silver_basis": {
       "source_file": "data/tank.json",
@@ -143,7 +144,7 @@
       "month": "2026-08",
       "series": "M1SL (seasonally adjusted, monthly)",
       "source": "https://fred.stlouisfed.org/series/M1SL",
-      "retrieved_at": "2026-10-14T22:20:00Z"
+      "retrieved_at": "2026-10-15T09:12:00Z"
     }
   }
 }
