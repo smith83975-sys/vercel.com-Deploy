@@ -17,6 +17,7 @@ PAGES=[
  ('gold-silver-news','/gold-silver-news','News','Gold &amp; silver news','📰','Live gold and silver headline stream with alerts'),
  ('flow','/flow','Deliveries','Deliveries tracker','🚚','Issues, stops and big COMEX stock moves, daily'),
  ('m1-calc','/#m1-calc','M1 Calculator','Spot vs M1 calculator','🧮','What spot would be at any % M1 money backing'),
+ ('what-is-money','/what-is-money','What is Money','What is money?','💵','Plain-English guide: barter to gold, silver and fiat'),
  ('sponsor','/sponsor','Sponsor','Sponsor VaultPulse','🤝','Reach silver and gold stackers from $400/month'),
 ]
 EXTRA={'home':('/','Home','Home','🏠','The full VaultPulse dashboard'),
@@ -37,6 +38,7 @@ RELATED={
  'gold-silver-news':['silver-squeeze-tracker','comex-force-majeure','gold-silver-ratio','newsletter'],
  'flow':['silver-squeeze-tracker','comex-silver-inventory','comex-gold-inventory','comex-force-majeure'],
  'sponsor':['silver-squeeze-tracker','gold-silver-news','silver-manipulation-history','newsletter'],
+ 'what-is-money':['m1-calc','paper-to-metal','silver-squeeze-tracker','comex-silver-inventory'],
  '404':['home','silver-squeeze-tracker','comex-silver-inventory','gold-silver-news'],
 }
 NAVJS='<script>(function(){var u=document.querySelector(".vp-pills");if(!u)return;var w=u.parentNode,a=u.querySelector("[aria-current]");if(a&&u.scrollWidth>u.clientWidth&&a.offsetLeft+a.offsetWidth>u.clientWidth-40)u.scrollLeft=a.offsetLeft-16;function f(){w.classList.toggle("at-end",u.scrollLeft+u.clientWidth>=u.scrollWidth-4)}u.addEventListener("scroll",f,{passive:true});addEventListener("resize",f);f()})()</script>'
