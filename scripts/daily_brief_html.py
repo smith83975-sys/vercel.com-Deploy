@@ -49,7 +49,7 @@ def build():
         cell = lambda lab, val, c: f'<td class="stack" width="33%" align="center" style="padding:14px 6px;{FONT}"><div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:{MUTED};">{lab}</div><div style="font-size:22px;font-weight:800;color:{c};">{val}</div></td>'
         R.append(f'''<tr><td style="padding:18px 28px 0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:{CARD};border:1px solid #2a2f3a;border-radius:10px;"><tr>
 {cell("Gold spot", f"${g:,.2f}", GOLD)}{cell("Silver spot", f"${s:,.2f}", "#c9d1dc")}{cell("Gold/Silver", f"{g/s:.1f}", "#ffffff")}
-</tr><tr><td colspan="3" align="center" style="padding:0 10px 12px;{FONT}font-size:11px;color:{MUTED};">Per troy oz &middot; gold-api.com, {stamp} &middot; ratio is our calculation</td></tr></table></td></tr>''')
+</tr><tr><td colspan="3" align="center" style="padding:0 10px 12px;{FONT}font-size:11px;color:{MUTED};">Per troy oz &middot; gold-api.com, {stamp}<br>How the ratio is calculated: {g/s:.1f} = ${g:,.2f} gold spot &divide; ${s:,.2f} silver spot (both gold-api.com, {stamp})</td></tr></table></td></tr>''')
     # featured (config: FEATURED in daily_brief.py)
     feats = featured(now)
     if feats: R.append(section("Featured"))
@@ -72,11 +72,11 @@ def build():
     rows = []
     sv, gd = tanks.get("silver"), tanks.get("gold")
     if sv:
-        rows.append(("COMEX silver", f"{sv['registered_oz']/1e6:.1f}M oz registered / {sv['total_oz']/1e6:.1f}M oz total", f"{sv['total_source']}, as of {sv['total_date']}"))
-        rows.append(("Silver deliveries Oct MTD", f"{sv['mtd_contracts']:,} contracts (~{sv['mtd_contracts']*sv['oz_per_contract']/1e6:.2f}M oz)", f"{sv['mtd_source']}, as of {sv['mtd_date']}"))
+        rows.append(("COMEX silver", f"{sv['registered_oz']/1e6:.1f}M oz registered / {sv['total_oz']/1e6:.1f}M oz total", f"{sv['total_source']}, as of {sv['total_date']}. How it's calculated: total = {sv['registered_oz']/1e6:.2f}M oz registered + {sv['eligible_oz']/1e6:.2f}M oz eligible; registered share {100*sv['registered_oz']/sv['total_oz']:.1f}% = registered ÷ total."))
+        rows.append(("Silver deliveries Oct MTD", f"{sv['mtd_contracts']:,} contracts (~{sv['mtd_contracts']*sv['oz_per_contract']/1e6:.2f}M oz)", f"{sv['mtd_source']}, as of {sv['mtd_date']}. How it's calculated: {sv['mtd_contracts']:,} contracts × {sv['oz_per_contract']:,} oz per contract."))
     if gd:
         rows.append(("COMEX gold registered", f"~{gd['registered_oz']/1e6:.1f}M oz", f"{gd['registered_source']}, as of {gd['registered_date']}"))
-        rows.append(("Gold deliveries Oct MTD", f"{gd['mtd_contracts']:,} contracts (~{gd['mtd_contracts']*gd['oz_per_contract']/1e6:.2f}M oz)", f"{gd['mtd_source']}, as of {gd['mtd_date']}"))
+        rows.append(("Gold deliveries Oct MTD", f"{gd['mtd_contracts']:,} contracts (~{gd['mtd_contracts']*gd['oz_per_contract']/1e6:.2f}M oz)", f"{gd['mtd_source']}, as of {gd['mtd_date']}. How it's calculated: {gd['mtd_contracts']:,} contracts × {gd['oz_per_contract']:,} oz per contract."))
     R.append(section("Vault snapshot"))
     inner = "".join(f'<tr><td style="padding:12px 16px;border-bottom:1px solid #2a2f3a;{FONT}"><div style="font-size:12px;color:{MUTED};text-transform:uppercase;letter-spacing:1px;">{E(a)}</div><div style="font-size:16px;color:#fff;font-weight:700;padding:2px 0;">{E(b)}</div><div style="font-size:11px;color:{MUTED};">{E(c)}</div></td></tr>' for a, b, c in rows)
     R.append(f'<tr><td style="padding:0 28px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:{CARD};border-radius:10px;border:1px solid #2a2f3a;">{inner}</table></td></tr>')

@@ -50,14 +50,14 @@ def main():
     L += ["", "## Vault snapshot"]
     if g and s:
         L.append(f"- **Gold spot:** ${g:,.2f}/oz; **Silver spot:** ${s:,.2f}/oz (gold-api.com, {now.strftime('%Y-%m-%d %H:%M')} UTC)")
-        L.append(f"- **Gold/silver ratio:** {g/s:.1f} (our calculation from the spot prices above)")
+        L.append(f"- **Gold/silver ratio:** {g/s:.1f} = ${g:,.2f} gold spot ÷ ${s:,.2f} silver spot (both gold-api.com, {now.strftime('%Y-%m-%d %H:%M')} UTC)")
     sv, gd = tanks.get("silver"), tanks.get("gold")
     if sv:
-        L.append(f"- **COMEX silver:** {sv['registered_oz']/1e6:.1f}M oz registered, {sv['total_oz']/1e6:.1f}M oz total in all vaults ({sv['total_source']}, as of {sv['total_date']})")
-        L.append(f"- **Silver deliveries Oct MTD:** {sv['mtd_contracts']:,} contracts (~{sv['mtd_contracts']*sv['oz_per_contract']/1e6:.2f}M oz) ({sv['mtd_source']}, as of {sv['mtd_date']})")
+        L.append(f"- **COMEX silver:** {sv['registered_oz']/1e6:.1f}M oz registered, {sv['total_oz']/1e6:.1f}M oz total in all vaults ({sv['total_source']}, as of {sv['total_date']}); total = {sv['registered_oz']/1e6:.2f}M registered + {sv['eligible_oz']/1e6:.2f}M eligible, registered share {100*sv['registered_oz']/sv['total_oz']:.1f}% = registered ÷ total")
+        L.append(f"- **Silver deliveries Oct MTD:** {sv['mtd_contracts']:,} contracts (~{sv['mtd_contracts']*sv['oz_per_contract']/1e6:.2f}M oz = {sv['mtd_contracts']:,} × {sv['oz_per_contract']:,} oz) ({sv['mtd_source']}, as of {sv['mtd_date']})")
     if gd:
         L.append(f"- **COMEX gold registered:** ~{gd['registered_oz']/1e6:.1f}M oz ({gd['registered_source']}, as of {gd['registered_date']})")
-        L.append(f"- **Gold deliveries Oct MTD:** {gd['mtd_contracts']:,} contracts (~{gd['mtd_contracts']*gd['oz_per_contract']/1e6:.2f}M oz) ({gd['mtd_source']}, as of {gd['mtd_date']})")
+        L.append(f"- **Gold deliveries Oct MTD:** {gd['mtd_contracts']:,} contracts (~{gd['mtd_contracts']*gd['oz_per_contract']/1e6:.2f}M oz = {gd['mtd_contracts']:,} × {gd['oz_per_contract']:,} oz) ({gd['mtd_source']}, as of {gd['mtd_date']})")
     tips = ["\"Registered\" COMEX metal has a warrant attached and can be delivered against futures; \"eligible\" metal meets exchange standards but isn't warranted.",
             "One COMEX silver contract (SI) is 5,000 oz; one standard gold contract (GC) is 100 oz.",
             "The gold/silver ratio tells you how many ounces of silver equal one ounce of gold. Historically it has ranged from about 12 to above 100.",

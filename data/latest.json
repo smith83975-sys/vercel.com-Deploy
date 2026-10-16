@@ -151,7 +151,7 @@
     }
   },
   "paper_to_metal": {
-    "computed_at": "2026-10-16T09:30:18Z",
+    "computed_at": "2026-10-16T10:47:37Z",
     "computed_by": "scripts/compute_paper_to_metal.py",
     "formula": {
       "paper_oz": "open interest contracts x oz per contract (silver 5,000 oz; gold 100 oz)",
@@ -248,7 +248,7 @@
     }
   },
   "resource_backing": {
-    "computed_at": "2026-10-16T09:30:18Z",
+    "computed_at": "2026-10-16T10:47:37Z",
     "computed_by": "scripts/compute_resource_backing.py",
     "inputs_file": "data/resources.json",
     "hypothetical": true,
@@ -305,7 +305,7 @@
         "series": "DCOILWTICO",
         "value": 101.91,
         "as_of": "2026-10-14",
-        "retrieved_at": "2026-10-16T09:30:18Z"
+        "retrieved_at": "2026-10-16T10:47:37Z"
       },
       "henry_hub": {
         "label": "Henry Hub natural gas spot",
@@ -315,7 +315,7 @@
         "series": "DHHNGSP",
         "value": 3.22,
         "as_of": "2026-10-14",
-        "retrieved_at": "2026-10-16T09:30:18Z"
+        "retrieved_at": "2026-10-16T10:47:37Z"
       },
       "copper": {
         "label": "Global copper price (monthly average)",
@@ -325,7 +325,7 @@
         "series": "PCOPPUSDM",
         "value": 13542.82086956522,
         "as_of": "2026-07-01",
-        "retrieved_at": "2026-10-16T09:30:18Z"
+        "retrieved_at": "2026-10-16T10:47:37Z"
       },
       "coal": {
         "label": "Average US coal sales price, all ranks (2024 annual)",

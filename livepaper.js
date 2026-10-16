@@ -21,8 +21,17 @@ pan(+lx.toFixed(1),ly,80)+pan(+rx.toFixed(1),ry,130)+obj+bills+
 function tiers(m,oz,sp){const el=$('lp-'+m+'-tiers');if(!el)return;const M=PM&&PM.money_supply&&PM.money_supply.m2_usd;const nm=m==='gold'?'gold':'silver';
 let h='<p class="pm-tiers-intro">If '+nm+' backed X% of the money supply, the price per ounce would need to be… <em>(hypothetical, not a prediction, not financial advice)</em></p><table class="pm-tier-table"><thead><tr><th>Backing</th><th>Implied price</th><th>vs spot</th></tr></thead><tbody>';
 [30,40,50,100].forEach(p=>{let v='Unavailable',x='Unavailable';if(M&&oz>0){const i=p/100*M/oz;v=usd(i)+' /oz';if(sp&&sp.price>0)x=(i/sp.price).toLocaleString('en-US',{maximumFractionDigits:i/sp.price<100?1:0})+'x spot';}h+='<tr><td>'+p+'%</td><td>'+v+'</td><td>'+x+'</td></tr>';});
-el.innerHTML=h+'</tbody></table>';}
+el.innerHTML=h+'</tbody></table>'+(M&&oz>0?'<p class="calc-basis"><b>How this is calculated:</b> implied price = backing % × '+m2txt()+' ÷ '+base(m)+'; vs spot = implied price ÷ '+(sp&&sp.price>0?usd(sp.price,2)+' live spot (gold-api.com)':'live spot (unavailable right now)')+'.</p>':'');}
 let LP=null,PM=null;
+const DT=iso=>{if(!iso)return 'date n/a';const d=new Date(String(iso).slice(0,10)+'T12:00:00Z');return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});};
+const MON=m=>{const d=new Date(m+'-15T12:00:00Z');return isNaN(d)?m:d.toLocaleDateString('en-US',{month:'short',year:'numeric',timeZone:'UTC'});};
+const TR=n=>'$'+(n/1e12).toFixed(2)+'T';
+function base(m){const MS=PM.money_supply;return m==='gold'?Math.round(MS.gold_reserve_oz).toLocaleString('en-US')+' oz US gold reserve (US Treasury, as of '+DT(MS.gold_reserve_as_of)+')':Math.round(MS.silver_oz).toLocaleString('en-US')+' oz total COMEX silver, registered + eligible (CME Group warehouse report via The Vault Report, '+DT(MS.silver_as_of)+')';}
+function m2txt(){const MS=PM.money_supply;return TR(MS.m2_usd)+' M2 ('+MON(MS.m2_month)+', FRED M2SL)';}
+function basis(m,sp){const el=$('lp-'+m+'-basis');if(!el||!PM||!PM.money_supply)return;const MS=PM.money_supply,oz=m==='gold'?MS.gold_reserve_oz:MS.silver_oz,imp=MS.m2_usd/oz;
+let h='<b>How this is calculated:</b> Implied '+usd(imp)+'/oz = '+m2txt()+' ÷ '+base(m)+'.';
+if(sp&&sp.price>0){const r=imp/sp.price;h+=' Paper to '+m+' '+r.toLocaleString('en-US',{maximumFractionDigits:r<100?2:0})+' to 1 = '+usd(imp)+' ÷ '+usd(sp.price,2)+' live '+m+' spot (gold-api.com, '+new Date(sp.updatedAt||Date.now()).toISOString().replace('T',' ').slice(0,16)+' UTC).';}
+el.innerHTML=h;}
 async function load(){
 try{if(!PM){const d=await (await fetch('/data/latest.json',{cache:'no-store'})).json();LP=d.live_paper;PM=d.paper_to_metal;}}catch(e){}
 const MS=PM&&PM.money_supply;if(MS&&MS.implied_gold_m2_usd_per_oz){$('lp-gold-imp').textContent=usd(MS.implied_gold_m2_usd_per_oz)+' /oz';}
@@ -36,7 +45,7 @@ if(T&&T.total_oz>0&&MS.implied_silver_m2_usd_per_oz){const si=MS.implied_silver_
 if(s){const r=si/s.price;$('lp-silver').textContent=Math.round(r).toLocaleString('en-US')+' to 1';$('lp-silver-spot').textContent=usd(s.price,2)+' /oz';const el=$('lp-silver-scale');el.innerHTML=svg('silver',r,100);el.setAttribute('aria-label','Balance scale tipped toward paper: $1 of silver in all COMEX vaults against $'+Math.round(r).toLocaleString('en-US')+' of paper money (live, from CME, Treasury and Fed data). Illustration only.');}
 else set('silver',null,0);}
 else{$('lp-silver-imp').textContent='Unavailable';$('lp-reg-oz').textContent='Unavailable';set('silver',null,0);}}
-tiers('gold',MS&&MS.gold_reserve_oz,g);tiers('silver',PM&&PM.silver&&PM.silver.total_oz,s);
+basis('gold',g);basis('silver',s);tiers('gold',MS&&MS.gold_reserve_oz,g);tiers('silver',PM&&PM.silver&&PM.silver.total_oz,s);
 $('lp-meta').textContent=(g&&s)?'Spot updated '+new Date(g.updatedAt||Date.now()).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})+' · refreshes every 60s':'Live spot unavailable right now. Ratios and spot are not shown rather than estimated; retrying every 60s.';
 }
 load();setInterval(load,60000);

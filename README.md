@@ -85,3 +85,12 @@ FRED (falls back to the last stored price with its own date), uses M1/M2, the Tr
 live gold/silver spot) and `scripts/render_resource_backing.js` writes the static fallback into index.html between
 `<!--rb-->` markers. Update a quantity in resources.json only when its source publishes a new figure.
 Note: build_seo_pages.py carries the hand-added GATA and Follow-on-X sections on silver-manipulation-history over from the current file.
+
+## "How this is calculated" lines (calc basis)
+Every derived figure (registered share, day/30-day changes, open interest in oz, paper-to-metal ratios, coverage,
+tightness score, premiums, gold/silver ratio, M1/M2 implied prices and tiers, delivery oz and % of registered,
+gold-vs-silver stock value, resource-backing totals and rows) shows its formula with each input value, source and
+data date right under it (`.calc-basis`, small muted text; `<details>` for long lists). Static pages and the
+newsletter get the text from `scripts/calc_basis.py`; live browser values get it from the same fields in
+app.js, livepaper.js, papersources.js, m1calc.js, ratio.js, tanks.js and resbacking.js. Never write "our calc":
+name the inputs instead.

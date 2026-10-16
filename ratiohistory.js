@@ -30,5 +30,5 @@ el.innerHTML=s;
 const A=Object.fromEntries(d.annual.map(a=>[a.year,a.ratio])),src=d.annual_source,mw='<a href="'+src.url+'" rel="noopener">MeasuringWorth</a>';
 let li=d.milestones.map(m=>'<li><b>'+(m.year<1000?'~AD '+m.year:m.year)+' — '+m.label+(m.ratio?': '+(m.approximate?'~':'')+m.ratio+':1':'')+'</b> ('+m.kind+(m.kind?'':'')+'). '+m.text+' <a href="'+m.url+'" rel="noopener">Source</a></li>').join('').replace(/ \(undefined\)/g,'');
 [[1900,'Market ratio after silver demonetization'],[1940,'Highest annual average in the series'],[1968,'Lowest annual average since 1900'],[1980,'Silver boom year (annual average)'],[1991,'Silver slump'],[2011,'Silver rally'],[2020,'Pandemic year'],[last.year,'Latest full year']].forEach(([yr,t])=>{if(A[yr])li+='<li><b>'+yr+' — '+t+': '+A[yr]+':1</b> (annual average). Source: '+mw+'</li>';});
-if(live)li+='<li><b>Today — live: ≈'+live.toFixed(2)+':1</b> (spot). See the <a href="#ratio">live ratio card</a>; source <a href="https://gold-api.com" rel="noopener">gold-api.com</a>.</li>';
+if(live)li+='<li><b>Today — live: ≈'+live.toFixed(2)+':1</b> (gold spot ÷ silver spot). See the <a href="#ratio">live ratio card</a>; source <a href="https://gold-api.com" rel="noopener">gold-api.com</a>.</li>';
 list.innerHTML=li;})();

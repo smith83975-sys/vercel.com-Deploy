@@ -130,3 +130,7 @@ html{scroll-padding-top:120px}html,body{overflow-x:clip}
 .rb-src{margin-top:.6rem}.rb-src summary{cursor:pointer}
 @media(max-width:700px){.rb-t thead{display:none}.rb-t tr{display:block;border-bottom:1px solid #444;padding:.4rem 0}.rb-t td{display:flex;justify-content:space-between;gap:.6rem;border:0;padding:3px 4px;text-align:right}.rb-t td::before{content:attr(data-l);color:#999;text-align:left;flex:0 0 32%}.rb-t td:first-child{text-align:right}.rb-big{font-size:1.9rem}}
 .rb-ctl label{display:inline-flex;align-items:center;gap:.35rem}.rb-ctl input[type=radio]{width:auto;padding:0;margin:0;accent-color:#d4af37}.rb-cb{padding:0}
+/* 'How this is calculated' lines: formula + inputs + source + date */
+.calc-basis{font-size:12px;line-height:1.45;color:#8f97a3;margin:.4rem 0 .2rem;overflow-wrap:anywhere}.calc-basis b{color:#aab2bd;font-weight:600}
+small.calc-basis,span.calc-basis{display:inline;margin:0}
+details.calc-basis{margin:.5rem 0;padding:.35rem .6rem;background:#15181e;border:1px solid #262b34;border-radius:8px}details.calc-basis summary{cursor:pointer;color:#aab2bd;font-weight:600}details.calc-basis ul{margin:.4rem 0 .2rem;padding-left:1.1rem}details.calc-basis li{margin:.3rem 0}

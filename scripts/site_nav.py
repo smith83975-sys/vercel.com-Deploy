@@ -3,7 +3,7 @@ Used by build_seo_pages.py for generated pages AND to inject the same nav into
 hand-written pages (index, flow, sponsor) and to generate 404.html.
 Edit PAGES / RELATED here, then run: python3 scripts/build_seo_pages.py"""
 import re
-CSSV='20261015nav'
+CSSV='20261016calc'
 # key, url, pill label (short), footer/card label (long), icon, one-line description
 PAGES=[
  ('silver-squeeze-tracker','/silver-squeeze-tracker','Silver Tracker','Silver squeeze tracker','📊','Registered silver, deliveries, paper ratio and premiums in one view'),
