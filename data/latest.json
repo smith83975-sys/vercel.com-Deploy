@@ -151,7 +151,7 @@
     }
   },
   "paper_to_metal": {
-    "computed_at": "2026-10-15T17:45:24Z",
+    "computed_at": "2026-10-16T08:39:02Z",
     "computed_by": "scripts/compute_paper_to_metal.py",
     "formula": {
       "paper_oz": "open interest contracts x oz per contract (silver 5,000 oz; gold 100 oz)",
@@ -248,7 +248,7 @@
     }
   },
   "resource_backing": {
-    "computed_at": "2026-10-15T17:45:24Z",
+    "computed_at": "2026-10-16T08:39:02Z",
     "computed_by": "scripts/compute_resource_backing.py",
     "inputs_file": "data/resources.json",
     "hypothetical": true,
@@ -265,10 +265,10 @@
       "m2_usd": 23342800000000.0,
       "m2_month": "2026-08",
       "m2_source": "https://fred.stlouisfed.org/series/M2SL",
-      "debt_usd": 40343879238035.67,
-      "debt_date": "2026-10-13",
-      "debt_held_public_usd": 32483641012611.98,
-      "debt_intragov_usd": 7860238225423.69,
+      "debt_usd": 40329229827541.02,
+      "debt_date": "2026-10-14",
+      "debt_held_public_usd": 32483712019721.84,
+      "debt_intragov_usd": 7845517807819.18,
       "debt_label": "Total public debt outstanding",
       "debt_source": "https://fiscaldata.treasury.gov/datasets/debt-to-the-penny/",
       "debt_api": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_to_penny?sort=-record_date&page%5Bsize%5D=1",
@@ -303,9 +303,9 @@
         "source_name": "FRED DCOILWTICO (EIA data)",
         "source_url": "https://fred.stlouisfed.org/series/DCOILWTICO",
         "series": "DCOILWTICO",
-        "value": 96.24,
-        "as_of": "2026-10-06",
-        "retrieved_at": "2026-10-15T17:45:24Z"
+        "value": 101.91,
+        "as_of": "2026-10-14",
+        "retrieved_at": "2026-10-16T08:39:02Z"
       },
       "henry_hub": {
         "label": "Henry Hub natural gas spot",
@@ -313,9 +313,9 @@
         "source_name": "FRED DHHNGSP (EIA data)",
         "source_url": "https://fred.stlouisfed.org/series/DHHNGSP",
         "series": "DHHNGSP",
-        "value": 3.03,
-        "as_of": "2026-10-06",
-        "retrieved_at": "2026-10-15T17:45:24Z"
+        "value": 3.22,
+        "as_of": "2026-10-14",
+        "retrieved_at": "2026-10-16T08:39:02Z"
       },
       "copper": {
         "label": "Global copper price (monthly average)",
@@ -325,7 +325,7 @@
         "series": "PCOPPUSDM",
         "value": 13542.82086956522,
         "as_of": "2026-07-01",
-        "retrieved_at": "2026-10-15T17:45:24Z"
+        "retrieved_at": "2026-10-16T08:39:02Z"
       },
       "coal": {
         "label": "Average US coal sales price, all ranks (2024 annual)",
@@ -462,11 +462,11 @@
         "base_quantity": 283000000,
         "base_unit": "barrels",
         "price_key": "wti",
-        "price": 96.24,
+        "price": 101.91,
         "price_unit": "$/barrel",
-        "price_as_of": "2026-10-06",
+        "price_as_of": "2026-10-14",
         "conversion": null,
-        "value_usd": 27235920000.0,
+        "value_usd": 28840530000.0,
         "value_basis": "quantity x price"
       },
       {
@@ -484,11 +484,11 @@
         "base_quantity": 45951000000,
         "base_unit": "barrels",
         "price_key": "wti",
-        "price": 96.24,
+        "price": 101.91,
         "price_unit": "$/barrel",
-        "price_as_of": "2026-10-06",
+        "price_as_of": "2026-10-14",
         "conversion": null,
-        "value_usd": 4422324240000.0,
+        "value_usd": 4682866410000.0,
         "value_basis": "quantity x price"
       },
       {
@@ -506,11 +506,11 @@
         "base_quantity": 545405000000.0,
         "base_unit": "Mcf",
         "price_key": "henry_hub",
-        "price": 3.03,
+        "price": 3.22,
         "price_unit": "$/MMBtu",
-        "price_as_of": "2026-10-06",
+        "price_as_of": "2026-10-14",
         "conversion": "x 1.036 MMBtu per Mcf",
-        "value_usd": 1712069927400.0,
+        "value_usd": 1819427447600.0,
         "value_basis": "quantity x price"
       },
       {
@@ -596,18 +596,18 @@
     ],
     "totals": {
       "default": {
-        "value_usd": 31886233157338.0,
-        "per_m1_dollar": 1.595,
-        "per_m2_dollar": 1.366,
-        "pct_of_m1": 159.5,
-        "pct_of_m2": 136.6,
-        "pct_of_debt": 79.0,
-        "per_debt_dollar": 0.7904
+        "value_usd": 32255737457538.0,
+        "per_m1_dollar": 1.6135,
+        "per_m2_dollar": 1.3818,
+        "pct_of_m1": 161.4,
+        "pct_of_m2": 138.2,
+        "pct_of_debt": 80.0,
+        "per_debt_dollar": 0.7998
       },
       "federal_only": {
-        "value_usd": 2916164781484.0,
-        "per_m1_dollar": 0.1459,
-        "per_m2_dollar": 0.1249,
+        "value_usd": 2917769391484.0,
+        "per_m1_dollar": 0.146,
+        "per_m2_dollar": 0.125,
         "pct_of_m1": 14.6,
         "pct_of_m2": 12.5,
         "pct_of_debt": 7.2,

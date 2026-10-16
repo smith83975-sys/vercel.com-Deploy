@@ -23,9 +23,10 @@ PAGES=[
 ]
 EXTRA={'home':('/','Home','Home','🏠','The full VaultPulse dashboard'),
        'watch':('/#watch','Video','Watch: What is VaultPulse?','▶️','A 74-second funny, sourced explainer'),
-       'newsletter':('/#newsletter','Daily Brief','Free daily brief','✉️','Gold and silver news in your inbox, free')}
+       'newsletter':('/#newsletter','Daily Brief','Free daily brief','✉️','Gold and silver news in your inbox, free'),
+       'data-license':('/data-license','Data License','Data use &amp; license','📄','Reuse our figures free with credit (CC BY 4.0)')}
 BY={k:(u,s,l,i,d) for k,u,s,l,i,d in PAGES}; BY.update(EXTRA)
-FOOT=['home','watch']+[p[0] for p in PAGES[:-1]]+['newsletter','sponsor']
+FOOT=['home','watch']+[p[0] for p in PAGES[:-1]]+['newsletter','sponsor','data-license']
 RELATED={
  'home':['silver-squeeze-tracker','comex-silver-inventory','silver-manipulation-history','silver-premiums'],
  'silver-squeeze-tracker':['comex-silver-inventory','silver-premiums','paper-to-metal','silver-manipulation-history'],
@@ -41,6 +42,7 @@ RELATED={
  'sponsor':['silver-squeeze-tracker','gold-silver-news','silver-manipulation-history','newsletter'],
  'what-is-money':['m1-calc','paper-to-metal','silver-squeeze-tracker','comex-silver-inventory'],
  'wizard-of-oz-silver':['what-is-money','gold-silver-ratio','silver-squeeze-tracker','comex-silver-inventory'],
+ 'data-license':['silver-squeeze-tracker','comex-silver-inventory','paper-to-metal','gold-silver-ratio'],
  '404':['home','silver-squeeze-tracker','comex-silver-inventory','gold-silver-news'],
 }
 NAVJS='<script>(function(){var u=document.querySelector(".vp-pills");if(!u)return;var w=u.parentNode,a=u.querySelector("[aria-current]");if(a&&u.scrollWidth>u.clientWidth&&a.offsetLeft+a.offsetWidth>u.clientWidth-40)u.scrollLeft=a.offsetLeft-16;function f(){w.classList.toggle("at-end",u.scrollLeft+u.clientWidth>=u.scrollWidth-4)}u.addEventListener("scroll",f,{passive:true});addEventListener("resize",f);f()})()</script>'
