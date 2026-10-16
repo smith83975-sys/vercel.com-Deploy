@@ -8,6 +8,12 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Featured block: edit this list to swap what's promoted in the brief (empty list = no block).
 # "until" (YYYY-MM-DD, optional) hides an item after that date.
 FEATURED = [
+    {"label": "Today in metals",
+     "title": "Warsh keeps his cards close in Bangkok",
+     "blurb": "Fed Chair Kevin Warsh told the IMF's Kristalina Georgieva he doesn't \"prejudge meetings,\" giving no hint on the Oct 27-28 decision, while noting \"a synchronous tightening\" by central banks worldwide. The Bloomberg dollar index slipped 0.2% and gold rose 0.2% to about $4,180 after his remarks (Bloomberg); silver was $57.81, up 0.7%, at 04:33 GMT (Reuters).",
+     "url": "https://finance.yahoo.com/economy/policy/articles/feds-warsh-gives-no-hint-040051405.html",
+     "cta": "Read the Reuters report",
+     "until": "2026-10-16"},
     {"label": "New on VP",
      "title": "Silver manipulation history",
      "blurb": "What's proven, what isn't, with official sources: 12 dated cases from CFTC, DOJ and court records, sorted into proven, alleged and dismissed.",
