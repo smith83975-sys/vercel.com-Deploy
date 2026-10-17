@@ -19,6 +19,7 @@ PAGES=[
  ('m1-calc','/#m1-calc','M1 Calculator','Spot vs M1 calculator','🧮','What spot would be at any % M1 money backing'),
  ('what-is-money','/what-is-money','What is Money','What is money?','💵','Plain-English guide: barter to gold, silver and fiat'),
  ('wizard-of-oz-silver','/wizard-of-oz-silver','Wizard of Oz','The Wizard of Oz and silver','🌪️','The 1890s gold vs silver fight hidden in a fairy tale'),
+ ('bis-silver-tier1','/bis-silver-tier1','Silver vs Basel','Silver like gold under Basel?','🏦','What the Basel bank rules say about gold vs silver, sourced'),
  ('sponsor','/sponsor','Sponsor','Sponsor VaultPulse','🤝','Reach silver and gold stackers from $400/month'),
 ]
 EXTRA={'home':('/','Home','Home','🏠','The full VaultPulse dashboard'),
@@ -40,8 +41,9 @@ RELATED={
  'gold-silver-news':['silver-squeeze-tracker','comex-force-majeure','gold-silver-ratio','newsletter'],
  'flow':['silver-squeeze-tracker','comex-silver-inventory','comex-gold-inventory','comex-force-majeure'],
  'sponsor':['silver-squeeze-tracker','gold-silver-news','silver-manipulation-history','newsletter'],
- 'what-is-money':['m1-calc','paper-to-metal','silver-squeeze-tracker','comex-silver-inventory'],
- 'wizard-of-oz-silver':['what-is-money','gold-silver-ratio','silver-squeeze-tracker','comex-silver-inventory'],
+ 'what-is-money':['m1-calc','paper-to-metal','bis-silver-tier1','silver-squeeze-tracker'],
+ 'wizard-of-oz-silver':['what-is-money','bis-silver-tier1','gold-silver-ratio','silver-squeeze-tracker'],
+ 'bis-silver-tier1':['comex-silver-inventory','silver-manipulation-history','what-is-money','silver-squeeze-tracker'],
  'data-license':['silver-squeeze-tracker','comex-silver-inventory','paper-to-metal','gold-silver-ratio'],
  '404':['home','silver-squeeze-tracker','comex-silver-inventory','gold-silver-news'],
 }

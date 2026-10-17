@@ -151,7 +151,7 @@
     }
   },
   "paper_to_metal": {
-    "computed_at": "2026-10-16T10:47:37Z",
+    "computed_at": "2026-10-17T22:49:03Z",
     "computed_by": "scripts/compute_paper_to_metal.py",
     "formula": {
       "paper_oz": "open interest contracts x oz per contract (silver 5,000 oz; gold 100 oz)",
@@ -248,7 +248,7 @@
     }
   },
   "resource_backing": {
-    "computed_at": "2026-10-16T10:47:37Z",
+    "computed_at": "2026-10-17T22:49:03Z",
     "computed_by": "scripts/compute_resource_backing.py",
     "inputs_file": "data/resources.json",
     "hypothetical": true,
@@ -265,10 +265,10 @@
       "m2_usd": 23342800000000.0,
       "m2_month": "2026-08",
       "m2_source": "https://fred.stlouisfed.org/series/M2SL",
-      "debt_usd": 40329229827541.02,
-      "debt_date": "2026-10-14",
-      "debt_held_public_usd": 32483712019721.84,
-      "debt_intragov_usd": 7845517807819.18,
+      "debt_usd": 40388317675071.91,
+      "debt_date": "2026-10-15",
+      "debt_held_public_usd": 32538236547452.08,
+      "debt_intragov_usd": 7850081127619.83,
       "debt_label": "Total public debt outstanding",
       "debt_source": "https://fiscaldata.treasury.gov/datasets/debt-to-the-penny/",
       "debt_api": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_to_penny?sort=-record_date&page%5Bsize%5D=1",
@@ -305,7 +305,7 @@
         "series": "DCOILWTICO",
         "value": 101.91,
         "as_of": "2026-10-14",
-        "retrieved_at": "2026-10-16T10:47:37Z"
+        "retrieved_at": "2026-10-17T22:49:03Z"
       },
       "henry_hub": {
         "label": "Henry Hub natural gas spot",
@@ -315,7 +315,7 @@
         "series": "DHHNGSP",
         "value": 3.22,
         "as_of": "2026-10-14",
-        "retrieved_at": "2026-10-16T10:47:37Z"
+        "retrieved_at": "2026-10-17T22:49:03Z"
       },
       "copper": {
         "label": "Global copper price (monthly average)",
@@ -325,7 +325,7 @@
         "series": "PCOPPUSDM",
         "value": 13542.82086956522,
         "as_of": "2026-07-01",
-        "retrieved_at": "2026-10-16T10:47:37Z"
+        "retrieved_at": "2026-10-17T22:49:03Z"
       },
       "coal": {
         "label": "Average US coal sales price, all ranks (2024 annual)",
@@ -601,8 +601,8 @@
         "per_m2_dollar": 1.3822,
         "pct_of_m1": 161.4,
         "pct_of_m2": 138.2,
-        "pct_of_debt": 80.0,
-        "per_debt_dollar": 0.8
+        "pct_of_debt": 79.9,
+        "per_debt_dollar": 0.7989
       },
       "federal_only": {
         "value_usd": 2924193647307.0,
@@ -610,8 +610,8 @@
         "per_m2_dollar": 0.1253,
         "pct_of_m1": 14.6,
         "pct_of_m2": 12.5,
-        "pct_of_debt": 7.3,
-        "per_debt_dollar": 0.0725
+        "pct_of_debt": 7.2,
+        "per_debt_dollar": 0.0724
       },
       "silver_only": {
         "value_usd": 43776123375.0,

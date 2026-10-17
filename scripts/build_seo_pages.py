@@ -334,6 +334,49 @@ P['data-license']=page('data-license','Data Use &amp; License | VaultPulse',
 <section><h2>Contact</h2><p>Questions about reuse: <a href="mailto:hello@vaultpulsehq.com">hello@vaultpulsehq.com</a>.</p></section>
 {SRC(('Creative Commons: Attribution 4.0 International (CC BY 4.0)','https://creativecommons.org/licenses/by/4.0/'),('FRED: Legal notices and terms of use','https://fred.stlouisfed.org/legal/'))}''',
  [], crumb='Data use &amp; license')
+# --- Explainer: What if the BIS treated silver like gold? (rule text verified Oct 17, 2026) ---
+BU=dict(cap10='https://www.bis.org/committees/bcbs/basel-framework/standard/cap/10/inforce/2019-12-15/published/2020-06-05',
+ cre20='https://www.bis.org/committees/bcbs/basel-framework/standard/cre/20/inforce/2023-01-01/published/2025-06-10',
+ cre22='https://www.bis.org/committees/bcbs/basel-framework/standard/cre/22/inforce/2023-01-01/published/2020-11-26',
+ mar40='https://www.bis.org/committees/bcbs/basel-framework/standard/mar/40/inforce/2023-01-01/published/2024-07-05',
+ mar21='https://www.bis.org/committees/bcbs/basel-framework/standard/mar/21/inforce/2023-01-01/published/2026-03-23',
+ nsf30='https://www.bis.org/committees/bcbs/basel-framework/standard/nsf/30/inforce/2019-12-15/published/2024-07-05',
+ lcr30='https://www.bis.org/committees/bcbs/basel-framework/standard/lcr/30/inforce/2019-12-15/published/2020-06-05',
+ lbma='https://www.lbma.org.uk/articles/gold-and-hqla-correcting-misleading-online-information',
+ ecfr='https://www.ecfr.gov/current/title-12/section-217.32',
+ occ='https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-8.html',
+ wss='https://silverinstitute.org/wp-content/uploads/2026/04/World-Silver-Survey-2026.pdf')
+def AB(k,t): return f'<a href="{BU[k]}" rel="noopener">{t}</a>'
+_wss_ind,_wss_tot=657.4,1130.6
+BFAQ=[('Is silver a Tier 1 asset under Basel III?','No. Tier 1 is a category of bank capital, not a list of assets. The special treatment people mean is the 0% risk weight for allocated gold bullion in Basel CRE20.110, and silver is not on that list.'),
+ ('Is gold a high-quality liquid asset (HQLA)?','No. Gold is not listed among high-quality liquid assets in the Basel LCR standard (LCR30), and the LBMA has publicly called claims that it is being reclassified "not correct".'),
+ ('Is there a proposal to give silver gold\'s treatment?','We found no BIS or Basel Committee proposal, consultation or statement on changing silver\'s treatment as of Oct 17, 2026.')]
+P['bis-silver-tier1']=page('bis-silver-tier1','What If Basel Treated Silver Like Gold? Tier 1 Explained',
+ 'Is silver a &quot;Tier 1&quot; asset? What the Basel rules say about gold vs silver, what a change would touch, and the unknowns. Rule text cited.',
+ 'What if the BIS treated silver like gold?', f"""
+<section><p class="lede"><strong>Short answer:</strong> under the Basel bank rules, allocated physical gold gets a 0% risk weight, like cash. Silver does not. There is no known proposal to change that. Below are the rule texts, what a change would touch mechanically, and the big unknowns.</p><p class="note">Educational only. Not financial advice and not a price prediction. Rule text checked on bis.org Oct 17, 2026.</p></section>
+<section><h2>First, the "Tier 1" label</h2><p>"Tier 1" is internet shorthand. In the Basel rules, Tier 1 is a type of <strong>bank capital</strong> (common equity and similar funding), not a list of assets: "Tier 1 capital is the sum of Common Equity Tier 1 and Additional Tier 1 capital" ({AB('cap10','Basel CAP10.2')}). Gold's real status is a <strong>0% risk weight</strong> on allocated physical gold, so it is treated like cash.</p></section>
+<section><h2>What the rules say today</h2><ul>
+<li><strong>Credit risk (CRE20.110):</strong> "A 0% risk weight will apply to: cash owned and held at the bank or in transit; and gold bullion held at the bank or held in another bank on an allocated basis, to the extent the gold bullion assets are backed by gold bullion liabilities." Everything not on that list starts at 100%. Silver is not on the list ({AB('cre20','CRE20.110')}).</li>
+<li><strong>Collateral (CRE22.34, CRE22.49):</strong> "Gold" is named as eligible financial collateral, with a 20% supervisory haircut (the same as main-index equities). Silver is not named ({AB('cre22','CRE22')}).</li>
+<li><strong>Market risk, simplified approach (MAR40.53, .61, .63, .72&ndash;.73):</strong> gold is handled "as an FX position rather than a commodity" with an 8% charge. Silver falls under commodities ("precious metals, but excluding gold"): 15% of the net position plus 3% of gross positions ({AB('mar40','MAR40')}).</li>
+<li><strong>Market risk, main standardised approach (MAR21.82, Table 11):</strong> here gold and silver already <strong>share</strong> bucket 7, "Precious metals (including gold)," at a 20% risk weight ({AB('mar21','MAR21.82')}).</li>
+<li><strong>Liquidity:</strong> under the NSFR, "physical traded commodities, including gold" get an 85% required-stable-funding factor, so gold and silver are treated alike ({AB('nsf30','NSF30.31')}). Neither gold nor silver is listed as a high-quality liquid asset in the LCR standard ({AB('lcr30','LCR30')}). The LBMA calls claims that gold is becoming a "Tier 1 HQLA" "not correct" ({AB('lbma','LBMA')}).</li>
+<li><strong>United States:</strong> 12 CFR 217.32(l)(1) gives a 0% risk weight to gold bullion in the bank's own vaults, or in another depository institution's vaults on an allocated basis, "to the extent the gold bullion assets are offset by gold bullion liabilities." Silver is not mentioned ({AB('ecfr','eCFR')}).</li></ul></section>
+<section><h2>Is anyone proposing it?</h2><p>We found no BIS or Basel Committee proposal, consultation or statement about changing silver's treatment (searched Oct 17, 2026). The US agencies' March 2026 capital proposals ({AB('occ','OCC Bulletin 2026-8')}) contain no silver-specific change that we could find.</p></section>
+<section><h2>What a change would touch (mechanics only)</h2><ol>
+<li><strong>Cost to hold allocated physical silver:</strong> a 0% weight would remove the credit-risk capital charge on allocated silver, the way CRE20.110 does for gold.</li>
+<li><strong>Collateral:</strong> if silver were added next to gold in CRE22.34, banks could count it as eligible collateral, subject to a supervisory haircut.</li>
+<li><strong>Allocated vs paper:</strong> gold's 0% applies only to allocated bullion backed by bullion liabilities. A parallel rule for silver would favor allocated metal over unallocated accounts or futures exposure.</li>
+<li><strong>What it would not touch by itself:</strong> the NSFR 85% factor and HQLA status, which already treat gold and silver alike.</li></ol></section>
+<section><h2>The big unknowns</h2><ul>
+<li>How regulators would judge silver's market size, liquidity and price swings is unknown. One dated fact: silver is largely an industrial metal. Industrial use was {_wss_ind:,.1f}M oz of {_wss_tot:,.1f}M oz total 2025 demand, or {100*_wss_ind/_wss_tot:.1f}% ({AB('wss','Silver Institute, World Silver Survey 2026, Apr 15, 2026')}).</li>
+<li>Each country chooses how to apply Basel standards. In the US, the federal banking agencies write the rules.</li>
+<li>No one can say how many banks would actually choose to hold silver.</li></ul>
+{HL(f"Industrial share = industrial demand ÷ total demand = {_wss_ind:,.1f}M oz ÷ {_wss_tot:,.1f}M oz = {100*_wss_ind/_wss_tot:.1f}% (Silver Institute / Metals Focus, World Silver Survey 2026, calendar 2025 data, published Apr 15, 2026)")}</section>
+<section id="comex-data"><h2>VaultPulse data: COMEX silver (as of {rd})</h2><div class="card"><div>Registered <b>{s['registered_oz']:,} oz</b> · Eligible <b>{s['eligible_oz']:,} oz</b> · Total <b>{s['total_oz']:,} oz</b> · Registered share <b>{F['s_share']}</b></div><div class="cite">CME Group daily warehouse reports via <a href="https://thevaultreport.com/comex">The Vault Report</a>, report date {rd}. Eligible and total are rounded to 0.01M oz by the source.</div>{HL(CB.reg_share(L,'silver'))}</div><p>Live, dated vault numbers: <a href="/comex-silver-inventory">COMEX silver inventory</a> · <a href="/silver-squeeze-tracker">silver squeeze tracker</a>.</p></section>
+{SRC(('BIS Basel Framework, CAP10.2 (effective Dec 15, 2019; updated Jun 5, 2020)',BU['cap10']),('BIS Basel Framework, CRE20.110 (effective Jan 1, 2023; updated Jun 10, 2025)',BU['cre20']),('BIS Basel Framework, CRE22.34 and CRE22.49 (effective Jan 1, 2023; updated Nov 26, 2020)',BU['cre22']),('BIS Basel Framework, MAR40.53, .61, .63, .72, .73 (effective Jan 1, 2023; updated Jul 5, 2024)',BU['mar40']),('BIS Basel Framework, MAR21.82 Table 11 (effective Jan 1, 2023; updated Mar 23, 2026)',BU['mar21']),('BIS Basel Framework, NSF30.31 (effective Dec 15, 2019; updated Jul 5, 2024)',BU['nsf30']),('BIS Basel Framework, LCR30 (effective Dec 15, 2019; updated Jun 5, 2020)',BU['lcr30']),('LBMA, "Gold and HQLA: Correcting Misleading Online Information" (undated page, accessed Oct 17, 2026)',BU['lbma']),('eCFR, 12 CFR 217.32(l)(1) (current, accessed Oct 17, 2026)',BU['ecfr']),('OCC Bulletin 2026-8, proposal of Mar 19, 2026',BU['occ']),('Silver Institute, World Silver Survey 2026 (Apr 15, 2026)',BU['wss']),(f'COMEX warehouse stocks via The Vault Report (report date {rd})','https://thevaultreport.com/comex'))}""",
+ [], faq=BFAQ, crumb='Silver like gold under Basel?')
 import re
 # Hand-added blocks on silver-manipulation-history (GATA infographic, Follow-on-X banner) are not generated above;
 # carry them over from the current file so a rebuild never drops them.
@@ -359,5 +402,5 @@ for f,k in [('index.html','home'),('flow.html','flow'),('sponsor.html','sponsor'
     t=open(f).read(); open(f,'w').write(site_nav.apply_hand(t,k))
 open('404.html','w').write(site_nav.page404())
 SIL={'silver-squeeze-tracker','comex-silver-inventory','silver-premiums'}
-urls=['']+['silver-squeeze-tracker','comex-silver-inventory','silver-premiums','silver-manipulation-history','paper-to-metal','gold-silver-ratio','comex-gold-inventory','comex-force-majeure','gold-silver-news','flow','what-is-money','wizard-of-oz-silver','sponsor','data-license']
+urls=['']+['silver-squeeze-tracker','comex-silver-inventory','silver-premiums','silver-manipulation-history','paper-to-metal','gold-silver-ratio','comex-gold-inventory','comex-force-majeure','gold-silver-news','flow','what-is-money','wizard-of-oz-silver','bis-silver-tier1','sponsor','data-license']
 open('sitemap.xml','w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'<url><loc>{B}/{u}</loc><lastmod>{F["date"]}</lastmod><priority>{"1.0" if u in SIL or u=="" else "0.9" if u=="silver-manipulation-history" else "0.7"}</priority></url>\n' for u in urls)+'</urlset>\n')

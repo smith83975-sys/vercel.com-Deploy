@@ -6,7 +6,7 @@ FORECAST = __import__("re").compile(r"\b(forecast\w*|target\w*|predict\w*|outloo
 SITE = "https://vaultpulsehq.com"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Featured block: edit this list to swap what's promoted in the brief (empty list = no block).
-# "until" (YYYY-MM-DD, optional) hides an item after that date.
+# "until" (YYYY-MM-DD, optional) hides an item after that date; "from" (optional) hides it before that date.
 FEATURED = [
     {"label": "Today in metals",
      "title": "Warsh keeps his cards close in Bangkok",
@@ -20,10 +20,16 @@ FEATURED = [
      "url": SITE + "/silver-manipulation-history",
      "cta": "Read the case history",
      "until": "2026-11-15"},
+    {"label": "New on VP",
+     "title": "Is silver a \"Tier 1\" asset?",
+     "blurb": "No. \"Tier 1\" is a type of bank capital. Gold's actual status is a 0% risk weight on allocated bullion under Basel rule CRE20.110, and silver isn't on that list. We found no BIS proposal to change that (checked Oct 17, 2026). Our explainer covers what such a change would touch mechanically, along with the big unknowns, with rule text for every claim.",
+     "url": SITE + "/bis-silver-tier1",
+     "cta": "Read the explainer",
+     "from": "2026-10-18", "until": "2026-10-18"},
 ]
 def featured(now=None):
     d = (now or dt.datetime.now(dt.timezone.utc)).strftime("%Y-%m-%d")
-    return [f for f in FEATURED if not f.get("until") or d <= f["until"]]
+    return [f for f in FEATURED if (not f.get("until") or d <= f["until"]) and (not f.get("from") or d >= f["from"])]
 def get(url):
     req = urllib.request.Request(url, headers={"User-Agent": "VaultPulse-brief/1.0"})
     with urllib.request.urlopen(req, timeout=20) as r: return json.load(r)
