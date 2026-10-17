@@ -2,7 +2,7 @@
 """VaultPulse Daily Brief generator. Builds a markdown email draft; never sends.
 Usage: python3 scripts/daily_brief.py [out.md]"""
 import json, sys, os, urllib.request, datetime as dt
-FORECAST = __import__("re").compile(r"\b(forecast|target|predict|outlook|could (hit|reach)|will (hit|reach)|to (hit|reach)|expects?|sees?|projection|price call|by 20\d\d|next year)\b", 2)
+FORECAST = __import__("re").compile(r"\b(forecast\w*|target\w*|predict\w*|outlook\w*|could (hit|reach)|will (hit|reach)|to (hit|reach)|expects?|sees?|projection|price call|by 20\d\d|next year)\b", 2)
 SITE = "https://vaultpulsehq.com"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Featured block: edit this list to swap what's promoted in the brief (empty list = no block).
