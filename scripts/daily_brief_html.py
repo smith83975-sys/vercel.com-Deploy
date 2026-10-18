@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from daily_brief import get, spot, SITE, ROOT, featured
 import daily_brief
 
-FORECAST = re.compile(r"\b(forecast\w*|target\w*|predict\w*|outlook\w*|could (hit|reach)|will (hit|reach)|to (hit|reach)|expects?|sees?|projection|price call|by 20\d\d|next year)\b", re.I)
+FORECAST = re.compile(r"\b(forecast\w*|target\w*|predict\w*|outlook\w*|could (hit|reach)|will (hit|reach)|to (hit|reach)|expects?|sees?|projection|price call|by 20\d\d|next year|(under|over)valued|silver (generation|economy|anniversary|medal\w*|screen))\b", re.I)
 TIPS = ["\"Registered\" COMEX metal has a warrant attached and can be delivered against futures; \"eligible\" metal meets exchange standards but isn't warranted.",
         "One COMEX silver contract (SI) is 5,000 oz; one standard gold contract (GC) is 100 oz.",
         "The gold/silver ratio tells you how many ounces of silver equal one ounce of gold. Historically it has ranged from about 12 to above 100.",
