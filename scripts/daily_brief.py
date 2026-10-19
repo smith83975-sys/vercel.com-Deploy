@@ -8,6 +8,12 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Featured block: edit this list to swap what's promoted in the brief (empty list = no block).
 # "until" (YYYY-MM-DD, optional) hides an item after that date; "from" (optional) hides it before that date.
 FEATURED = [
+    {"label": "Notable move",
+     "title": "Gold deliveries jump to 552 contracts on Oct 16",
+     "blurb": "552 GC contracts × 100 oz = 55,200 oz (~1.72 t) delivered on Oct 16; that one day is 552 ÷ 1,767 = ~31% of calendar-October GC deliveries through Oct 16. JP Morgan Securities' customer account issued 543; biggest stoppers Barclays (customer) 200, JP Morgan (customer) 120, BMO (house) 100. Silver quiet at 18 SI contracts. Source: CME Group daily Issues and Stops report, Oct 16, 2026, via The Vault Report.",
+     "url": SITE + "/flow",
+     "cta": "See COMEX deliveries",
+     "from": "2026-10-19", "until": "2026-10-19"},
     {"label": "Today in metals",
      "title": "Warsh keeps his cards close in Bangkok",
      "blurb": "Fed Chair Kevin Warsh told the IMF's Kristalina Georgieva he doesn't \"prejudge meetings,\" giving no hint on the Oct 27-28 decision, while noting \"a synchronous tightening\" by central banks worldwide. The Bloomberg dollar index slipped 0.2% and gold rose 0.2% to about $4,180 after his remarks (Bloomberg); silver was $57.81, up 0.7%, at 04:33 GMT (Reuters).",
