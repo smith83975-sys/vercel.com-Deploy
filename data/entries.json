@@ -1,7 +1,19 @@
 {
- "updated": "2026-10-15",
+ "updated": "2026-10-19",
  "archive_after_days": 10,
  "entries": [
+  {
+   "id": "gc-2026-10-16-notices",
+   "data_date": "2026-10-16",
+   "metal": "gold",
+   "type": "deliveries",
+   "headline": "Gold deliveries jump to 552 contracts on Oct 16",
+   "moved": "552 October gold (GC, 100 oz) contracts were delivered in the Oct 16 CME report. JP Morgan Securities' customer account issued 543 of them; the largest takers were Barclays (customer) 200, JP Morgan Securities (customer) 120 and BMO Capital Markets (house) 100.",
+   "amount": "About 55,200 oz (552 \u00d7 100 oz), roughly 1.72 tonnes. That is about 31% of the 1,767 GC contracts delivered in calendar October through Oct 16 (552 \u00f7 1,767). The other 1,215 contracts were spread over the 11 October sessions from Oct 1 to Oct 15, about 110 a day on average.",
+   "context": "The Oct 15 report had no GC notices, so this is a jump after a quiet stretch. The CME October-contract cumulative, which also counts the Sep 29\u201330 first-notice days, is now 13,072 contracts. Silver was quiet the same day at 18 SI contracts (about 90,000 oz). Registered gold was 14.82M oz as of Oct 15; the next warehouse report is due Mon Oct 19, evening ET.",
+   "source": "The Vault Report (CME Group daily Issues and Stops report, Oct 16, 2026)",
+   "source_url": "https://thevaultreport.com/comex/deliveries"
+  },
   {
    "id": "si-2026-10-13-eligible",
    "data_date": "2026-10-13",

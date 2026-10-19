@@ -121,10 +121,10 @@
     ]
   },
   "spot_last_known": {
-    "gold_usd": 4172.899902,
-    "silver_usd": 57.661999,
+    "gold_usd": 4170.799805,
+    "silver_usd": 57.620998,
     "ratio": 72.4,
-    "as_of": "2026-10-19T09:07:50Z",
+    "as_of": "2026-10-19T09:28:20Z",
     "source": "gold-api.com",
     "source_url": "https://gold-api.com"
   },
