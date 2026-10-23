@@ -1,671 +1,671 @@
 {
-  "generated_at": "2026-10-23T09:20:00Z",
-  "comex": {
-    "report_date": "2026-10-21",
-    "source": "CME Group daily COMEX warehouse stock reports, via thevaultreport.com/comex (data as of Oct 21, 2026; accessed Oct 23, 2026). Direct CME .xls download was blocked (HTTP 403) from our server. VaultReport lists the next warehouse report as Fri Oct 23, evening ET.",
-    "source_url": "https://thevaultreport.com/comex",
-    "silver": {
-      "registered_oz": 100699420,
-      "eligible_oz": 236900000,
-      "total_oz": 337600000,
-      "registered_change_oz": -2633029,
-      "change_vs": "2026-10-20",
-      "precision_note": "Registered is exact (100,699,420 oz per VaultReport, down 2,633,029 oz from 103,332,449 on Oct 20; VaultReport shows -2.63M oz); eligible/total rounded to 0.01M oz by source. Eligible rose 234.33M to 236.90M, total 337.67M to 337.60M.",
-      "history_registered_moz": {
-        "2026-09-14": 96.45,
-        "2026-09-15": 97.17,
-        "2026-09-16": 97.29,
-        "2026-09-17": 97.29,
-        "2026-09-18": 97.29,
-        "2026-09-21": 97.88,
-        "2026-09-22": 95.49,
-        "2026-09-23": 96.63,
-        "2026-09-24": 96.28,
-        "2026-09-25": 96.28,
-        "2026-09-28": 99.2,
-        "2026-09-29": 101.56,
-        "2026-09-30": 101.38,
-        "2026-10-01": 101.1,
-        "2026-10-02": 101.68,
-        "2026-10-05": 102.29,
-        "2026-10-06": 102.82,
-        "2026-10-07": 102.22,
-        "2026-10-08": 102.81,
-        "2026-10-09": 102.76,
-        "2026-10-12": 103.35,
-        "2026-10-13": 103.09,
-        "2026-10-14": 103.15,
-        "2026-10-15": 103.12,
-        "2026-10-16": 103.12,
-        "2026-10-19": 104.24,
-        "2026-10-20": 103.33,
-        "2026-10-21": 100.7
-      },
-      "registered_30d_change_pct": 2.9
+ "generated_at": "2026-10-23T09:20:00Z",
+ "comex": {
+  "report_date": "2026-10-21",
+  "source": "CME Group daily COMEX warehouse stock reports, via thevaultreport.com/comex (data as of Oct 21, 2026; accessed Oct 23, 2026). Direct CME .xls download was blocked (HTTP 403) from our server. VaultReport lists the next warehouse report as Fri Oct 23, evening ET.",
+  "source_url": "https://thevaultreport.com/comex",
+  "silver": {
+   "registered_oz": 100699420,
+   "eligible_oz": 236900000,
+   "total_oz": 337600000,
+   "registered_change_oz": -2633029,
+   "change_vs": "2026-10-20",
+   "precision_note": "Registered is exact (100,699,420 oz per VaultReport, down 2,633,029 oz from 103,332,449 on Oct 20; VaultReport shows -2.63M oz); eligible/total rounded to 0.01M oz by source. Eligible rose 234.33M to 236.90M, total 337.67M to 337.60M.",
+   "history_registered_moz": {
+    "2026-09-14": 96.45,
+    "2026-09-15": 97.17,
+    "2026-09-16": 97.29,
+    "2026-09-17": 97.29,
+    "2026-09-18": 97.29,
+    "2026-09-21": 97.88,
+    "2026-09-22": 95.49,
+    "2026-09-23": 96.63,
+    "2026-09-24": 96.28,
+    "2026-09-25": 96.28,
+    "2026-09-28": 99.2,
+    "2026-09-29": 101.56,
+    "2026-09-30": 101.38,
+    "2026-10-01": 101.1,
+    "2026-10-02": 101.68,
+    "2026-10-05": 102.29,
+    "2026-10-06": 102.82,
+    "2026-10-07": 102.22,
+    "2026-10-08": 102.81,
+    "2026-10-09": 102.76,
+    "2026-10-12": 103.35,
+    "2026-10-13": 103.09,
+    "2026-10-14": 103.15,
+    "2026-10-15": 103.12,
+    "2026-10-16": 103.12,
+    "2026-10-19": 104.24,
+    "2026-10-20": 103.33,
+    "2026-10-21": 100.7
+   },
+   "registered_30d_change_pct": 2.9
+  },
+  "gold": {
+   "registered_oz": 14820000,
+   "eligible_oz": 8530000,
+   "total_oz": 23340000,
+   "registered_change_oz": 0,
+   "change_vs": "2026-10-20",
+   "precision_note": "All gold figures rounded to 0.01M oz by source; registered 14.82M on both Oct 20 and Oct 21, so the day change rounds to 0 (approximate). Eligible 8.59M to 8.53M, total 23.40M to 23.34M.",
+   "registered_30d_change_pct": -2.4,
+   "history_registered_moz": null
+  }
+ },
+ "open_interest": {
+  "source": "CME Group Daily Bulletin, Section 02B Exchange Summary Volume & Open Interest (Metals), futures open interest.",
+  "source_url": "https://www.cmegroup.com/daily_bulletin/current/Section02B_Summary_Volume_And_Open_Interest_Metals_Futures_And_Options.pdf",
+  "fetched_at": "2026-10-14",
+  "trade_date": null,
+  "trade_date_note": "Trade date not shown in the extract we kept; the 2026-10-15, 2026-10-16, 2026-10-19, 2026-10-20, 2026-10-21, 2026-10-22 and 2026-10-23 refreshes got HTTP 403 from CME, so these are the 2026-10-14 fetch. scripts/parse_cme_oi.py records the bulletin trade date when it can parse one.",
+  "silver": {
+   "contracts": 104389,
+   "oz_per_contract": 5000
+  },
+  "gold": {
+   "contracts": 415134,
+   "oz_per_contract": 100
+  }
+ },
+ "premiums": {
+  "checked_at": "2026-10-23",
+  "source": "bullion-compare.com (hourly dealer comparison; premium measured vs its independent spot floor)",
+  "items": [
+   {
+    "product": "1 oz American Silver Eagle",
+    "metal": "silver",
+    "spot": 53.84,
+    "dealers": [
+     {
+      "dealer": "JM Bullion",
+      "price": 70.71
+     },
+     {
+      "dealer": "SD Bullion",
+      "price": 59.58
+     },
+     {
+      "dealer": "APMEX",
+      "price": 70.4
+     }
+    ],
+    "url": "https://bullion-compare.com/prices/silver-eagle-1oz"
+   },
+   {
+    "product": "1 oz American Gold Eagle",
+    "metal": "gold",
+    "spot": 4023.12,
+    "dealers": [
+     {
+      "dealer": "Sell Your Metals",
+      "price": 4107.23
+     },
+     {
+      "dealer": "SD Bullion",
+      "price": 4118.2
+     },
+     {
+      "dealer": "APMEX",
+      "price": 4259.18
+     }
+    ],
+    "url": "https://bullion-compare.com/prices/gold-eagle-1oz"
+   },
+   {
+    "product": "1 oz generic silver round",
+    "metal": "silver",
+    "spot": null,
+    "dealers": [],
+    "pending": "Not yet verified from a dealer page."
+   }
+  ]
+ },
+ "spot_last_known": {
+  "gold_usd": 4027.6,
+  "silver_usd": 54.09,
+  "ratio": 74.5,
+  "as_of": "2026-10-23T09:29:43Z",
+  "source": "gold-api.com",
+  "source_url": "https://gold-api.com"
+ },
+ "live_paper": {
+  "m2": {
+   "value_usd": 23342800000000.0,
+   "month": "2026-08",
+   "series": "M2SL (seasonally adjusted, monthly)",
+   "source": "https://fred.stlouisfed.org/series/M2SL",
+   "retrieved_at": "2026-10-22T09:18:00Z"
+  },
+  "gold_reserve": {
+   "troy_oz": 261498926.241,
+   "as_of": "2026-09-30",
+   "source": "https://fiscaldata.treasury.gov/datasets/status-report-government-gold-reserve/",
+   "retrieved_at": "2026-10-16T09:31:00Z"
+  },
+  "silver_basis": {
+   "source_file": "data/latest.json (comex.silver.total_oz)",
+   "definition": "No official US silver reserve; implied silver = M2 / TOTAL COMEX silver oz (registered + eligible). M2 / registered-only is shown only as a labelled secondary figure (paper_to_metal.money_supply)."
+  },
+  "m1": {
+   "value_usd": 19991100000000.0,
+   "month": "2026-08",
+   "series": "M1SL (seasonally adjusted, monthly)",
+   "source": "https://fred.stlouisfed.org/series/M1SL",
+   "retrieved_at": "2026-10-22T09:18:00Z"
+  }
+ },
+ "paper_to_metal": {
+  "computed_at": "2026-10-23T09:17:39Z",
+  "computed_by": "scripts/compute_paper_to_metal.py",
+  "formula": {
+   "paper_oz": "open interest contracts x oz per contract (silver 5,000 oz; gold 100 oz)",
+   "ratio_vs_total": "paper oz / total COMEX vault oz (registered + eligible)  [headline]",
+   "ratio_vs_registered": "paper oz / registered oz  [secondary]",
+   "coverage_total_pct": "total vault oz / paper oz x 100",
+   "implied_m2": "M2 / metal oz (gold: US Treasury gold reserve; silver: total COMEX silver)",
+   "m2_paper_ratio": "implied price / spot (live in browser; stored value uses spot_last_known)"
+  },
+  "vault": {
+   "report_date": "2026-10-21",
+   "report_date_label": "Oct 21, 2026",
+   "source": "CME Group daily COMEX warehouse stock reports, via thevaultreport.com/comex (data as of Oct 21, 2026; accessed Oct 23, 2026). Direct CME .xls download was blocked (HTTP 403) from our server. VaultReport lists the next warehouse report as Fri Oct 23, evening ET.",
+   "sources": [
+    {
+     "name": "The Vault Report (republishes CME warehouse stocks)",
+     "url": "https://thevaultreport.com/comex"
     },
-    "gold": {
-      "registered_oz": 14820000,
-      "eligible_oz": 8530000,
-      "total_oz": 23340000,
-      "registered_change_oz": 0,
-      "change_vs": "2026-10-20",
-      "precision_note": "All gold figures rounded to 0.01M oz by source; registered 14.82M on both Oct 20 and Oct 21, so the day change rounds to 0 (approximate). Eligible 8.59M to 8.53M, total 23.40M to 23.34M.",
-      "registered_30d_change_pct": -2.4,
-      "history_registered_moz": null
+    {
+     "name": "MetalCharts COMEX silver (cross-check)",
+     "url": "https://metalcharts.org/comex/silver"
+    },
+    {
+     "name": "MetalCharts COMEX gold (cross-check)",
+     "url": "https://metalcharts.org/comex/gold"
+    },
+    {
+     "name": "CME Group daily warehouse stock reports (original)",
+     "url": "https://www.cmegroup.com/clearing/operations-and-deliveries/nymex-delivery-notices.html"
     }
+   ]
   },
   "open_interest": {
-    "source": "CME Group Daily Bulletin, Section 02B Exchange Summary Volume & Open Interest (Metals), futures open interest.",
-    "source_url": "https://www.cmegroup.com/daily_bulletin/current/Section02B_Summary_Volume_And_Open_Interest_Metals_Futures_And_Options.pdf",
-    "fetched_at": "2026-10-14",
-    "trade_date": null,
-    "trade_date_note": "Trade date not shown in the extract we kept; the 2026-10-15, 2026-10-16, 2026-10-19, 2026-10-20, 2026-10-21, 2026-10-22 and 2026-10-23 refreshes got HTTP 403 from CME, so these are the 2026-10-14 fetch. scripts/parse_cme_oi.py records the bulletin trade date when it can parse one.",
-    "silver": {
-      "contracts": 104389,
-      "oz_per_contract": 5000
-    },
-    "gold": {
-      "contracts": 415134,
-      "oz_per_contract": 100
-    }
+   "trade_date": null,
+   "fetched_at": "2026-10-14",
+   "source": "CME Group Daily Bulletin, Section 02B Exchange Summary Volume & Open Interest (Metals), futures open interest.",
+   "source_url": "https://www.cmegroup.com/daily_bulletin/current/Section02B_Summary_Volume_And_Open_Interest_Metals_Futures_And_Options.pdf",
+   "as_of_label": "open interest as of CME bulletin fetched Oct 14, 2026, trade date not shown in extract"
   },
-  "premiums": {
-    "checked_at": "2026-10-23",
-    "source": "bullion-compare.com (hourly dealer comparison; premium measured vs its independent spot floor)",
-    "items": [
-      {
-        "product": "1 oz American Silver Eagle",
-        "metal": "silver",
-        "spot": 53.84,
-        "dealers": [
-          {
-            "dealer": "JM Bullion",
-            "price": 70.71
-          },
-          {
-            "dealer": "SD Bullion",
-            "price": 59.58
-          },
-          {
-            "dealer": "APMEX",
-            "price": 70.4
-          }
-        ],
-        "url": "https://bullion-compare.com/prices/silver-eagle-1oz"
-      },
-      {
-        "product": "1 oz American Gold Eagle",
-        "metal": "gold",
-        "spot": 4023.12,
-        "dealers": [
-          {
-            "dealer": "Sell Your Metals",
-            "price": 4107.23
-          },
-          {
-            "dealer": "SD Bullion",
-            "price": 4118.2
-          },
-          {
-            "dealer": "APMEX",
-            "price": 4259.18
-          }
-        ],
-        "url": "https://bullion-compare.com/prices/gold-eagle-1oz"
-      },
-      {
-        "product": "1 oz generic silver round",
-        "metal": "silver",
-        "spot": null,
-        "dealers": [],
-        "pending": "Not yet verified from a dealer page."
-      }
-    ]
+  "spot": {
+   "gold_usd": 4026.4,
+   "silver_usd": 54.08,
+   "as_of": "2026-10-23T09:16:43Z",
+   "source": "gold-api.com",
+   "source_url": "https://gold-api.com"
   },
-  "spot_last_known": {
-    "gold_usd": 4026.4,
-    "silver_usd": 54.08,
-    "ratio": 74.5,
-    "as_of": "2026-10-23T09:16:43Z",
-    "source": "gold-api.com",
-    "source_url": "https://gold-api.com"
+  "silver": {
+   "oi_contracts": 104389,
+   "oz_per_contract": 5000,
+   "paper_oz": 521945000,
+   "registered_oz": 100699420,
+   "eligible_oz": 236900000,
+   "total_oz": 337600000,
+   "ratio_vs_total": 1.546,
+   "ratio_vs_registered_secondary": 5.1832,
+   "coverage_total_pct": 64.68,
+   "coverage_registered_pct_secondary": 19.29,
+   "vault_as_of": "2026-10-21",
+   "oi_as_of_label": "open interest as of CME bulletin fetched Oct 14, 2026, trade date not shown in extract"
   },
-  "live_paper": {
-    "m2": {
-      "value_usd": 23342800000000.0,
-      "month": "2026-08",
-      "series": "M2SL (seasonally adjusted, monthly)",
-      "source": "https://fred.stlouisfed.org/series/M2SL",
-      "retrieved_at": "2026-10-22T09:18:00Z"
-    },
-    "gold_reserve": {
-      "troy_oz": 261498926.241,
-      "as_of": "2026-09-30",
-      "source": "https://fiscaldata.treasury.gov/datasets/status-report-government-gold-reserve/",
-      "retrieved_at": "2026-10-16T09:31:00Z"
-    },
-    "silver_basis": {
-      "source_file": "data/latest.json (comex.silver.total_oz)",
-      "definition": "No official US silver reserve; implied silver = M2 / TOTAL COMEX silver oz (registered + eligible). M2 / registered-only is shown only as a labelled secondary figure (paper_to_metal.money_supply)."
-    },
-    "m1": {
-      "value_usd": 19991100000000.0,
-      "month": "2026-08",
-      "series": "M1SL (seasonally adjusted, monthly)",
-      "source": "https://fred.stlouisfed.org/series/M1SL",
-      "retrieved_at": "2026-10-22T09:18:00Z"
-    }
+  "gold": {
+   "oi_contracts": 415134,
+   "oz_per_contract": 100,
+   "paper_oz": 41513400,
+   "registered_oz": 14820000,
+   "eligible_oz": 8530000,
+   "total_oz": 23340000,
+   "ratio_vs_total": 1.7786,
+   "ratio_vs_registered_secondary": 2.8012,
+   "coverage_total_pct": 56.22,
+   "coverage_registered_pct_secondary": 35.7,
+   "vault_as_of": "2026-10-21",
+   "oi_as_of_label": "open interest as of CME bulletin fetched Oct 14, 2026, trade date not shown in extract"
   },
-  "paper_to_metal": {
-    "computed_at": "2026-10-23T09:17:39Z",
-    "computed_by": "scripts/compute_paper_to_metal.py",
-    "formula": {
-      "paper_oz": "open interest contracts x oz per contract (silver 5,000 oz; gold 100 oz)",
-      "ratio_vs_total": "paper oz / total COMEX vault oz (registered + eligible)  [headline]",
-      "ratio_vs_registered": "paper oz / registered oz  [secondary]",
-      "coverage_total_pct": "total vault oz / paper oz x 100",
-      "implied_m2": "M2 / metal oz (gold: US Treasury gold reserve; silver: total COMEX silver)",
-      "m2_paper_ratio": "implied price / spot (live in browser; stored value uses spot_last_known)"
-    },
-    "vault": {
-      "report_date": "2026-10-21",
-      "report_date_label": "Oct 21, 2026",
-      "source": "CME Group daily COMEX warehouse stock reports, via thevaultreport.com/comex (data as of Oct 21, 2026; accessed Oct 23, 2026). Direct CME .xls download was blocked (HTTP 403) from our server. VaultReport lists the next warehouse report as Fri Oct 23, evening ET.",
-      "sources": [
-        {
-          "name": "The Vault Report (republishes CME warehouse stocks)",
-          "url": "https://thevaultreport.com/comex"
-        },
-        {
-          "name": "MetalCharts COMEX silver (cross-check)",
-          "url": "https://metalcharts.org/comex/silver"
-        },
-        {
-          "name": "MetalCharts COMEX gold (cross-check)",
-          "url": "https://metalcharts.org/comex/gold"
-        },
-        {
-          "name": "CME Group daily warehouse stock reports (original)",
-          "url": "https://www.cmegroup.com/clearing/operations-and-deliveries/nymex-delivery-notices.html"
-        }
-      ]
-    },
-    "open_interest": {
-      "trade_date": null,
-      "fetched_at": "2026-10-14",
-      "source": "CME Group Daily Bulletin, Section 02B Exchange Summary Volume & Open Interest (Metals), futures open interest.",
-      "source_url": "https://www.cmegroup.com/daily_bulletin/current/Section02B_Summary_Volume_And_Open_Interest_Metals_Futures_And_Options.pdf",
-      "as_of_label": "open interest as of CME bulletin fetched Oct 14, 2026, trade date not shown in extract"
-    },
-    "spot": {
-      "gold_usd": 4026.4,
-      "silver_usd": 54.08,
-      "as_of": "2026-10-23T09:16:43Z",
-      "source": "gold-api.com",
-      "source_url": "https://gold-api.com"
-    },
-    "silver": {
-      "oi_contracts": 104389,
-      "oz_per_contract": 5000,
-      "paper_oz": 521945000,
-      "registered_oz": 100699420,
-      "eligible_oz": 236900000,
-      "total_oz": 337600000,
-      "ratio_vs_total": 1.546,
-      "ratio_vs_registered_secondary": 5.1832,
-      "coverage_total_pct": 64.68,
-      "coverage_registered_pct_secondary": 19.29,
-      "vault_as_of": "2026-10-21",
-      "oi_as_of_label": "open interest as of CME bulletin fetched Oct 14, 2026, trade date not shown in extract"
-    },
-    "gold": {
-      "oi_contracts": 415134,
-      "oz_per_contract": 100,
-      "paper_oz": 41513400,
-      "registered_oz": 14820000,
-      "eligible_oz": 8530000,
-      "total_oz": 23340000,
-      "ratio_vs_total": 1.7786,
-      "ratio_vs_registered_secondary": 2.8012,
-      "coverage_total_pct": 56.22,
-      "coverage_registered_pct_secondary": 35.7,
-      "vault_as_of": "2026-10-21",
-      "oi_as_of_label": "open interest as of CME bulletin fetched Oct 14, 2026, trade date not shown in extract"
-    },
-    "money_supply": {
-      "m2_usd": 23342800000000.0,
-      "m2_month": "2026-08",
-      "m2_source": "https://fred.stlouisfed.org/series/M2SL",
-      "m1_usd": 19991100000000.0,
-      "m1_month": "2026-08",
-      "m1_source": "https://fred.stlouisfed.org/series/M1SL",
-      "gold_reserve_oz": 261498926.241,
-      "gold_reserve_as_of": "2026-09-30",
-      "gold_reserve_source": "https://fiscaldata.treasury.gov/datasets/status-report-government-gold-reserve/",
-      "silver_basis": "total COMEX silver (registered + eligible)",
-      "silver_oz": 337600000,
-      "silver_as_of": "2026-10-21",
-      "implied_gold_m2_usd_per_oz": 89265.38,
-      "implied_silver_m2_usd_per_oz": 69143.36,
-      "implied_silver_m2_vs_registered_secondary": 231806.7,
-      "m2_paper_ratio_gold_at_stored_spot": 22.17,
-      "m2_paper_ratio_silver_at_stored_spot": 1278.5,
-      "stored_spot_as_of": "2026-10-23T09:16:43Z"
-    }
-  },
-  "resource_backing": {
-    "computed_at": "2026-10-23T09:17:39Z",
-    "computed_by": "scripts/compute_resource_backing.py",
-    "inputs_file": "data/resources.json",
-    "hypothetical": true,
-    "disclaimer": "HYPOTHETICAL. Resources in the ground are not liquid, many are privately owned, and this is an illustration, not a valuation or prediction. Not financial advice.",
-    "formula": {
-      "value": "quantity x current price (gas: dry Bcf x 1,000,000 Mcf x 1.036 MMBtu/Mcf x Henry Hub; metals: metric tons x 32,150.7 troy oz x spot)",
-      "land": "published BEA working-paper estimate, 2009 dollars, not updated",
-      "coverage": "selected resource value / money supply (M1 or M2) or total public debt x 100; per dollar = selected value / that total"
-    },
-    "money_supply": {
-      "m1_usd": 19991100000000.0,
-      "m1_month": "2026-08",
-      "m1_source": "https://fred.stlouisfed.org/series/M1SL",
-      "m2_usd": 23342800000000.0,
-      "m2_month": "2026-08",
-      "m2_source": "https://fred.stlouisfed.org/series/M2SL",
-      "debt_usd": 40413639012305.97,
-      "debt_date": "2026-10-21",
-      "debt_held_public_usd": 32566346587338.02,
-      "debt_intragov_usd": 7847292424967.95,
-      "debt_label": "Total public debt outstanding",
-      "debt_source": "https://fiscaldata.treasury.gov/datasets/debt-to-the-penny/",
-      "debt_api": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_to_penny?sort=-record_date&page%5Bsize%5D=1",
-      "debt_source_name": "US Treasury, Debt to the Penny (FiscalData)",
-      "debt_stale_note": null
-    },
-    "revaluation_note": {
-      "text": "Comparing the debt with the country's assets mirrors the 'asset revaluation' idea discussed on usdebtclock.org. Shown here only as arithmetic: VaultPulse does not endorse it or predict it will happen.",
-      "url": "https://www.usdebtclock.org/",
-      "name": "usdebtclock.org"
-    },
-    "prices": {
-      "spot_silver": {
-        "label": "Silver spot",
-        "unit": "$/troy oz",
-        "value": 54.08,
-        "as_of": "2026-10-23T09:16:43Z",
-        "source_name": "gold-api.com (stored; live in browser)",
-        "source_url": "https://gold-api.com"
-      },
-      "spot_gold": {
-        "label": "Gold spot",
-        "unit": "$/troy oz",
-        "value": 4026.4,
-        "as_of": "2026-10-23T09:16:43Z",
-        "source_name": "gold-api.com (stored; live in browser)",
-        "source_url": "https://gold-api.com"
-      },
-      "wti": {
-        "label": "WTI crude spot (Cushing)",
-        "unit": "$/barrel",
-        "source_name": "FRED DCOILWTICO (EIA data)",
-        "source_url": "https://fred.stlouisfed.org/series/DCOILWTICO",
-        "series": "DCOILWTICO",
-        "value": 107.89,
-        "as_of": "2026-10-20",
-        "retrieved_at": "2026-10-23T09:17:39Z"
-      },
-      "henry_hub": {
-        "label": "Henry Hub natural gas spot",
-        "unit": "$/MMBtu",
-        "source_name": "FRED DHHNGSP (EIA data)",
-        "source_url": "https://fred.stlouisfed.org/series/DHHNGSP",
-        "series": "DHHNGSP",
-        "value": 3.1,
-        "as_of": "2026-10-20",
-        "retrieved_at": "2026-10-23T09:17:39Z"
-      },
-      "copper": {
-        "label": "Global copper price (monthly average)",
-        "unit": "$/metric ton",
-        "source_name": "FRED PCOPPUSDM (IMF data)",
-        "source_url": "https://fred.stlouisfed.org/series/PCOPPUSDM",
-        "series": "PCOPPUSDM",
-        "value": 14473.05590909091,
-        "as_of": "2026-09-01",
-        "retrieved_at": "2026-10-23T09:17:39Z"
-      },
-      "coal": {
-        "label": "Average US coal sales price, all ranks (2024 annual)",
-        "unit": "$/short ton",
-        "source_name": "EIA Annual Coal Report 2024, Table 31",
-        "source_url": "https://www.eia.gov/coal/annual/pdf/table31.pdf",
-        "value": 52.47,
-        "as_of": "2024"
-      }
-    },
-    "items": [
-      {
-        "id": "silver_mint",
-        "group": "silver",
-        "name": "US Treasury silver (US Mint stocks)",
-        "ownership": "federal",
-        "quantity_unit": "metric tons",
-        "source_name": "USGS Mineral Commodity Summaries 2026, Silver (Stocks, Treasury; source: US Mint, working and deep-storage stocks)",
-        "source_url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-silver.pdf",
-        "note": "Working stock for coin programs, not a monetary reserve. The US holds no official silver reserve.",
-        "default_on": true,
-        "quantity": 498,
-        "as_of": "2025 year-end (estimate)",
-        "base_quantity": 16011048.6,
-        "base_unit": "troy oz",
-        "price_key": "spot_silver",
-        "price": 54.08,
-        "price_unit": "$/troy oz",
-        "price_as_of": "2026-10-23T09:16:43Z",
-        "conversion": null,
-        "value_usd": 865877508.0,
-        "value_basis": "quantity x price"
-      },
-      {
-        "id": "silver_ground",
-        "group": "silver",
-        "name": "US silver reserves in the ground",
-        "ownership": "national",
-        "quantity_unit": "metric tons",
-        "source_name": "USGS Mineral Commodity Summaries 2026, Silver (World Mine Production and Reserves)",
-        "source_url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-silver.pdf",
-        "note": "Unmined, mostly owned by mining companies or private/state mineral owners. Valued at spot before any mining cost.",
-        "default_on": true,
-        "quantity": 23000,
-        "as_of": "2025 (published Feb 2026)",
-        "base_quantity": 739466100.0,
-        "base_unit": "troy oz",
-        "price_key": "spot_silver",
-        "price": 54.08,
-        "price_unit": "$/troy oz",
-        "price_as_of": "2026-10-23T09:16:43Z",
-        "conversion": null,
-        "value_usd": 39990326688.0,
-        "value_basis": "quantity x price"
-      },
-      {
-        "id": "silver_comex",
-        "group": "silver",
-        "name": "COMEX vault silver (registered + eligible)",
-        "ownership": "private",
-        "quantity_unit": "troy oz",
-        "source_name": "CME warehouse reports via The Vault Report",
-        "source_url": "https://thevaultreport.com/comex",
-        "note": "Privately owned metal stored in US vaults (some by foreign owners). Off by default.",
-        "default_on": false,
-        "quantity": 337600000,
-        "as_of": "2026-10-21",
-        "base_quantity": 337600000,
-        "base_unit": "troy oz",
-        "price_key": "spot_silver",
-        "price": 54.08,
-        "price_unit": "$/troy oz",
-        "price_as_of": "2026-10-23T09:16:43Z",
-        "conversion": null,
-        "value_usd": 18257408000.0,
-        "value_basis": "quantity x price"
-      },
-      {
-        "id": "gold_reserve",
-        "group": "gold",
-        "name": "US official gold reserve",
-        "ownership": "federal",
-        "quantity_unit": "troy oz",
-        "source_name": "US Treasury: Status Report of U.S. Government Gold Reserve",
-        "source_url": "https://fiscaldata.treasury.gov/datasets/status-report-government-gold-reserve/",
-        "note": "Official statutory value is $42.22/oz; valued here at market spot.",
-        "default_on": true,
-        "quantity": 261498926.241,
-        "as_of": "2026-09-30",
-        "base_quantity": 261498926.241,
-        "base_unit": "troy oz",
-        "price_key": "spot_gold",
-        "price": 4026.4,
-        "price_unit": "$/troy oz",
-        "price_as_of": "2026-10-23T09:16:43Z",
-        "conversion": null,
-        "value_usd": 1052899276617.0,
-        "value_basis": "quantity x price"
-      },
-      {
-        "id": "gold_ground",
-        "group": "gold",
-        "name": "US gold reserves in the ground",
-        "ownership": "national",
-        "quantity_unit": "metric tons",
-        "source_name": "USGS Mineral Commodity Summaries 2026, Gold (World Mine Production and Reserves)",
-        "source_url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-gold.pdf",
-        "note": "Unmined, mostly privately held mining claims. Valued at spot before any mining cost.",
-        "default_on": true,
-        "quantity": 3000,
-        "as_of": "2025 (published Feb 2026)",
-        "base_quantity": 96452100.0,
-        "base_unit": "troy oz",
-        "price_key": "spot_gold",
-        "price": 4026.4,
-        "price_unit": "$/troy oz",
-        "price_as_of": "2026-10-23T09:16:43Z",
-        "conversion": null,
-        "value_usd": 388354735440.0,
-        "value_basis": "quantity x price"
-      },
-      {
-        "id": "spr",
-        "group": "oil",
-        "name": "Strategic Petroleum Reserve crude",
-        "ownership": "federal",
-        "quantity_unit": "barrels",
-        "source_name": "US DOE: SPR Quick Facts (inventory by site)",
-        "source_url": "https://www.energy.gov/hgeo/opr/spr-quick-facts",
-        "note": "Owned by the US Department of Energy. Not part of EIA proved reserves.",
-        "default_on": true,
-        "quantity": 283000000,
-        "as_of": "2026-09-30",
-        "base_quantity": 283000000,
-        "base_unit": "barrels",
-        "price_key": "wti",
-        "price": 107.89,
-        "price_unit": "$/barrel",
-        "price_as_of": "2026-10-20",
-        "conversion": null,
-        "value_usd": 30532870000.0,
-        "value_basis": "quantity x price"
-      },
-      {
-        "id": "oil",
-        "group": "oil",
-        "name": "US proved crude oil + lease condensate reserves",
-        "ownership": "national",
-        "quantity_unit": "barrels",
-        "source_name": "EIA: U.S. Crude Oil and Natural Gas Proved Reserves, Year-End 2024 (Table 1)",
-        "source_url": "https://www.eia.gov/naturalgas/crudeoilreserves/",
-        "note": "In the ground; mostly privately or state owned, some under federal leases. Valued at spot before any production cost.",
-        "default_on": true,
-        "quantity": 45951000000,
-        "as_of": "2024-12-31",
-        "base_quantity": 45951000000,
-        "base_unit": "barrels",
-        "price_key": "wti",
-        "price": 107.89,
-        "price_unit": "$/barrel",
-        "price_as_of": "2026-10-20",
-        "conversion": null,
-        "value_usd": 4957653390000.0,
-        "value_basis": "quantity x price"
-      },
-      {
-        "id": "natgas",
-        "group": "gas",
-        "name": "US proved natural gas reserves (dry gas content)",
-        "ownership": "national",
-        "quantity_unit": "billion cubic feet",
-        "source_name": "EIA: Proved Reserves Year-End 2024 (Table 11, dry natural gas content of 583,942 Bcf wet gas)",
-        "source_url": "https://www.eia.gov/naturalgas/crudeoilreserves/pdf/ARR_2024_TABLES_ALL.pdf",
-        "note": "Natural gas plant liquids (34,072 million barrels) are not valued. Converted at 1.036 MMBtu per thousand cubic feet.",
-        "default_on": true,
-        "quantity": 545405,
-        "as_of": "2024-12-31",
-        "base_quantity": 545405000000.0,
-        "base_unit": "Mcf",
-        "price_key": "henry_hub",
-        "price": 3.1,
-        "price_unit": "$/MMBtu",
-        "price_as_of": "2026-10-20",
-        "conversion": "x 1.036 MMBtu per Mcf",
-        "value_usd": 1751622698000.0,
-        "value_basis": "quantity x price"
-      },
-      {
-        "id": "coal",
-        "group": "coal",
-        "name": "US recoverable coal reserves at producing mines",
-        "ownership": "national",
-        "quantity_unit": "million short tons",
-        "source_name": "EIA Annual Coal Report 2024, Table 14",
-        "source_url": "https://www.eia.gov/coal/annual/pdf/table14.pdf",
-        "note": "EIA's broader 'estimated recoverable reserves' (249,351 million short tons) is not used because most of it is not economic to mine at today's prices.",
-        "default_on": true,
-        "quantity": 10593,
-        "as_of": "2024",
-        "base_quantity": 10593000000.0,
-        "base_unit": "short tons",
-        "price_key": "coal",
-        "price": 52.47,
-        "price_unit": "$/short ton",
-        "price_as_of": "2024",
-        "conversion": null,
-        "value_usd": 555814710000.0,
-        "value_basis": "quantity x price"
-      },
-      {
-        "id": "copper",
-        "group": "minerals",
-        "name": "US copper reserves in the ground",
-        "ownership": "national",
-        "quantity_unit": "thousand metric tons",
-        "source_name": "USGS Mineral Commodity Summaries 2026, Copper (World Mine Production and Reserves)",
-        "source_url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-copper.pdf",
-        "note": "Unmined. Valued at the global price before any mining cost.",
-        "default_on": true,
-        "quantity": 47000,
-        "as_of": "2025 (published Feb 2026)",
-        "base_quantity": 47000000.0,
-        "base_unit": "metric tons",
-        "price_key": "copper",
-        "price": 14473.05590909091,
-        "price_unit": "$/metric ton",
-        "price_as_of": "2026-09-01",
-        "conversion": null,
-        "value_usd": 680233627727.0,
-        "value_basis": "quantity x price"
-      },
-      {
-        "id": "land_federal",
-        "group": "land",
-        "name": "Federal land, lower 48 states",
-        "ownership": "federal",
-        "quantity_unit": null,
-        "source_name": "BEA working paper WP2015-3, Larson, 'New Estimates of Value of Land of the United States'",
-        "source_url": "https://www.bea.gov/research/papers/2015/new-estimates-value-land-united-states",
-        "note": "2009 dollars, not updated. Excludes Alaska and Hawaii (where most federal acreage is). Context: about 615.2M acres are managed by five federal agencies, ~640M acres total (CRS R42346, Sept 30, 2024).",
-        "default_on": true,
-        "quantity": null,
-        "quantity_label": "published value estimate",
-        "price": null,
-        "price_key": null,
-        "value_usd": 1800000000000.0,
-        "as_of": "2009 (published 2015)",
-        "value_basis": "published estimate in 2009 dollars (not updated)"
-      },
-      {
-        "id": "land_nonfederal",
-        "group": "land",
-        "name": "Non-federal land, lower 48 states",
-        "ownership": "national",
-        "quantity_unit": null,
-        "source_name": "BEA working paper WP2015-3 (total $23.0T minus $1.8T federal)",
-        "source_url": "https://www.bea.gov/research/papers/2015/new-estimates-value-land-united-states",
-        "note": "2009 dollars, not updated. Mostly private, state, local and tribal land. Larson's land values include timber and water rights that convey with the land.",
-        "default_on": true,
-        "quantity": null,
-        "quantity_label": "published value estimate",
-        "price": null,
-        "price_key": null,
-        "value_usd": 21200000000000.0,
-        "as_of": "2009 (published 2015)",
-        "value_basis": "published estimate in 2009 dollars (not updated)"
-      }
-    ],
-    "totals": {
-      "default": {
-        "value_usd": 32457967511980.0,
-        "per_m1_dollar": 1.6236,
-        "per_m2_dollar": 1.3905,
-        "pct_of_m1": 162.4,
-        "pct_of_m2": 139.0,
-        "pct_of_debt": 80.3,
-        "per_debt_dollar": 0.8031
-      },
-      "federal_only": {
-        "value_usd": 2884298024125.0,
-        "per_m1_dollar": 0.1443,
-        "per_m2_dollar": 0.1236,
-        "pct_of_m1": 14.4,
-        "pct_of_m2": 12.4,
-        "pct_of_debt": 7.1,
-        "per_debt_dollar": 0.0714
-      },
-      "silver_only": {
-        "value_usd": 40856204196.0,
-        "per_m1_dollar": 0.002,
-        "per_m2_dollar": 0.0018,
-        "pct_of_m1": 0.2,
-        "pct_of_m2": 0.2,
-        "pct_of_debt": 0.1,
-        "per_debt_dollar": 0.001
-      }
-    },
-    "context": {
-      "federal_acres_five_agencies": 615203294,
-      "federal_acres_total_est": 640000000,
-      "as_of": "2024-09-30",
-      "source_name": "CRS R42346, Federal Land Ownership: Overview and Data (updated Sept 14, 2026)",
-      "source_url": "https://www.everycrsreport.com/files/2026-09-14_R42346_336f754f9a0a5c5e48b254e0f7164c6e30465cf2.html",
-      "federal_mineral_estate_note": "BLM also administers 700M+ acres of federal subsurface mineral estate, so part of the oil, gas and coal reserves is federally owned, but EIA does not split its totals by owner."
-    },
-    "left_out": [
-      {
-        "name": "Timber",
-        "reason": "No credible current national dollar valuation found. Larson (BEA) land values already include timber that conveys with the land, so adding it would double count."
-      },
-      {
-        "name": "Natural gas plant liquids",
-        "reason": "EIA reports 34,072 million barrels in proved reserves, but there is no single public NGL price series to value them on, so they are not counted."
-      },
-      {
-        "name": "Critical minerals other than copper (lithium, rare earths, etc.)",
-        "reason": "USGS reserve figures exist for some, but there is no reliable public spot price for most, so they are left out rather than guessed."
-      },
-      {
-        "name": "Federal buildings, roads and other property",
-        "reason": "Not natural resources; outside this comparison."
-      }
-    ],
-    "conversions": {
-      "troy_oz_per_metric_ton": 32150.7,
-      "troy_oz_source": {
-        "name": "USGS Mineral Commodity Summaries 2026, Silver (footnote: 1 metric ton = 32,150.7 troy oz)",
-        "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-silver.pdf"
-      },
-      "mmbtu_per_mcf": 1.036,
-      "mmbtu_source": {
-        "name": "EIA: Energy units and calculators explained (1 cubic foot = 1,036 Btu)",
-        "url": "https://www.eia.gov/energyexplained/units-and-calculators/"
-      }
-    }
+  "money_supply": {
+   "m2_usd": 23342800000000.0,
+   "m2_month": "2026-08",
+   "m2_source": "https://fred.stlouisfed.org/series/M2SL",
+   "m1_usd": 19991100000000.0,
+   "m1_month": "2026-08",
+   "m1_source": "https://fred.stlouisfed.org/series/M1SL",
+   "gold_reserve_oz": 261498926.241,
+   "gold_reserve_as_of": "2026-09-30",
+   "gold_reserve_source": "https://fiscaldata.treasury.gov/datasets/status-report-government-gold-reserve/",
+   "silver_basis": "total COMEX silver (registered + eligible)",
+   "silver_oz": 337600000,
+   "silver_as_of": "2026-10-21",
+   "implied_gold_m2_usd_per_oz": 89265.38,
+   "implied_silver_m2_usd_per_oz": 69143.36,
+   "implied_silver_m2_vs_registered_secondary": 231806.7,
+   "m2_paper_ratio_gold_at_stored_spot": 22.17,
+   "m2_paper_ratio_silver_at_stored_spot": 1278.5,
+   "stored_spot_as_of": "2026-10-23T09:16:43Z"
   }
+ },
+ "resource_backing": {
+  "computed_at": "2026-10-23T09:17:39Z",
+  "computed_by": "scripts/compute_resource_backing.py",
+  "inputs_file": "data/resources.json",
+  "hypothetical": true,
+  "disclaimer": "HYPOTHETICAL. Resources in the ground are not liquid, many are privately owned, and this is an illustration, not a valuation or prediction. Not financial advice.",
+  "formula": {
+   "value": "quantity x current price (gas: dry Bcf x 1,000,000 Mcf x 1.036 MMBtu/Mcf x Henry Hub; metals: metric tons x 32,150.7 troy oz x spot)",
+   "land": "published BEA working-paper estimate, 2009 dollars, not updated",
+   "coverage": "selected resource value / money supply (M1 or M2) or total public debt x 100; per dollar = selected value / that total"
+  },
+  "money_supply": {
+   "m1_usd": 19991100000000.0,
+   "m1_month": "2026-08",
+   "m1_source": "https://fred.stlouisfed.org/series/M1SL",
+   "m2_usd": 23342800000000.0,
+   "m2_month": "2026-08",
+   "m2_source": "https://fred.stlouisfed.org/series/M2SL",
+   "debt_usd": 40413639012305.97,
+   "debt_date": "2026-10-21",
+   "debt_held_public_usd": 32566346587338.02,
+   "debt_intragov_usd": 7847292424967.95,
+   "debt_label": "Total public debt outstanding",
+   "debt_source": "https://fiscaldata.treasury.gov/datasets/debt-to-the-penny/",
+   "debt_api": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_to_penny?sort=-record_date&page%5Bsize%5D=1",
+   "debt_source_name": "US Treasury, Debt to the Penny (FiscalData)",
+   "debt_stale_note": null
+  },
+  "revaluation_note": {
+   "text": "Comparing the debt with the country's assets mirrors the 'asset revaluation' idea discussed on usdebtclock.org. Shown here only as arithmetic: VaultPulse does not endorse it or predict it will happen.",
+   "url": "https://www.usdebtclock.org/",
+   "name": "usdebtclock.org"
+  },
+  "prices": {
+   "spot_silver": {
+    "label": "Silver spot",
+    "unit": "$/troy oz",
+    "value": 54.08,
+    "as_of": "2026-10-23T09:16:43Z",
+    "source_name": "gold-api.com (stored; live in browser)",
+    "source_url": "https://gold-api.com"
+   },
+   "spot_gold": {
+    "label": "Gold spot",
+    "unit": "$/troy oz",
+    "value": 4026.4,
+    "as_of": "2026-10-23T09:16:43Z",
+    "source_name": "gold-api.com (stored; live in browser)",
+    "source_url": "https://gold-api.com"
+   },
+   "wti": {
+    "label": "WTI crude spot (Cushing)",
+    "unit": "$/barrel",
+    "source_name": "FRED DCOILWTICO (EIA data)",
+    "source_url": "https://fred.stlouisfed.org/series/DCOILWTICO",
+    "series": "DCOILWTICO",
+    "value": 107.89,
+    "as_of": "2026-10-20",
+    "retrieved_at": "2026-10-23T09:17:39Z"
+   },
+   "henry_hub": {
+    "label": "Henry Hub natural gas spot",
+    "unit": "$/MMBtu",
+    "source_name": "FRED DHHNGSP (EIA data)",
+    "source_url": "https://fred.stlouisfed.org/series/DHHNGSP",
+    "series": "DHHNGSP",
+    "value": 3.1,
+    "as_of": "2026-10-20",
+    "retrieved_at": "2026-10-23T09:17:39Z"
+   },
+   "copper": {
+    "label": "Global copper price (monthly average)",
+    "unit": "$/metric ton",
+    "source_name": "FRED PCOPPUSDM (IMF data)",
+    "source_url": "https://fred.stlouisfed.org/series/PCOPPUSDM",
+    "series": "PCOPPUSDM",
+    "value": 14473.05590909091,
+    "as_of": "2026-09-01",
+    "retrieved_at": "2026-10-23T09:17:39Z"
+   },
+   "coal": {
+    "label": "Average US coal sales price, all ranks (2024 annual)",
+    "unit": "$/short ton",
+    "source_name": "EIA Annual Coal Report 2024, Table 31",
+    "source_url": "https://www.eia.gov/coal/annual/pdf/table31.pdf",
+    "value": 52.47,
+    "as_of": "2024"
+   }
+  },
+  "items": [
+   {
+    "id": "silver_mint",
+    "group": "silver",
+    "name": "US Treasury silver (US Mint stocks)",
+    "ownership": "federal",
+    "quantity_unit": "metric tons",
+    "source_name": "USGS Mineral Commodity Summaries 2026, Silver (Stocks, Treasury; source: US Mint, working and deep-storage stocks)",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-silver.pdf",
+    "note": "Working stock for coin programs, not a monetary reserve. The US holds no official silver reserve.",
+    "default_on": true,
+    "quantity": 498,
+    "as_of": "2025 year-end (estimate)",
+    "base_quantity": 16011048.6,
+    "base_unit": "troy oz",
+    "price_key": "spot_silver",
+    "price": 54.08,
+    "price_unit": "$/troy oz",
+    "price_as_of": "2026-10-23T09:16:43Z",
+    "conversion": null,
+    "value_usd": 865877508.0,
+    "value_basis": "quantity x price"
+   },
+   {
+    "id": "silver_ground",
+    "group": "silver",
+    "name": "US silver reserves in the ground",
+    "ownership": "national",
+    "quantity_unit": "metric tons",
+    "source_name": "USGS Mineral Commodity Summaries 2026, Silver (World Mine Production and Reserves)",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-silver.pdf",
+    "note": "Unmined, mostly owned by mining companies or private/state mineral owners. Valued at spot before any mining cost.",
+    "default_on": true,
+    "quantity": 23000,
+    "as_of": "2025 (published Feb 2026)",
+    "base_quantity": 739466100.0,
+    "base_unit": "troy oz",
+    "price_key": "spot_silver",
+    "price": 54.08,
+    "price_unit": "$/troy oz",
+    "price_as_of": "2026-10-23T09:16:43Z",
+    "conversion": null,
+    "value_usd": 39990326688.0,
+    "value_basis": "quantity x price"
+   },
+   {
+    "id": "silver_comex",
+    "group": "silver",
+    "name": "COMEX vault silver (registered + eligible)",
+    "ownership": "private",
+    "quantity_unit": "troy oz",
+    "source_name": "CME warehouse reports via The Vault Report",
+    "source_url": "https://thevaultreport.com/comex",
+    "note": "Privately owned metal stored in US vaults (some by foreign owners). Off by default.",
+    "default_on": false,
+    "quantity": 337600000,
+    "as_of": "2026-10-21",
+    "base_quantity": 337600000,
+    "base_unit": "troy oz",
+    "price_key": "spot_silver",
+    "price": 54.08,
+    "price_unit": "$/troy oz",
+    "price_as_of": "2026-10-23T09:16:43Z",
+    "conversion": null,
+    "value_usd": 18257408000.0,
+    "value_basis": "quantity x price"
+   },
+   {
+    "id": "gold_reserve",
+    "group": "gold",
+    "name": "US official gold reserve",
+    "ownership": "federal",
+    "quantity_unit": "troy oz",
+    "source_name": "US Treasury: Status Report of U.S. Government Gold Reserve",
+    "source_url": "https://fiscaldata.treasury.gov/datasets/status-report-government-gold-reserve/",
+    "note": "Official statutory value is $42.22/oz; valued here at market spot.",
+    "default_on": true,
+    "quantity": 261498926.241,
+    "as_of": "2026-09-30",
+    "base_quantity": 261498926.241,
+    "base_unit": "troy oz",
+    "price_key": "spot_gold",
+    "price": 4026.4,
+    "price_unit": "$/troy oz",
+    "price_as_of": "2026-10-23T09:16:43Z",
+    "conversion": null,
+    "value_usd": 1052899276617.0,
+    "value_basis": "quantity x price"
+   },
+   {
+    "id": "gold_ground",
+    "group": "gold",
+    "name": "US gold reserves in the ground",
+    "ownership": "national",
+    "quantity_unit": "metric tons",
+    "source_name": "USGS Mineral Commodity Summaries 2026, Gold (World Mine Production and Reserves)",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-gold.pdf",
+    "note": "Unmined, mostly privately held mining claims. Valued at spot before any mining cost.",
+    "default_on": true,
+    "quantity": 3000,
+    "as_of": "2025 (published Feb 2026)",
+    "base_quantity": 96452100.0,
+    "base_unit": "troy oz",
+    "price_key": "spot_gold",
+    "price": 4026.4,
+    "price_unit": "$/troy oz",
+    "price_as_of": "2026-10-23T09:16:43Z",
+    "conversion": null,
+    "value_usd": 388354735440.0,
+    "value_basis": "quantity x price"
+   },
+   {
+    "id": "spr",
+    "group": "oil",
+    "name": "Strategic Petroleum Reserve crude",
+    "ownership": "federal",
+    "quantity_unit": "barrels",
+    "source_name": "US DOE: SPR Quick Facts (inventory by site)",
+    "source_url": "https://www.energy.gov/hgeo/opr/spr-quick-facts",
+    "note": "Owned by the US Department of Energy. Not part of EIA proved reserves.",
+    "default_on": true,
+    "quantity": 283000000,
+    "as_of": "2026-09-30",
+    "base_quantity": 283000000,
+    "base_unit": "barrels",
+    "price_key": "wti",
+    "price": 107.89,
+    "price_unit": "$/barrel",
+    "price_as_of": "2026-10-20",
+    "conversion": null,
+    "value_usd": 30532870000.0,
+    "value_basis": "quantity x price"
+   },
+   {
+    "id": "oil",
+    "group": "oil",
+    "name": "US proved crude oil + lease condensate reserves",
+    "ownership": "national",
+    "quantity_unit": "barrels",
+    "source_name": "EIA: U.S. Crude Oil and Natural Gas Proved Reserves, Year-End 2024 (Table 1)",
+    "source_url": "https://www.eia.gov/naturalgas/crudeoilreserves/",
+    "note": "In the ground; mostly privately or state owned, some under federal leases. Valued at spot before any production cost.",
+    "default_on": true,
+    "quantity": 45951000000,
+    "as_of": "2024-12-31",
+    "base_quantity": 45951000000,
+    "base_unit": "barrels",
+    "price_key": "wti",
+    "price": 107.89,
+    "price_unit": "$/barrel",
+    "price_as_of": "2026-10-20",
+    "conversion": null,
+    "value_usd": 4957653390000.0,
+    "value_basis": "quantity x price"
+   },
+   {
+    "id": "natgas",
+    "group": "gas",
+    "name": "US proved natural gas reserves (dry gas content)",
+    "ownership": "national",
+    "quantity_unit": "billion cubic feet",
+    "source_name": "EIA: Proved Reserves Year-End 2024 (Table 11, dry natural gas content of 583,942 Bcf wet gas)",
+    "source_url": "https://www.eia.gov/naturalgas/crudeoilreserves/pdf/ARR_2024_TABLES_ALL.pdf",
+    "note": "Natural gas plant liquids (34,072 million barrels) are not valued. Converted at 1.036 MMBtu per thousand cubic feet.",
+    "default_on": true,
+    "quantity": 545405,
+    "as_of": "2024-12-31",
+    "base_quantity": 545405000000.0,
+    "base_unit": "Mcf",
+    "price_key": "henry_hub",
+    "price": 3.1,
+    "price_unit": "$/MMBtu",
+    "price_as_of": "2026-10-20",
+    "conversion": "x 1.036 MMBtu per Mcf",
+    "value_usd": 1751622698000.0,
+    "value_basis": "quantity x price"
+   },
+   {
+    "id": "coal",
+    "group": "coal",
+    "name": "US recoverable coal reserves at producing mines",
+    "ownership": "national",
+    "quantity_unit": "million short tons",
+    "source_name": "EIA Annual Coal Report 2024, Table 14",
+    "source_url": "https://www.eia.gov/coal/annual/pdf/table14.pdf",
+    "note": "EIA's broader 'estimated recoverable reserves' (249,351 million short tons) is not used because most of it is not economic to mine at today's prices.",
+    "default_on": true,
+    "quantity": 10593,
+    "as_of": "2024",
+    "base_quantity": 10593000000.0,
+    "base_unit": "short tons",
+    "price_key": "coal",
+    "price": 52.47,
+    "price_unit": "$/short ton",
+    "price_as_of": "2024",
+    "conversion": null,
+    "value_usd": 555814710000.0,
+    "value_basis": "quantity x price"
+   },
+   {
+    "id": "copper",
+    "group": "minerals",
+    "name": "US copper reserves in the ground",
+    "ownership": "national",
+    "quantity_unit": "thousand metric tons",
+    "source_name": "USGS Mineral Commodity Summaries 2026, Copper (World Mine Production and Reserves)",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-copper.pdf",
+    "note": "Unmined. Valued at the global price before any mining cost.",
+    "default_on": true,
+    "quantity": 47000,
+    "as_of": "2025 (published Feb 2026)",
+    "base_quantity": 47000000.0,
+    "base_unit": "metric tons",
+    "price_key": "copper",
+    "price": 14473.05590909091,
+    "price_unit": "$/metric ton",
+    "price_as_of": "2026-09-01",
+    "conversion": null,
+    "value_usd": 680233627727.0,
+    "value_basis": "quantity x price"
+   },
+   {
+    "id": "land_federal",
+    "group": "land",
+    "name": "Federal land, lower 48 states",
+    "ownership": "federal",
+    "quantity_unit": null,
+    "source_name": "BEA working paper WP2015-3, Larson, 'New Estimates of Value of Land of the United States'",
+    "source_url": "https://www.bea.gov/research/papers/2015/new-estimates-value-land-united-states",
+    "note": "2009 dollars, not updated. Excludes Alaska and Hawaii (where most federal acreage is). Context: about 615.2M acres are managed by five federal agencies, ~640M acres total (CRS R42346, Sept 30, 2024).",
+    "default_on": true,
+    "quantity": null,
+    "quantity_label": "published value estimate",
+    "price": null,
+    "price_key": null,
+    "value_usd": 1800000000000.0,
+    "as_of": "2009 (published 2015)",
+    "value_basis": "published estimate in 2009 dollars (not updated)"
+   },
+   {
+    "id": "land_nonfederal",
+    "group": "land",
+    "name": "Non-federal land, lower 48 states",
+    "ownership": "national",
+    "quantity_unit": null,
+    "source_name": "BEA working paper WP2015-3 (total $23.0T minus $1.8T federal)",
+    "source_url": "https://www.bea.gov/research/papers/2015/new-estimates-value-land-united-states",
+    "note": "2009 dollars, not updated. Mostly private, state, local and tribal land. Larson's land values include timber and water rights that convey with the land.",
+    "default_on": true,
+    "quantity": null,
+    "quantity_label": "published value estimate",
+    "price": null,
+    "price_key": null,
+    "value_usd": 21200000000000.0,
+    "as_of": "2009 (published 2015)",
+    "value_basis": "published estimate in 2009 dollars (not updated)"
+   }
+  ],
+  "totals": {
+   "default": {
+    "value_usd": 32457967511980.0,
+    "per_m1_dollar": 1.6236,
+    "per_m2_dollar": 1.3905,
+    "pct_of_m1": 162.4,
+    "pct_of_m2": 139.0,
+    "pct_of_debt": 80.3,
+    "per_debt_dollar": 0.8031
+   },
+   "federal_only": {
+    "value_usd": 2884298024125.0,
+    "per_m1_dollar": 0.1443,
+    "per_m2_dollar": 0.1236,
+    "pct_of_m1": 14.4,
+    "pct_of_m2": 12.4,
+    "pct_of_debt": 7.1,
+    "per_debt_dollar": 0.0714
+   },
+   "silver_only": {
+    "value_usd": 40856204196.0,
+    "per_m1_dollar": 0.002,
+    "per_m2_dollar": 0.0018,
+    "pct_of_m1": 0.2,
+    "pct_of_m2": 0.2,
+    "pct_of_debt": 0.1,
+    "per_debt_dollar": 0.001
+   }
+  },
+  "context": {
+   "federal_acres_five_agencies": 615203294,
+   "federal_acres_total_est": 640000000,
+   "as_of": "2024-09-30",
+   "source_name": "CRS R42346, Federal Land Ownership: Overview and Data (updated Sept 14, 2026)",
+   "source_url": "https://www.everycrsreport.com/files/2026-09-14_R42346_336f754f9a0a5c5e48b254e0f7164c6e30465cf2.html",
+   "federal_mineral_estate_note": "BLM also administers 700M+ acres of federal subsurface mineral estate, so part of the oil, gas and coal reserves is federally owned, but EIA does not split its totals by owner."
+  },
+  "left_out": [
+   {
+    "name": "Timber",
+    "reason": "No credible current national dollar valuation found. Larson (BEA) land values already include timber that conveys with the land, so adding it would double count."
+   },
+   {
+    "name": "Natural gas plant liquids",
+    "reason": "EIA reports 34,072 million barrels in proved reserves, but there is no single public NGL price series to value them on, so they are not counted."
+   },
+   {
+    "name": "Critical minerals other than copper (lithium, rare earths, etc.)",
+    "reason": "USGS reserve figures exist for some, but there is no reliable public spot price for most, so they are left out rather than guessed."
+   },
+   {
+    "name": "Federal buildings, roads and other property",
+    "reason": "Not natural resources; outside this comparison."
+   }
+  ],
+  "conversions": {
+   "troy_oz_per_metric_ton": 32150.7,
+   "troy_oz_source": {
+    "name": "USGS Mineral Commodity Summaries 2026, Silver (footnote: 1 metric ton = 32,150.7 troy oz)",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-silver.pdf"
+   },
+   "mmbtu_per_mcf": 1.036,
+   "mmbtu_source": {
+    "name": "EIA: Energy units and calculators explained (1 cubic foot = 1,036 Btu)",
+    "url": "https://www.eia.gov/energyexplained/units-and-calculators/"
+   }
+  }
+ }
 }
