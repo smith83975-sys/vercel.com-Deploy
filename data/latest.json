@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-10-28T09:20:00Z",
+  "generated_at": "2026-10-29T09:15:00Z",
   "comex": {
-    "report_date": "2026-10-26",
-    "source": "CME Group daily COMEX warehouse stock reports, via thevaultreport.com/comex (data as of Oct 26, 2026; accessed Oct 28, 2026). Direct CME .xls download was blocked (HTTP 403) from our server. VaultReport lists the next warehouse report as Wed Oct 28, evening ET.",
+    "report_date": "2026-10-27",
+    "source": "CME Group daily COMEX warehouse stock reports, via thevaultreport.com/comex (data as of Oct 27, 2026; accessed Oct 29, 2026). Direct CME .xls download was blocked (HTTP 403) from our server. VaultReport lists the next warehouse report as Thu Oct 29, evening ET.",
     "source_url": "https://thevaultreport.com/comex",
     "silver": {
       "registered_oz": 99798110,
-      "eligible_oz": 237410000,
-      "total_oz": 337210000,
-      "registered_change_oz": 5060,
-      "change_vs": "2026-10-23",
-      "precision_note": "Registered is exact (99,798,110 oz per VaultReport, up 5,060 oz from 99,793,050 on Oct 23; VaultReport shows +5.1K oz); eligible/total rounded to 0.01M oz by source. Eligible fell 237.71M to 237.41M, total fell 337.50M to 337.21M.",
+      "eligible_oz": 236740000,
+      "total_oz": 336540000,
+      "registered_change_oz": 0,
+      "change_vs": "2026-10-26",
+      "precision_note": "Registered is exact (99,798,110 oz per VaultReport, unchanged from Oct 26); eligible/total rounded to 0.01M oz by source. Eligible fell 237.41M to 236.74M, total fell 337.21M to 336.54M.",
       "history_registered_moz": {
         "2026-09-14": 96.45,
         "2026-09-15": 97.17,
@@ -42,17 +42,18 @@
         "2026-10-21": 100.7,
         "2026-10-22": 100.51,
         "2026-10-23": 99.79,
-        "2026-10-26": 99.8
+        "2026-10-26": 99.8,
+        "2026-10-27": 99.8
       },
       "registered_30d_change_pct": 3.7
     },
     "gold": {
-      "registered_oz": 14820000,
-      "eligible_oz": 8370000,
-      "total_oz": 23200000,
+      "registered_oz": 14830000,
+      "eligible_oz": 8380000,
+      "total_oz": 23210000,
       "registered_change_oz": 10000,
-      "change_vs": "2026-10-23",
-      "precision_note": "All gold figures rounded to 0.01M oz by source; registered 14.81M on Oct 23 and 14.82M on Oct 26, so the day change is roughly +10K oz (rounding). Eligible 8.40M to 8.37M, total 23.21M to 23.20M.",
+      "change_vs": "2026-10-26",
+      "precision_note": "All gold figures rounded to 0.01M oz by source; registered 14.82M on Oct 26 and 14.83M on Oct 27, so the day change is roughly +10K oz (rounding). Eligible 8.37M to 8.38M, total 23.20M to 23.21M.",
       "registered_30d_change_pct": -2.2,
       "history_registered_moz": null
     }
@@ -62,7 +63,7 @@
     "source_url": "https://www.cmegroup.com/daily_bulletin/current/Section02B_Summary_Volume_And_Open_Interest_Metals_Futures_And_Options.pdf",
     "fetched_at": "2026-10-14",
     "trade_date": null,
-    "trade_date_note": "Trade date not shown in the extract we kept; the 2026-10-15, 2026-10-16, 2026-10-19, 2026-10-20, 2026-10-21, 2026-10-22, 2026-10-23, 2026-10-26, 2026-10-27 and 2026-10-28 refreshes got HTTP 403 from CME, so these are the 2026-10-14 fetch. scripts/parse_cme_oi.py records the bulletin trade date when it can parse one.",
+    "trade_date_note": "Trade date not shown in the extract we kept; the 2026-10-15, 2026-10-16, 2026-10-19, 2026-10-20, 2026-10-21, 2026-10-22, 2026-10-23, 2026-10-26, 2026-10-27, 2026-10-28 and 2026-10-29 refreshes got HTTP 403 from CME, so these are the 2026-10-14 fetch. scripts/parse_cme_oi.py records the bulletin trade date when it can parse one.",
     "silver": {
       "contracts": 104389,
       "oz_per_contract": 5000
@@ -73,25 +74,25 @@
     }
   },
   "premiums": {
-    "checked_at": "2026-10-28",
+    "checked_at": "2026-10-29",
     "source": "bullion-compare.com (hourly dealer comparison; premium measured vs its independent spot floor)",
     "items": [
       {
         "product": "1 oz American Silver Eagle",
         "metal": "silver",
-        "spot": 53.82,
+        "spot": 52.85,
         "dealers": [
           {
             "dealer": "JM Bullion",
-            "price": 70.61
+            "price": 69.71
           },
           {
             "dealer": "SD Bullion",
-            "price": 59.52
+            "price": 58.28
           },
           {
             "dealer": "APMEX",
-            "price": 70.69
+            "price": 69.71
           }
         ],
         "url": "https://bullion-compare.com/prices/silver-eagle-1oz"
@@ -99,19 +100,19 @@
       {
         "product": "1 oz American Gold Eagle",
         "metal": "gold",
-        "spot": 4047.44,
+        "spot": 4028.01,
         "dealers": [
           {
             "dealer": "Sell Your Metals",
-            "price": 4131.55
+            "price": 4112.12
           },
           {
             "dealer": "SD Bullion",
-            "price": 4191.28
+            "price": 4174.19
           },
           {
             "dealer": "APMEX",
-            "price": 4284.2
+            "price": 4247.02
           }
         ],
         "url": "https://bullion-compare.com/prices/gold-eagle-1oz"
@@ -126,10 +127,10 @@
     ]
   },
   "spot_last_known": {
-    "gold_usd": 4052.4,
-    "silver_usd": 54.06,
-    "ratio": 75.0,
-    "as_of": "2026-10-28T09:29:56Z",
+    "gold_usd": 4033.0,
+    "silver_usd": 53.04,
+    "ratio": 76.0,
+    "as_of": "2026-10-29T09:08:08Z",
     "source": "gold-api.com",
     "source_url": "https://gold-api.com"
   },
@@ -160,7 +161,7 @@
     }
   },
   "paper_to_metal": {
-    "computed_at": "2026-10-28T09:30:43Z",
+    "computed_at": "2026-10-29T09:08:44Z",
     "computed_by": "scripts/compute_paper_to_metal.py",
     "formula": {
       "paper_oz": "open interest contracts x oz per contract (silver 5,000 oz; gold 100 oz)",
@@ -171,9 +172,9 @@
       "m2_paper_ratio": "implied price / spot (live in browser; stored value uses spot_last_known)"
     },
     "vault": {
-      "report_date": "2026-10-26",
-      "report_date_label": "Oct 26, 2026",
-      "source": "CME Group daily COMEX warehouse stock reports, via thevaultreport.com/comex (data as of Oct 26, 2026; accessed Oct 28, 2026). Direct CME .xls download was blocked (HTTP 403) from our server. VaultReport lists the next warehouse report as Wed Oct 28, evening ET.",
+      "report_date": "2026-10-27",
+      "report_date_label": "Oct 27, 2026",
+      "source": "CME Group daily COMEX warehouse stock reports, via thevaultreport.com/comex (data as of Oct 27, 2026; accessed Oct 29, 2026). Direct CME .xls download was blocked (HTTP 403) from our server. VaultReport lists the next warehouse report as Thu Oct 29, evening ET.",
       "sources": [
         {
           "name": "The Vault Report (republishes CME warehouse stocks)",
@@ -201,9 +202,9 @@
       "as_of_label": "open interest as of CME bulletin fetched Oct 14, 2026, trade date not shown in extract"
     },
     "spot": {
-      "gold_usd": 4052.4,
-      "silver_usd": 54.06,
-      "as_of": "2026-10-28T09:29:56Z",
+      "gold_usd": 4033.0,
+      "silver_usd": 53.04,
+      "as_of": "2026-10-29T09:08:08Z",
       "source": "gold-api.com",
       "source_url": "https://gold-api.com"
     },
@@ -212,27 +213,27 @@
       "oz_per_contract": 5000,
       "paper_oz": 521945000,
       "registered_oz": 99798110,
-      "eligible_oz": 237410000,
-      "total_oz": 337210000,
-      "ratio_vs_total": 1.5478,
+      "eligible_oz": 236740000,
+      "total_oz": 336540000,
+      "ratio_vs_total": 1.5509,
       "ratio_vs_registered_secondary": 5.23,
-      "coverage_total_pct": 64.61,
+      "coverage_total_pct": 64.48,
       "coverage_registered_pct_secondary": 19.12,
-      "vault_as_of": "2026-10-26",
+      "vault_as_of": "2026-10-27",
       "oi_as_of_label": "open interest as of CME bulletin fetched Oct 14, 2026, trade date not shown in extract"
     },
     "gold": {
       "oi_contracts": 415134,
       "oz_per_contract": 100,
       "paper_oz": 41513400,
-      "registered_oz": 14820000,
-      "eligible_oz": 8370000,
-      "total_oz": 23200000,
-      "ratio_vs_total": 1.7894,
-      "ratio_vs_registered_secondary": 2.8012,
-      "coverage_total_pct": 55.89,
-      "coverage_registered_pct_secondary": 35.7,
-      "vault_as_of": "2026-10-26",
+      "registered_oz": 14830000,
+      "eligible_oz": 8380000,
+      "total_oz": 23210000,
+      "ratio_vs_total": 1.7886,
+      "ratio_vs_registered_secondary": 2.7993,
+      "coverage_total_pct": 55.91,
+      "coverage_registered_pct_secondary": 35.72,
+      "vault_as_of": "2026-10-27",
       "oi_as_of_label": "open interest as of CME bulletin fetched Oct 14, 2026, trade date not shown in extract"
     },
     "money_supply": {
@@ -246,18 +247,18 @@
       "gold_reserve_as_of": "2026-09-30",
       "gold_reserve_source": "https://fiscaldata.treasury.gov/datasets/status-report-government-gold-reserve/",
       "silver_basis": "total COMEX silver (registered + eligible)",
-      "silver_oz": 337210000,
-      "silver_as_of": "2026-10-26",
+      "silver_oz": 336540000,
+      "silver_as_of": "2026-10-27",
       "implied_gold_m2_usd_per_oz": 89537.27,
-      "implied_silver_m2_usd_per_oz": 69434.18,
+      "implied_silver_m2_usd_per_oz": 69572.41,
       "implied_silver_m2_vs_registered_secondary": 234612.66,
-      "m2_paper_ratio_gold_at_stored_spot": 22.09,
-      "m2_paper_ratio_silver_at_stored_spot": 1284.4,
-      "stored_spot_as_of": "2026-10-28T09:29:56Z"
+      "m2_paper_ratio_gold_at_stored_spot": 22.2,
+      "m2_paper_ratio_silver_at_stored_spot": 1311.7,
+      "stored_spot_as_of": "2026-10-29T09:08:08Z"
     }
   },
   "resource_backing": {
-    "computed_at": "2026-10-28T09:30:43Z",
+    "computed_at": "2026-10-29T09:08:44Z",
     "computed_by": "scripts/compute_resource_backing.py",
     "inputs_file": "data/resources.json",
     "hypothetical": true,
@@ -274,10 +275,10 @@
       "m2_usd": 23413900000000.0,
       "m2_month": "2026-09",
       "m2_source": "https://fred.stlouisfed.org/series/M2SL",
-      "debt_usd": 40528358939415.85,
-      "debt_date": "2026-10-26",
-      "debt_held_public_usd": 32635294814294.48,
-      "debt_intragov_usd": 7893064125121.37,
+      "debt_usd": 40582274254843.57,
+      "debt_date": "2026-10-27",
+      "debt_held_public_usd": 32677379585770.57,
+      "debt_intragov_usd": 7904894669073.0,
       "debt_label": "Total public debt outstanding",
       "debt_source": "https://fiscaldata.treasury.gov/datasets/debt-to-the-penny/",
       "debt_api": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_to_penny?sort=-record_date&page%5Bsize%5D=1",
@@ -293,16 +294,16 @@
       "spot_silver": {
         "label": "Silver spot",
         "unit": "$/troy oz",
-        "value": 54.06,
-        "as_of": "2026-10-28T09:29:56Z",
+        "value": 53.04,
+        "as_of": "2026-10-29T09:08:08Z",
         "source_name": "gold-api.com (stored; live in browser)",
         "source_url": "https://gold-api.com"
       },
       "spot_gold": {
         "label": "Gold spot",
         "unit": "$/troy oz",
-        "value": 4052.4,
-        "as_of": "2026-10-28T09:29:56Z",
+        "value": 4033.0,
+        "as_of": "2026-10-29T09:08:08Z",
         "source_name": "gold-api.com (stored; live in browser)",
         "source_url": "https://gold-api.com"
       },
@@ -312,10 +313,9 @@
         "source_name": "FRED DCOILWTICO (EIA data)",
         "source_url": "https://fred.stlouisfed.org/series/DCOILWTICO",
         "series": "DCOILWTICO",
-        "value": 107.89,
-        "as_of": "2026-10-20",
-        "retrieved_at": "2026-10-28T09:30:37Z",
-        "stale_note": "FRED fetch failed (CalledProcessError); showing last stored value"
+        "value": 103.37,
+        "as_of": "2026-10-27",
+        "retrieved_at": "2026-10-29T09:08:44Z"
       },
       "henry_hub": {
         "label": "Henry Hub natural gas spot",
@@ -323,9 +323,9 @@
         "source_name": "FRED DHHNGSP (EIA data)",
         "source_url": "https://fred.stlouisfed.org/series/DHHNGSP",
         "series": "DHHNGSP",
-        "value": 3.1,
-        "as_of": "2026-10-20",
-        "retrieved_at": "2026-10-28T09:30:43Z"
+        "value": 2.76,
+        "as_of": "2026-10-27",
+        "retrieved_at": "2026-10-29T09:08:44Z"
       },
       "copper": {
         "label": "Global copper price (monthly average)",
@@ -335,7 +335,7 @@
         "series": "PCOPPUSDM",
         "value": 14473.05590909091,
         "as_of": "2026-09-01",
-        "retrieved_at": "2026-10-28T09:30:43Z"
+        "retrieved_at": "2026-10-29T09:08:44Z"
       },
       "coal": {
         "label": "Average US coal sales price, all ranks (2024 annual)",
@@ -362,11 +362,11 @@
         "base_quantity": 16011048.6,
         "base_unit": "troy oz",
         "price_key": "spot_silver",
-        "price": 54.06,
+        "price": 53.04,
         "price_unit": "$/troy oz",
-        "price_as_of": "2026-10-28T09:29:56Z",
+        "price_as_of": "2026-10-29T09:08:08Z",
         "conversion": null,
-        "value_usd": 865557287.0,
+        "value_usd": 849226018.0,
         "value_basis": "quantity x price"
       },
       {
@@ -384,11 +384,11 @@
         "base_quantity": 739466100.0,
         "base_unit": "troy oz",
         "price_key": "spot_silver",
-        "price": 54.06,
+        "price": 53.04,
         "price_unit": "$/troy oz",
-        "price_as_of": "2026-10-28T09:29:56Z",
+        "price_as_of": "2026-10-29T09:08:08Z",
         "conversion": null,
-        "value_usd": 39975537366.0,
+        "value_usd": 39221281944.0,
         "value_basis": "quantity x price"
       },
       {
@@ -401,16 +401,16 @@
         "source_url": "https://thevaultreport.com/comex",
         "note": "Privately owned metal stored in US vaults (some by foreign owners). Off by default.",
         "default_on": false,
-        "quantity": 337210000,
-        "as_of": "2026-10-26",
-        "base_quantity": 337210000,
+        "quantity": 336540000,
+        "as_of": "2026-10-27",
+        "base_quantity": 336540000,
         "base_unit": "troy oz",
         "price_key": "spot_silver",
-        "price": 54.06,
+        "price": 53.04,
         "price_unit": "$/troy oz",
-        "price_as_of": "2026-10-28T09:29:56Z",
+        "price_as_of": "2026-10-29T09:08:08Z",
         "conversion": null,
-        "value_usd": 18229572600.0,
+        "value_usd": 17850081600.0,
         "value_basis": "quantity x price"
       },
       {
@@ -428,11 +428,11 @@
         "base_quantity": 261498926.241,
         "base_unit": "troy oz",
         "price_key": "spot_gold",
-        "price": 4052.4,
+        "price": 4033.0,
         "price_unit": "$/troy oz",
-        "price_as_of": "2026-10-28T09:29:56Z",
+        "price_as_of": "2026-10-29T09:08:08Z",
         "conversion": null,
-        "value_usd": 1059698248699.0,
+        "value_usd": 1054625169530.0,
         "value_basis": "quantity x price"
       },
       {
@@ -450,11 +450,11 @@
         "base_quantity": 96452100.0,
         "base_unit": "troy oz",
         "price_key": "spot_gold",
-        "price": 4052.4,
+        "price": 4033.0,
         "price_unit": "$/troy oz",
-        "price_as_of": "2026-10-28T09:29:56Z",
+        "price_as_of": "2026-10-29T09:08:08Z",
         "conversion": null,
-        "value_usd": 390862490040.0,
+        "value_usd": 388991319300.0,
         "value_basis": "quantity x price"
       },
       {
@@ -472,11 +472,11 @@
         "base_quantity": 283000000,
         "base_unit": "barrels",
         "price_key": "wti",
-        "price": 107.89,
+        "price": 103.37,
         "price_unit": "$/barrel",
-        "price_as_of": "2026-10-20",
+        "price_as_of": "2026-10-27",
         "conversion": null,
-        "value_usd": 30532870000.0,
+        "value_usd": 29253710000.0,
         "value_basis": "quantity x price"
       },
       {
@@ -494,11 +494,11 @@
         "base_quantity": 45951000000,
         "base_unit": "barrels",
         "price_key": "wti",
-        "price": 107.89,
+        "price": 103.37,
         "price_unit": "$/barrel",
-        "price_as_of": "2026-10-20",
+        "price_as_of": "2026-10-27",
         "conversion": null,
-        "value_usd": 4957653390000.0,
+        "value_usd": 4749954870000.0,
         "value_basis": "quantity x price"
       },
       {
@@ -516,11 +516,11 @@
         "base_quantity": 545405000000.0,
         "base_unit": "Mcf",
         "price_key": "henry_hub",
-        "price": 3.1,
+        "price": 2.76,
         "price_unit": "$/MMBtu",
-        "price_as_of": "2026-10-20",
+        "price_as_of": "2026-10-27",
         "conversion": "x 1.036 MMBtu per Mcf",
-        "value_usd": 1751622698000.0,
+        "value_usd": 1559509240800.0,
         "value_basis": "quantity x price"
       },
       {
@@ -606,25 +606,25 @@
     ],
     "totals": {
       "default": {
-        "value_usd": 32467259129119.0,
-        "per_m1_dollar": 1.6184,
-        "per_m2_dollar": 1.3867,
-        "pct_of_m1": 161.8,
-        "pct_of_m2": 138.7,
-        "pct_of_debt": 80.1,
-        "per_debt_dollar": 0.8011
+        "value_usd": 32058453155319.0,
+        "per_m1_dollar": 1.598,
+        "per_m2_dollar": 1.3692,
+        "pct_of_m1": 159.8,
+        "pct_of_m2": 136.9,
+        "pct_of_debt": 79.0,
+        "per_debt_dollar": 0.79
       },
       "federal_only": {
-        "value_usd": 2891096675986.0,
-        "per_m1_dollar": 0.1441,
-        "per_m2_dollar": 0.1235,
+        "value_usd": 2884728105548.0,
+        "per_m1_dollar": 0.1438,
+        "per_m2_dollar": 0.1232,
         "pct_of_m1": 14.4,
         "pct_of_m2": 12.3,
         "pct_of_debt": 7.1,
-        "per_debt_dollar": 0.0713
+        "per_debt_dollar": 0.0711
       },
       "silver_only": {
-        "value_usd": 40841094653.0,
+        "value_usd": 40070507962.0,
         "per_m1_dollar": 0.002,
         "per_m2_dollar": 0.0017,
         "pct_of_m1": 0.2,
