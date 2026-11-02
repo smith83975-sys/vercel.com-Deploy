@@ -10,7 +10,8 @@ fetch('data/tank.json').then(r=>r.json()).then(d=>{
 <div class="fill"></div><div class="drain" style="height:${h.toFixed(1)}%"></div></div>
 <ul class="tank-vals"><li><b>Registered:</b> ${t.registered_approx?'about ':''}${M(reg)}<br><span class="cite">as of ${esc(t.registered_date)}</span></li>
 <li><b>Delivered MTD:</b> ${M(del)}<br><span class="cite">${t.mtd_contracts.toLocaleString('en-US')} × ${t.oz_per_contract.toLocaleString('en-US')} oz, as of ${esc(t.mtd_date)}</span></li></ul></div>
-<p>October month-to-date deliveries equal about <b>${pct.toFixed(1)}%</b> of registered stock.</p>
+<p>${esc(d.mtd_month||'Month-to-date')}${d.mtd_month?'-contract':''} deliveries so far equal about <b>${pct.toFixed(1)}%</b> of registered stock.</p>
+${t.prior_month?`<p class="cite">${esc(t.prior_month.contract)} contract ${esc(t.prior_month.status)}: ${t.prior_month.mtd_contracts.toLocaleString('en-US')} contracts ≈ ${M(t.prior_month.mtd_contracts*t.oz_per_contract)} (${esc(t.prior_month.source)}).</p>`:''}
 <p class="calc-basis"><b>How this is calculated:</b> ${pct.toFixed(1)}% = ${M(del)} delivered (${t.mtd_contracts.toLocaleString('en-US')} contracts × ${t.oz_per_contract.toLocaleString('en-US')} oz, as of ${esc(t.mtd_date)}) ÷ ${M(reg)} registered (as of ${esc(t.registered_date)}, ${esc(t.registered_source)}).</p>
 ${t.mtd_note?`<p class="cite">${esc(t.mtd_note)}</p>`:''}
 <p class="cite">Sources: <a href="${esc(t.registered_url)}" rel="nofollow">${esc(t.registered_source)}</a>; <a href="${esc(t.mtd_url)}" rel="nofollow">${esc(t.mtd_source)}</a>. Delivered metal often stays in COMEX vaults, so this is not a forecast of drawdown.</p></div>`;
