@@ -133,10 +133,10 @@
     ]
   },
   "spot_last_known": {
-    "gold_usd": 4079.7,
-    "silver_usd": 52.29,
-    "ratio": 78.0,
-    "as_of": "2026-11-06T09:17:34Z",
+    "gold_usd": 4077.9,
+    "silver_usd": 52.23,
+    "ratio": 78.1,
+    "as_of": "2026-11-06T09:31:34Z",
     "source": "gold-api.com",
     "source_url": "https://gold-api.com"
   },
@@ -167,7 +167,7 @@
     }
   },
   "paper_to_metal": {
-    "computed_at": "2026-11-06T09:28:13Z",
+    "computed_at": "2026-11-06T09:32:31Z",
     "computed_by": "scripts/compute_paper_to_metal.py",
     "formula": {
       "paper_oz": "open interest contracts x oz per contract (silver 5,000 oz; gold 100 oz)",
@@ -208,9 +208,9 @@
       "as_of_label": "open interest as of CME bulletin fetched Oct 14, 2026, trade date not shown in extract"
     },
     "spot": {
-      "gold_usd": 4079.7,
-      "silver_usd": 52.29,
-      "as_of": "2026-11-06T09:17:34Z",
+      "gold_usd": 4077.9,
+      "silver_usd": 52.23,
+      "as_of": "2026-11-06T09:31:34Z",
       "source": "gold-api.com",
       "source_url": "https://gold-api.com"
     },
@@ -258,9 +258,9 @@
       "implied_gold_m2_usd_per_oz": 89537.27,
       "implied_silver_m2_usd_per_oz": 69854.7,
       "implied_silver_m2_vs_registered_secondary": 230593.11,
-      "m2_paper_ratio_gold_at_stored_spot": 21.95,
-      "m2_paper_ratio_silver_at_stored_spot": 1335.9,
-      "stored_spot_as_of": "2026-11-06T09:17:34Z"
+      "m2_paper_ratio_gold_at_stored_spot": 21.96,
+      "m2_paper_ratio_silver_at_stored_spot": 1337.4,
+      "stored_spot_as_of": "2026-11-06T09:31:34Z"
     }
   },
   "resource_backing": {
