@@ -378,6 +378,18 @@ P['bis-silver-tier1']=page('bis-silver-tier1','What If Basel Treated Silver Like
 <section id="comex-data"><h2>VaultPulse data: COMEX silver (as of {rd})</h2><div class="card"><div>Registered <b>{s['registered_oz']:,} oz</b> · Eligible <b>{s['eligible_oz']:,} oz</b> · Total <b>{s['total_oz']:,} oz</b> · Registered share <b>{F['s_share']}</b></div><div class="cite">CME Group daily warehouse reports via <a href="https://thevaultreport.com/comex">The Vault Report</a>, report date {rd}. Eligible and total are rounded to 0.01M oz by the source.</div>{HL(CB.reg_share(L,'silver'))}</div><p>Live, dated vault numbers: <a href="/comex-silver-inventory">COMEX silver inventory</a> · <a href="/silver-squeeze-tracker">silver squeeze tracker</a>.</p></section>
 {SRC(('BIS Basel Framework, CAP10.2 (effective Dec 15, 2019; updated Jun 5, 2020)',BU['cap10']),('BIS Basel Framework, CRE20.110 (effective Jan 1, 2023; updated Jun 10, 2025)',BU['cre20']),('BIS Basel Framework, CRE22.34 and CRE22.49 (effective Jan 1, 2023; updated Nov 26, 2020)',BU['cre22']),('BIS Basel Framework, MAR40.53, .61, .63, .72, .73 (effective Jan 1, 2023; updated Jul 5, 2024)',BU['mar40']),('BIS Basel Framework, MAR21.82 Table 11 (effective Jan 1, 2023; updated Mar 23, 2026)',BU['mar21']),('BIS Basel Framework, NSF30.31 (effective Dec 15, 2019; updated Jul 5, 2024)',BU['nsf30']),('BIS Basel Framework, LCR30 (effective Dec 15, 2019; updated Jun 5, 2020)',BU['lcr30']),('LBMA, "Gold and HQLA: Correcting Misleading Online Information" (undated page, accessed Oct 17, 2026)',BU['lbma']),('eCFR, 12 CFR 217.32(l)(1) (current, accessed Oct 17, 2026)',BU['ecfr']),('OCC Bulletin 2026-8, proposal of Mar 19, 2026',BU['occ']),('Silver Institute, World Silver Survey 2026 (Apr 15, 2026)',BU['wss']),(f'COMEX warehouse stocks via The Vault Report (report date {rd})','https://thevaultreport.com/comex'))}""",
  [], faq=BFAQ, crumb='Silver like gold under Basel?')
+# Beyond COMEX: holdings from sources COMEX doesn't control (data/beyond_comex.json, refreshed by scripts/fetch_beyond_comex.py).
+if os.path.exists('data/beyond_comex.json'):
+    import beyond_comex_page as BCP
+    BX=json.load(open('data/beyond_comex.json'))
+    _bs=sum(1 for r in BCP.rows(L,BX) if r['metal']=='silver')
+    P['beyond-comex']=page('beyond-comex','Beyond COMEX: London, Shanghai &amp; ETF Metal Holdings',
+     "Gold and silver holdings from sources COMEX doesn't control: LBMA London vaults, Shanghai SHFE and SGE, SLV, GLD and PSLV bar lists, plus retail premiums.",
+     'Beyond COMEX: who else reports the metal', BCP.body(L,BX), [],
+     faq=[('Why look beyond COMEX?','COMEX inventory figures come from the depositories themselves via CME. London, Shanghai and ETF data are published by other organisations, so they give an independent view of how much metal is reported in other vaults.'),
+          ('Can I add these holdings together?','No. The same bar can appear in more than one source; for example, SLV and GLD bars held in London are also inside the LBMA London vault total.'),
+          ('Which source is the most detailed?','The ETF bar lists. SLV, GLD and PSLV publish every bar they hold, with serial number, refiner and weight.')],
+     dataset={"name":"Beyond COMEX: London, Shanghai and ETF gold and silver holdings","description":"LBMA London vault holdings, SHFE warranted stocks, SGE silver vault inventory and SLV, GLD and PSLV trust holdings, each with source and as-of date.","distribution":{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":B+"/data/beyond_comex.json"}},crumb='Beyond COMEX')
 import re
 # Hand-added blocks on silver-manipulation-history (GATA infographic, Follow-on-X banner) are not generated above;
 # carry them over from the current file so a rebuild never drops them.
@@ -403,5 +415,5 @@ for f,k in [('index.html','home'),('flow.html','flow'),('sponsor.html','sponsor'
     t=open(f).read(); open(f,'w').write(site_nav.apply_hand(t,k))
 open('404.html','w').write(site_nav.page404())
 SIL={'silver-squeeze-tracker','comex-silver-inventory','silver-premiums'}
-urls=['']+['silver-squeeze-tracker','comex-silver-inventory','silver-premiums','silver-manipulation-history','paper-to-metal','gold-silver-ratio','comex-gold-inventory','comex-force-majeure','gold-silver-news','flow','what-is-money','wizard-of-oz-silver','bis-silver-tier1','sponsor','data-license']
+urls=['']+['silver-squeeze-tracker','comex-silver-inventory','silver-premiums','silver-manipulation-history','paper-to-metal','gold-silver-ratio','comex-gold-inventory','beyond-comex','comex-force-majeure','gold-silver-news','flow','what-is-money','wizard-of-oz-silver','bis-silver-tier1','sponsor','data-license']
 open('sitemap.xml','w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'<url><loc>{B}/{u}</loc><lastmod>{F["date"]}</lastmod><priority>{"1.0" if u in SIL or u=="" else "0.9" if u=="silver-manipulation-history" else "0.7"}</priority></url>\n' for u in urls)+'</urlset>\n')

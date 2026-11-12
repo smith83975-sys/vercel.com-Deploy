@@ -94,3 +94,16 @@ data date right under it (`.calc-basis`, small muted text; `<details>` for long 
 newsletter get the text from `scripts/calc_basis.py`; live browser values get it from the same fields in
 app.js, livepaper.js, papersources.js, m1calc.js, ratio.js, tanks.js and resbacking.js. Never write "our calc":
 name the inputs instead.
+
+## Beyond COMEX page (`/beyond-comex`)
+
+Holdings from sources COMEX doesn't control: LBMA London vaults (monthly), SHFE daily warrant stocks,
+SGE weekly silver vault inventory, SLV / GLD / PSLV trust holdings and bar-list totals, plus the
+premiums already in `data/latest.json`.
+
+- Fetch: `python3 scripts/fetch_beyond_comex.py` writes `data/beyond_comex.json` (never touches `latest.json`).
+  A source that fails is marked `unavailable` with the reason; the last verified figure is kept with its own date.
+  Needs curl, poppler-utils (pdftotext/pdfinfo) and openpyxl. Bar-list PDFs are large (SLV ~22 MB, PSLV ~37 MB).
+- Page: `python3 scripts/build_seo_pages.py` renders `beyond-comex.html` from that JSON (skipped if the JSON is missing).
+- X chart: `python3 scripts/beyond_comex_chart.py /workspace/beyond_comex_YYYYMMDD.png`.
+- Not yet part of the weekday ops routine. To keep it fresh, run the fetch before the build in that routine.

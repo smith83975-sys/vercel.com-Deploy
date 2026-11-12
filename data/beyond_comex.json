@@ -1,0 +1,148 @@
+{
+ "fetched_at": "2026-11-12T15:02:26Z",
+ "fetched_by": "scripts/fetch_beyond_comex.py",
+ "oz_per_kg": 32.1507466,
+ "oz_per_tonne": 32150.7466,
+ "lbma": {
+  "gold": {
+   "source": "LBMA London Vault Data (monthly, one month in arrears; includes Bank of England gold)",
+   "source_url": "https://www.lbma.org.uk/prices-and-data/london-vault-data",
+   "as_of": "2026-10-31",
+   "as_of_label": "end of October 2026",
+   "frequency": "monthly",
+   "conversion": "oz = tonnes × 32,150.7466 (LBMA conversion factor 1 g = 0.0321507465 troy oz)",
+   "tonnes": 9850.0,
+   "oz": 316684854,
+   "mom_change_pct": 0.29,
+   "status": "ok"
+  },
+  "silver": {
+   "source": "LBMA London Vault Data (monthly, one month in arrears; includes Bank of England gold)",
+   "source_url": "https://www.lbma.org.uk/prices-and-data/london-vault-data",
+   "as_of": "2026-10-31",
+   "as_of_label": "end of October 2026",
+   "frequency": "monthly",
+   "conversion": "oz = tonnes × 32,150.7466 (LBMA conversion factor 1 g = 0.0321507465 troy oz)",
+   "tonnes": 28889.0,
+   "oz": 928802919,
+   "mom_change_pct": -0.33,
+   "status": "ok"
+  },
+  "checked_at": "2026-11-12T15:01:44Z"
+ },
+ "shfe": {
+  "gold": {
+   "source": "Shanghai Futures Exchange daily warrant stock report (仓单日报), warranted metal in SHFE delivery warehouses",
+   "source_url": "https://www.shfe.com.cn/data/tradedata/future/stockdata/dailystock_20261112/ZH/all.html",
+   "as_of": "2026-11-12",
+   "frequency": "daily (business days, Beijing time)",
+   "scope": "Warranted (deliverable) stock only, comparable to COMEX registered, not to COMEX total",
+   "conversion": "oz = kg × 32.1507466",
+   "kg": 118404.0,
+   "oz": 3806777,
+   "day_change_kg": 0.0,
+   "status": "ok"
+  },
+  "silver": {
+   "source": "Shanghai Futures Exchange daily warrant stock report (仓单日报), warranted metal in SHFE delivery warehouses",
+   "source_url": "https://www.shfe.com.cn/data/tradedata/future/stockdata/dailystock_20261112/ZH/all.html",
+   "as_of": "2026-11-12",
+   "frequency": "daily (business days, Beijing time)",
+   "scope": "Warranted (deliverable) stock only, comparable to COMEX registered, not to COMEX total",
+   "conversion": "oz = kg × 32.1507466",
+   "kg": 1324163.0,
+   "oz": 42572829,
+   "day_change_kg": -2883.0,
+   "status": "ok"
+  },
+  "checked_at": "2026-11-12T15:02:18Z"
+ },
+ "sge": {
+  "silver": {
+   "status": "ok",
+   "kg": 806835.0,
+   "oz": 25940348,
+   "week_change_kg": -39420.0,
+   "prior_week_kg": 846255.0,
+   "as_of": "2026-11-06",
+   "as_of_label": "week ending 2026-11-06",
+   "published": "2026-11-09",
+   "source": "Shanghai Gold Exchange weekly market report (行情周报), designated-warehouse inventory table (指定仓库库存周报)",
+   "source_url": "https://www.sge.com.cn/upload/file/202611/09/2b6deb83ba534ad4a96a5666dd4a1788.pdf",
+   "list_url": "https://www.sge.com.cn/sjzx/hqzb",
+   "frequency": "weekly (published Mondays)",
+   "scope": "Silver in SGE designated warehouses. SGE does not publish a gold vault total in this report.",
+   "conversion": "oz = kg × 32.1507466"
+  },
+  "checked_at": "2026-11-12T15:01:44Z"
+ },
+ "gld": {
+  "status": "ok",
+  "oz": 33471847.99,
+  "tonnes": 1041.08,
+  "as_of": "2026-11-11",
+  "source": "SPDR Gold Shares (GLD) historical archive, \"Total Ounces of Gold in the Trust\"",
+  "source_url": "https://www.spdrgoldshares.com/usa/gld/",
+  "data_url": "https://api.spdrgoldshares.com/api/v1/historical-archive?product=gld&exchange=NYSE&lang=en",
+  "frequency": "daily",
+  "bar_lists": [
+   {
+    "custodian": "JPMorgan (London)",
+    "url": "https://emea-markets.jpmorgan.com/metalicsWebAppJanus/publicUnauthenticated/SPDR_GOLD_TRUST_JPM_BARLIST.pdf",
+    "as_of": "2026-11-11",
+    "bars": 77968,
+    "fine_oz": 31106244.664,
+    "status": "ok"
+   },
+   {
+    "custodian": "HSBC",
+    "url": "https://api.spdrgoldshares.com/api/v1/barlist?underlying=gld",
+    "as_of": "2026-11-12",
+    "bars": 5944,
+    "fine_oz": 2411823.374,
+    "status": "ok"
+   }
+  ],
+  "checked_at": "2026-11-12T15:01:44Z"
+ },
+ "slv": {
+  "status": "ok",
+  "oz": 504269035.8,
+  "tonnes": null,
+  "as_of": "2026-11-11",
+  "source": "iShares Silver Trust (SLV) product page, \"Ounces in Trust\" (trade-date basis)",
+  "source_url": "https://www.ishares.com/us/products/239855/ishares-silver-trust-fund",
+  "frequency": "daily",
+  "bar_lists": [
+   {
+    "custodian": "JPMorgan (London)",
+    "url": "https://emea-markets.jpmorgan.com/metalicsWebAppJanus/publicUnauthenticated/BONY_SLV.pdf",
+    "as_of": "2026-11-11",
+    "bars": 517560,
+    "fine_oz": 504630642.6,
+    "status": "ok"
+   }
+  ],
+  "checked_at": "2026-11-12T15:02:26Z"
+ },
+ "pslv": {
+  "status": "ok",
+  "oz": 204597529.0,
+  "as_of": "2026-11-11",
+  "source": "Sprott Physical Silver Trust (PSLV) page, \"Total Oz. of Silver\"",
+  "source_url": "https://sprott.com/investment-strategies/physical-bullion-trusts/silver/",
+  "frequency": "daily",
+  "custodian": "Royal Canadian Mint",
+  "bar_lists": [
+   {
+    "custodian": "Royal Canadian Mint",
+    "url": "https://sprott.com/media/2doppccg/pslv-bar-list.pdf",
+    "as_of": "2026-10-31",
+    "bars": 208416,
+    "fine_oz": 206994529.014,
+    "status": "ok"
+   }
+  ],
+  "checked_at": "2026-11-12T15:02:18Z"
+ }
+}
